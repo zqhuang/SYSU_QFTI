@@ -33,14 +33,73 @@ https://github.com/zqhuang/SYSU\_QFTI
 
 
 \begin{frame}
-\frametitle{\bch 泛函与变分 \ech}
+\frametitle{\bch 课堂互动：函数与稳定点 \ech}
 \bch
-一元函数 $f(x)$ :  $x \rightarrow f$
+稳定点：所有一阶导数全为零的点 （极值点一定是稳定点，反之则未必）
+\begin{itemize}
+\item{$f(\phi) = \phi$存在稳定点吗}
+\item{求$f(\phi) = \phi^2$的稳定点}
+\item{求$f(\phi) = \frac{1}{3}\phi^3-\phi$的稳定点}
+\item{求$f(\phi_1, \phi_2) = \frac{1}{3}\phi_1^3 - \phi_1 + (\phi_2-\phi_1)^2$的稳定点}
+\item{求$f(\phi_1, \phi_2, \ldots, \phi_n) = \frac{1}{3}\phi_1^3 - \phi_1 + \sum_{j=2}^n(\phi_j - \phi_1)^2$的稳定点}
+\item{求$f(\phi_1, \phi_2, \ldots) = \frac{1}{3}\phi_1^3 - \phi_1 + \sum_{j=2}^\infty(\phi_j - \phi_1)^2$的满足“边界条件”$\phi_1>0$的稳定点。}
+\end{itemize}
 
-多元函数 $f(x_1, x_2, x_3, \ldots)$: $(x_1, x_2, x_3,\ldots) \rightarrow f$
+\skipline
 
-泛函 $f\left(x(t)\right)$: $x(t) \rightarrow f$
+我们看到函数如存在多个稳定点，则可以添加适当的“边界条件”使得稳定点唯一。
+
 \ech
+\end{frame}
+
+\begin{frame}
+\chtitle{场的函数}
+\bch
+以自然数标记自由度的变量$(\phi_1, \phi_2, \ldots)$的进一步推广就是用坐标来标记自由度的“场”$\phi_t$ ($t\in (-\infty, \infty)$)。当然，我们更习惯把它记成$\phi(t)$。在学习场论的过程中，我们通常不把场看成坐标的函数，而是把坐标$t$看成自由度的标记，把场看成有无穷多自由度的变量。
+
+\skipline
+
+场既然只是一个（自由度有点多）的变量，当然就可以定义它的函数，数学上叫“泛函”(functional)：
+\ech
+\bex
+\bch
+$$ S = \int_{-\infty}^\infty \frac{m}{2}\left[(\frac{d\phi}{dt})^2 - \omega^2\phi^2\right] dt$$
+把$\phi(t)$映射为一个数。这里$\omega$是具有角速度量纲的常量，$m$是具有质量量纲的常量。
+\ech
+\eex
+\end{frame}
+
+\begin{frame}
+\chtitle{四维时空里的场的泛函}
+\bch
+四维时空里的场（也同样可以看成一个无穷多自由度的变量，其自由度用四维时空坐标来标记）也可以有它的泛函，例如。
+\ech
+\bex
+$$ S = \int \sqrt{-g} d^4x \left[\frac{1}{2}\partial^\mu\phi \partial_\mu\phi - \frac{1}{2}m^2\phi^2\right]$$
+\bch
+把场$\phi(x^0,x^1, x^2, x^3)$映射为一个数$S$. 其中$g$是度规$g_{\mu\nu}$的行列式的简写。$d^4x$是$dx^0dx^1dx^2dx^3$的简写。$m$是质量量纲的常量。积分范围是整个四维时空。这里我们假设了度规是已知确定的。（允许度规变化的理论参考广义相对论。）
+\ech
+\eex
+\end{frame}
+
+\begin{frame}
+\chtitle{作用量}
+\bch
+泛函
+
+$$ S = \int_{-\infty}^\infty \frac{m}{2}\left[(\frac{d\phi}{dt})^2 - \omega^2\phi^2\right] dt$$
+
+定义了一个物理系统(谐振子）。反过来的等价说法是这个物理系统的“作用量”（Action）是上述泛函。
+
+\skipline
+{\bf 作用量的满足边界条件的稳定点给出了物理系统的经典解。}原则上所有经典物理问题都可以归结为求解作用量的稳定点。
+\ech
+
+\end{frame}
+
+
+\begin{frame}
+
 \end{frame}
 
 
