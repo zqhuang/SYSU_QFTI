@@ -177,7 +177,27 @@ $$\dot\pi(\vecx) = -\frac{\partial \hamil}{\partial\phi(\vecx)},\ \dot\phi(\vecx
 
 \begin{frame}
 \chtitle{Noether定理}
-把时间维特殊化之后，就有不随时间变化的量，即“守恒量”的概念。
+\bch
+仍回到四维时空的作用量。
+
+$$S = \int d^4x\ \langr(\phi, \partial_\mu\phi)\,.$$
+
+考虑场的一个无穷小变化：
+
+$$\delta \phi = \epsilon \frac{\delta\phi}{\delta\epsilon}$$
+
+若这个映射使得作用量的变化严格为零，则$\langr$的变化必然可以写成$ \delta \langr = \epsilon \partial_\mu F^\mu$的形势。
+
+Noether定理: $$j^\mu = F^\mu - \frac{\partial\langr}{\partial (\partial_\mu\phi)} \frac{\delta\phi}{\delta\epsilon}$$ 是一个守恒流（即$\partial_\mu j^\mu = 0$)。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{课堂互动}
+\bch
+试证明Noether定理。
+\ech
 \end{frame}
 
 \end{document}
