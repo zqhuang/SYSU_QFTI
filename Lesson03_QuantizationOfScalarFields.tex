@@ -64,7 +64,7 @@ $$S = \int dt\,  \left[\frac{m}{2}\dot q^2 - V(q)\right]$$
 证明：
 \begin{eqnarray}
 \int_{-\infty}^{\infty} x e^{-\alpha x^2 }\, dx &=& 0 \\
-\int_{-\infty}^{\infty} x^2 e^{-\alpha x^2 }\, dx &=& \left(\frac{1}{2\alpha}\right) \int_{-\infty}^{\infty} e^{-\alpha x^2 + \beta x} dx 
+\int_{-\infty}^{\infty} x^2 e^{-\alpha x^2 }\, dx &=& \left(\frac{1}{2\alpha}\right) \int_{-\infty}^{\infty} e^{-\alpha x^2} dx 
 \end{eqnarray}
 \ech
 \end{frame}
@@ -114,8 +114,8 @@ $$[\hatq, \hatpi] = i$$
 现在我们考虑单位质量的谐振子，其Hamilton算符为
 $$\hat{H} = \frac{1}{2}\hatpi^2 + \frac{\omega^2}{2}\hatq^2$$
 定义产生算符$\adag$和湮灭算符$\hata$如下:
-$$\hata = \frac{\omega\hatq + i\hatpi}{\sqrt{2}}$$
-$$\adag = \frac{\omega\hatq - i\hatpi}{\sqrt{2}}$$
+$$\hata = \frac{\omega\hatq + i\hatpi}{\sqrt{2\omega}}$$
+$$\adag = \frac{\omega\hatq - i\hatpi}{\sqrt{2\omega}}$$
 
 \ech
 \end{frame}
@@ -174,12 +174,12 @@ $$\int d^3\vecx\,f^*(\vecx)g(\vecx) = \int d^3\veck\, \tilde{f}^*(\veck)\tilde{g
 \chtitle{自由实标量场的量子化}
 \bch
 根据前面的数学准备知识，若以傅立叶变换后的$\phi(\veck;t)$为变量（为了符号简介，在不致于引起混淆的情况下仍用$\phi$标记傅立叶变换后的场），则拉氏量可写成
-$$L\left(\dot\phi(\veck), \phi(\veck)\right) = \int d^3\veck \,\left[\frac{1}{2}|\dot\phi(\veck)|^2 + \frac{\omega^2}{2} |\phi(\veck)|^2\right]$$
+$$L\left(\dot\phi(\veck), \phi(\veck)\right) = \int d^3\veck \,\left[\frac{1}{2}|\dot\phi(\veck)|^2 - \frac{\omega^2}{2} |\phi(\veck)|^2\right]$$
 这里$\omega^2 = k^2 + m^2$.
 
 \skipline
 与谐振子类似，可以推导出
-$$\phi(\veck) = \frac{\hata_{\veck}+\adag_{-\veck}}{\sqrt{2}\omega}$$
+$$\phi(\veck) = \frac{\hata_{\veck}+\adag_{-\veck}}{\sqrt{2\omega}}$$
 这样就解决了固定时间的实数场的量子化问题，下节课我们要讨论不同时间的场算符的表达式以及复标量场的量子化。
 \ech
 \end{frame}
