@@ -35,9 +35,28 @@ https://github.com/zqhuang/SYSU\_QFTI
 
 \begin{frame}
 \chtitle{实标量场的量子化}
-$$L = \int d^3\veck\, \frac{1}{2}|\dot\phi(\veck)|^2 - \frac{\omega^2}{2}|\phi(\veck)|^2$$
+\bch
+回到傅立叶变换后的$\phi$的拉氏量：
+$$L = \int d^3\veck\, \left[\frac{1}{2}|\dot\phi(\veck)|^2 - \frac{\omega^2}{2}|\phi(\veck)|^2\right]$$
+\skipline
+
+考虑到$\phi(\veck)$是实数场的傅立叶变换，必须满足$\phi^\dagger(\veck) = \phi(-\veck)$, 上述积分可以只对半个$\veck$空间(例如限定$k_1>0$)进行。在半空间内把$\phi(\veck)$分解为实部和虚部$\phi(\veck) = \frac{u(\veck) + i \vel(\veck)}{\sqrt{2}}$，$u$和$v$就是独立变量了：
+
+\skipline
+$$L = \int_{k_1>0} d^3\veck\,\left[ \frac{1}{2}\left(\dot u^2 + \dot \vel^2 \right) - \frac{\omega^2}{2}\left(u^2+v^2\right)\right]$$
+
+\ech
+
 \end{frame}
 
+\begin{frame}
+\chtitle{实标量场的量子化}
+\bch
+于是每个$u(\veck)\sqrt{d^3\veck}$和$\vel(\veck)\sqrt{d^3\veck}$均为单位质量谐振子, 我们可以写出
+$$u  = \frac{\hata_u + \adag_u}{\sqrt{2\omega d^3\veck}}$$
+$$\vel  = \frac{\hata_{\vel} + \adag_{\vel}}{\sqrt{2\omega d^3\veck}}$$
+\ech
+\end{frame}
 
 
 \end{document}
