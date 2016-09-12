@@ -1,0 +1,187 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Lesson 03 - Quantization of Scalar Fields}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+实标量场的量子化
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{量子作用量原理}
+\bch
+{\bf 如果变量$q$的作用量为$S(q)$,则末态的概率幅等于所有初态的概率幅以权重$e^{iS(q)}\Dint q$叠加。其中$S(q)$仅包括从初态时刻到末态时刻的拉氏量的积分，$\Dint q$是包含四维观点下的所有自由度的积分元。}
+
+\skipline
+物理含义：
+\begin{itemize}
+\item{因为非稳定点也被允许出现，不能用边界条件来确定唯一的解。}
+\item{经典解取作用量的稳定点是因为在经典极限下非稳定点附近概率振幅$e^{iS}$快速振动互相抵消了。}
+\item{在3+1维观点下，经典物理研究的是变量随时间的演化，量子物理研究的是变量的概率幅（波函数）随时间的演化。}
+\end{itemize}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{薛定谔方程}
+\bch
+从量子作用量原理出发推导作用量为
+$$S = \int dt\,  \left[\frac{m}{2}\dot q^2 - V(q)\right]$$
+的系统的薛定谔方程。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{数学准备}
+\bch
+证明：
+\begin{eqnarray}
+\int_{-\infty}^{\infty} x e^{-\alpha x^2 }\, dx &=& 0 \\
+\int_{-\infty}^{\infty} x^2 e^{-\alpha x^2 }\, dx &=& \left(\frac{1}{2\alpha}\right) \int_{-\infty}^{\infty} e^{-\alpha x^2 + \beta x} dx 
+\end{eqnarray}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{薛定谔方程的推导}
+\bch
+设概率幅函数为$\psi(q;t)$,按量子作用量原理有 
+$$ \psi(q; t+\Delta t) \propto \int \psi(q';t) e^{iS(q'\rightarrow q)}dq'$$
+正比的系数和$q,t$无关。
+\skipline
+
+在$\Delta t$非常小的极限下，可以取匀速直线运动的近似$q' = q - \vel \Delta t$，
+$$ \psi(q; t+\Delta t) \propto \int d\vel\, \psi(q-\vel \Delta t; t) e^{i[\frac{m\vel^2}{2} - V(q)]\Delta t}$$
+注意我们固定了$\Delta t$并通过对所有$\vel$求和的方法来取遍所有的初始态。在指数$iS$中我们仅保留了$\Delta t$的一次项。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{薛定谔方程的推导}
+\bch
+把两边按小量$\Delta t$进行展开到二阶近似。按照前面的数学准备知识($\alpha = -\frac{im\Delta t}{2}$)，$\vel$的一次项可以直接扔掉，$\vel^2$可以替换为$\frac{1}{2\alpha}$。
+$$ \psi + \frac{\partial \psi}{\partial t}\Delta t \propto \left(\psi - iV\Delta t \psi + \frac{\Delta t}{2i m}\frac{\partial^2\psi}{\partial q^2}\right) \int d\vel\, e^{\frac{im\Delta t}{2} \vel^2}$$
+两边的$\psi$及其偏导都是在$(q, t)$求的。正比符号的含义仍然是一个和$q,t$无关的常数因子。那么通过比较两边，可以知道这个常数因子和最右边的积分必须抵消并给出$1$.
+$$ \psi + \frac{\partial \psi}{\partial t}\Delta t  = \psi - iV\Delta t \psi + \frac{\Delta t}{2i m}\frac{\partial^2\psi}{\partial q^2}$$
+两边去掉零次项后对比剩下的$\Delta t$的系数即给出薛定谔方程：
+$$ i\frac{\partial \psi}{\partial t} = \left[-\frac{1}{2m}\frac{\partial^2}{\partial q^2} + V(q)\right] \psi$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{算符语言和对易规则}
+\bch
+除了量子作用量原理，量子物理更常用的是算符语言和对易规则。在算符语言描述方法下，变量的所有自由度和对应的正则动量都成为算符。
+
+\skipline
+从薛定谔方程以及Hamilton函数的表达式：$H(\pi, q) = \frac{\pi^2}{2} + V(q)$,我们可以得到动量算符$\hatpi = -i\frac{\partial}{\partial q}$（这里的负号可对平面波$e^{-i(\omega t -\veck\cdot\vecx)}$作用动量算符来确定） 。于是得到对易关系
+$$[\hatq, \hatpi] = i$$
+反过来，我们也可以把上述对易关系作为量子力学的基本假设而不借助于量子作用量原理。事实上量子力学在初期的确是这样发展起来的。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{单位质量的谐振子}
+\bch
+现在我们考虑单位质量的谐振子，其Hamilton算符为
+$$\hat{H} = \frac{1}{2}\hatpi^2 + \frac{\omega^2}{2}\hatq^2$$
+定义产生算符$\adag$和湮灭算符$\hata$如下:
+$$\hata = \frac{\omega\hatq + i\hatpi}{\sqrt{2}}$$
+$$\adag = \frac{\omega\hatq - i\hatpi}{\sqrt{2}}$$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{课堂互动}
+\bch
+对单位质量的谐振子，证明
+\begin{itemize}
+\item{证明$[\hata, \adag] = 1$}
+\item{证明粒子数算符$\hat{N} \equiv \adag \hata$的本征值一定是非负实数}
+\item{如果$|n\rangle$为粒子数算符$\hat{N}$的本征值为$n$的本征态，则$\hata|n\rangle$是$\hat{N}$的本征值为$n-1$的本征态，$\adag|n\rangle$是$\hat{N}$的本征值为$n+1$的本征态}
+\item{进一步证明 $\hata|n\rangle = \sqrt{n}|n-1\rangle$, $\adag|n\rangle = \sqrt{n+1}|n+1\rangle$} 
+\item{进一步证明$\hatN$的本征态只能取非负整数的本征值。}
+\item{把$\hatN$的本征值为零的态称为真空态，如果真空态是唯一的，试证明本征值为任意正整数的态都存在且唯一。这样可以列举出$\hatN$所有的本征态$|0\rangle$, $|1\rangle$, $|2\rangle$, $\ldots$}
+\item{证明Hamilton算符和粒子数算符有如下关系$\hat{H} = (\hat{N} + \frac{1}{2})\omega$}
+\end{itemize}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{自由实标量场的量子化}
+\bch
+下面我们讨论自由实标量场的量子化。
+
+\skipline
+自由实标量场的拉氏量
+$$L = \int d^3\vecx \, \frac{1}{2}\dot\phi^2 - \frac{1}{2}|\nabla \phi|^2 - \frac{m^2}{2}\phi^2$$
+所谓“自由场”，是指它的势能仅包含二次项$m^2\phi^2/2$。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{数学准备}
+\bch
+1. 证明$\frac{1}{2\pi}\int_{-\infty}^{\infty} dx e^{ikx} = \delta(k)$.
+
+\skipline
+2. 证明$\frac{1}{(2\pi)^3}\int d^3\vecx e^{i\veck\cdot\vecx} = \delta(\veck)$.
+
+
+\skipline
+3. 设$f(\vecx)$和$g(\vecx)$的傅立叶变换(Fourier transformation)分别为
+$$\tilde{f}(\veck) \equiv \frac{1}{(2\pi)^{3/2}}\int d^3\vecx\, f(\vecx)e^{i\veck\cdot\vecx}$$和
+$$\tilde{g}(\veck) \equiv \frac{1}{(2\pi)^{3/2}}\int d^3\vecx\, g(\vecx)e^{i\veck\cdot\vecx}\,,$$
+证明
+$$\int d^3\vecx\,f^*(\vecx)g(\vecx) = \int d^3\veck\, \tilde{f}^*(\veck)\tilde{g}(\veck)$$.
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{自由实标量场的量子化}
+\bch
+根据前面的数学准备知识，若以傅立叶变换后的$\phi(\veck;t)$为变量（为了符号简介，在不致于引起混淆的情况下仍用$\phi$标记傅立叶变换后的场），则拉氏量可写成
+$$L\left(\dot\phi(\veck), \phi(\veck)\right) = \int d^3\veck \,\left[\frac{1}{2}|\dot\phi(\veck)|^2 + \frac{\omega^2}{2} |\phi(\veck)|^2\right]$$
+这里$\omega^2 = k^2 + m^2$.
+
+\skipline
+与谐振子类似，可以推导出
+$$\phi(\veck) = \frac{\hata_{\veck}+\adag_{-\veck}}{\sqrt{2}\omega}$$
+这样就解决了固定时间的实数场的量子化问题，下节课我们要讨论不同时间的场算符的表达式以及复标量场的量子化。
+\ech
+\end{frame}
+
+\end{document}
