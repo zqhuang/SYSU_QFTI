@@ -153,16 +153,16 @@ $$L = \int d^3\vecx \, \frac{1}{2}\dot\phi^2 - \frac{1}{2}|\nabla \phi|^2 - \fra
 \begin{frame}
 \chtitle{数学准备}
 \bch
-1. 证明$\frac{1}{2\pi}\int_{-\infty}^{\infty} dx e^{ikx} = \delta(k)$.
+1. 证明$\frac{1}{2\pi}\int_{-\infty}^{\infty} dx\, e^{ikx} = \delta(k)$.
 
 \skipline
-2. 证明$\frac{1}{(2\pi)^3}\int d^3\vecx e^{i\veck\cdot\vecx} = \delta(\veck)$.
+2. 证明$\frac{1}{(2\pi)^3}\int d^3\vecx\, e^{i\veck\cdot\vecx} = \delta(\veck)$.
 
 
 \skipline
 3. 设$f(\vecx)$和$g(\vecx)$的傅立叶变换(Fourier transformation)分别为
-$$\tilde{f}(\veck) \equiv \frac{1}{(2\pi)^{3/2}}\int d^3\vecx\, f(\vecx)e^{i\veck\cdot\vecx}$$和
-$$\tilde{g}(\veck) \equiv \frac{1}{(2\pi)^{3/2}}\int d^3\vecx\, g(\vecx)e^{i\veck\cdot\vecx}\,,$$
+$$\tilde{f}(\veck) \equiv \frac{1}{(2\pi)^{3/2}}\int d^3\vecx\, f(\vecx)e^{-i\veck\cdot\vecx}$$和
+$$\tilde{g}(\veck) \equiv \frac{1}{(2\pi)^{3/2}}\int d^3\vecx\, g(\vecx)e^{-i\veck\cdot\vecx}\,,$$
 证明
 $$\int d^3\vecx\,f^*(\vecx)g(\vecx) = \int d^3\veck\, \tilde{f}^*(\veck)\tilde{g}(\veck)$$.
 
@@ -174,13 +174,13 @@ $$\int d^3\vecx\,f^*(\vecx)g(\vecx) = \int d^3\veck\, \tilde{f}^*(\veck)\tilde{g
 \chtitle{自由实标量场的量子化}
 \bch
 根据前面的数学准备知识，若以傅立叶变换后的$\phi(\veck;t)$为变量（为了符号简介，在不致于引起混淆的情况下仍用$\phi$标记傅立叶变换后的场），则拉氏量可写成
-$$L\left(\dot\phi(\veck), \phi(\veck)\right) = \int d^3\veck \,\left[\frac{1}{2}|\dot\phi(\veck)|^2 - \frac{\omega^2}{2} |\phi(\veck)|^2\right]$$
+$$L = \int d^3\veck \,\left[\frac{1}{2}|\dot\phi(\veck)|^2 - \frac{\omega^2}{2} |\phi(\veck)|^2\right]$$
 这里$\omega^2 = k^2 + m^2$.
 
 \skipline
-与谐振子类似，可以推导出
+与谐振子类似，下节课我们会推导出
 $$\phi(\veck) = \frac{\hata_{\veck}+\adag_{-\veck}}{\sqrt{2\omega d^3\veck}}$$
-这样就解决了固定时间的实数场的量子化问题，下节课我们要讨论不同时间的场算符的表达式以及复标量场的量子化。
+这样就解决了固定时间的自由实标量场的量子化问题。下节课我们还要讨论实标量场算符随时间的演化。
 \ech
 \end{frame}
 
