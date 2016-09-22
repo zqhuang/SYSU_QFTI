@@ -1,0 +1,128 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Lesson 05 - Gauge Field}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第五课 定域规范变换和规范场
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{定域规范变换(Local Gauge Transformation)}
+\bch
+上节课讲到，局域规范变换$\phi \rightarrow \phi e^{i\gamma(x)}$会改变不同时空点的$\phi$的相位差，从而改变作用量。联系不同时空点的$\phi$的算符为动量算符$-i\partial_\mu$，一个很自然的想法就是，能否把拉氏密度中的$-i\partial_\mu$算符替换成另一个矢量算符而使得作用量不变？
+
+\skipline
+答案是肯定的，通过定义“正则动量算符”：
+$$-iD_\mu \equiv -i\partial_\mu + q A_\mu$$
+并规定矢量场$A_\mu$在定域规范变换下按如下的规则进行变换：
+$$ A_\mu \rightarrow A_\mu - \frac{1}{q} \partial_\mu \gamma\, ,$$
+就可以满足作用量不变的要求。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{课堂互动}
+\bch
+按上述定义
+$$D_\mu \equiv \partial_\mu + iq A_\mu$$
+证明在定域规范变换$\phi \rightarrow e^{i\gamma(x)}\phi$, $A_\mu \rightarrow A_\mu - \frac{1}{q}\partial\gamma$下，拉氏密度
+$$\langr = D_\mu\phi^\dagger D^\mu\phi - m^2\phi^\dagger \phi$$
+是不变量。因此作用量也是不变量。
+
+\skipline
+$\phi \rightarrow e^{i\gamma(x)}\phi$在数学上称为一维幺正变换，简写为$U(1)$。与之对应的规范场$A_\mu$就叫做$U(1)$规范场。群论中U(1)属于阿贝尔群，所以$A_\mu$又称阿贝尔规范场。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{是否自寻烦恼？}
+\bch
+思考：为了使作用量形式上不变而引进的$A_\mu$场是“自寻烦恼”吗？
+\skipline
+关键在于：能否选取适当的局域规范变换使得$A_\mu$处处为零？
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{课堂互动}
+\bch
+试证明：
+\begin{itemize}
+\item{如果存在$\gamma(x)$使得$A_\mu - \frac{1}{q}\partial_\mu\gamma = 0$处处成立，则
+$F^{\mu\nu} \equiv \partial^\mu A^\nu - \partial^\nu A^\mu$ 处处为零。}
+\item{若$F^{\mu\nu} \equiv \partial^\mu A^\nu - \partial^\nu A^\mu$处处为零，则存在$\gamma(x)$使得$A_\mu - \frac{1}{q}\partial_\mu\gamma = 0$处处成立}
+\end{itemize}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\bch
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\bch
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\bch
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\bch
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\bch
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\bch
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\bch
+\ech
+\end{frame}
+
+\end{document}
