@@ -54,7 +54,7 @@ $$ A_\mu \rightarrow A_\mu - \frac{1}{q} \partial_\mu \gamma\, ,$$
 按上述定义
 $$D_\mu \equiv \partial_\mu + iq A_\mu$$
 证明在定域规范变换$\phi \rightarrow e^{i\gamma(x)}\phi$, $A_\mu \rightarrow A_\mu - \frac{1}{q}\partial\gamma$下，拉氏密度
-$$\langr = D_\mu\phi^\dagger D^\mu\phi - m^2\phi^\dagger \phi$$
+$$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi$$
 是不变量。因此作用量也是不变量。
 
 \skipline
@@ -63,11 +63,27 @@ $\phi \rightarrow e^{i\gamma(x)}\phi$在数学上称为一维幺正变换，简�
 \end{frame}
 
 \begin{frame}
-\chtitle{是否自寻烦恼？}
+\chtitle{自寻烦恼？}
 \bch
-思考：为了使作用量形式上不变而引进的$A_\mu$场是“自寻烦恼”吗？
+
+迄今为止，我们似乎只是对原先的复标量场强加了一个局域规范变换，并通过引入规范场$A_\mu$以及强加给规范场的变换规则来抵消局域规范变换产生的额外相位差，这是否有自寻烦恼的嫌疑？
+
 \skipline
-关键在于：能否选取适当的局域规范变换使得$A_\mu$处处为零？
+实际上不是这样的。下面我们来证明，引入$A_\mu$后的拉氏量包含了更多的自由度。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Stokes定理的四维空间曲面积分形式}
+\bch
+数学准备：
+\skipline
+若$\Sigma$是四维时空的有限光滑曲面，其边界为$\partial\Sigma$, $A_\mu$是四维时空中的矢量场，则有
+$$\int_\Sigma (\partial_\mu A_\nu - \partial_\nu A_\mu)(dx^\mu\wedge dx^\nu) = \oint_{\partial \Sigma} A_\mu dx^\mu\, .$$
+
+\skipline
+为了不过多涉及微分几何的知识，我们仅需把外积$dx^\mu \wedge dx^\nu$看成按右手定则取符号的面积分元。它是反对称的：$dx^\mu \wedge dx^\nu = -dx^\nu \wedge dx^\mu$.
 \ech
 \end{frame}
 
@@ -76,52 +92,152 @@ $\phi \rightarrow e^{i\gamma(x)}\phi$在数学上称为一维幺正变换，简�
 \bch
 试证明：
 \begin{itemize}
-\item{如果存在$\gamma(x)$使得$A_\mu - \frac{1}{q}\partial_\mu\gamma = 0$处处成立，则
-$F^{\mu\nu} \equiv \partial^\mu A^\nu - \partial^\nu A^\mu$ 处处为零。}
-\item{若$F^{\mu\nu} \equiv \partial^\mu A^\nu - \partial^\nu A^\mu$处处为零，则存在$\gamma(x)$使得$A_\mu - \frac{1}{q}\partial_\mu\gamma = 0$处处成立}
+\item{在定域规范变换下，反对称张量$F^{\mu\nu} \equiv \partial^\mu A^\nu - \partial^\nu A^\mu$ 是不变量。}
+\item{如果存在定域规范变换使得$A_\mu$处处为零，则$F^{\mu\nu}$处处为零。反之，若$F^{\mu\nu}$处处为零，则存在定域规范变换使得$A_\mu$处处为零。}
 \end{itemize}
+可见（在经典图像下）若$F^{\mu\nu}$不恒为零，引入$A_\mu$场后的拉氏量并不等价于原先的拉氏量。
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{课堂互动}
 \bch
+进一步证明
+\begin{itemize}
+\item{由$A_\mu$构造的最简单的标量$A_\mu A^\mu$在定域规范变换下（很可惜地……）{\bf 不是}不变量。}
+\item{幸运的是，由$A_\mu$构造的次简单的标量$F_{\mu\nu}F^{\mu\nu}$在定域规范变换下是不变量。}
+\end{itemize}
+因此，满足定域规范不变性的拉氏密度还可以进一步拓展为
+$$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
+这里的$-1/4$因子是为了和电磁场的矢量势的习惯约定一致。
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{守恒流}
 \bch
+对拉氏密度
+$$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
+仍然考虑规范变换$\phi\rightarrow \phi e^{iq\epsilon}$,显然拉氏密度在该变换下不变（即Noether定理中$F^\mu=0$仍然成立）,并且$\frac{\delta\phi}{\delta\epsilon} = iq\phi$, $\frac{\delta\phi^\dagger}{\delta\epsilon} = -iq\phi^\dagger$均不变，发生变化的仅仅是$\frac{\partial\langr}{\partial(\partial_\mu\phi)} = (D^\mu\phi)^\dagger$和$\frac{\partial\langr}{\partial(\partial_\mu\phi^\dagger)} = D^\mu\phi$，因此守恒流就简单地变成了：
+$$j^\mu = iq\left(\phi^\dagger D^\mu\phi - \phi (D^\mu \phi)^\dagger\right)\, .$$
+
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{课堂互动}
 \bch
+对拉氏密度
+$$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
+
+1. 证明$\phi$满足的Euler-Lagrange方程为：$(D_\mu D^\mu + m^2)\phi = 0\,$.
+
+2. 证明$\frac{\partial\langr}{\partial A_\mu} = - j^\mu\,$.
+
+3. 证明$\frac{\partial\langr}{\partial (\partial_\mu A_\nu)} = - F^{\mu\nu}\,$.
+
+4. 证明$A_\mu$满足的Euler-Lagrange方程为：$\partial_\mu F^{\mu\nu} = j^\nu\,$.
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Maxwell方程组}
+\bch
+根据$F^{\mu\nu}$的定义，可以证明
+$$\partial_\lambda F_{\mu\nu} + \partial_\mu F_{\nu\lambda} + \partial_\nu F_{\lambda\mu} = 0$$
+这个方程和上述的
+$$\partial_\mu F^{\mu\nu} = j^\nu $$
+一起，构成了Maxwell方程组。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{$A_\mu$的自由度}
+\bch
+
+因为允许任意的定域规范变换，$A_\mu$显然包含了非物理的冗余自由度。在实际计算中往往需要把这些自由度去掉以简化计算。下面我们进行这方面的讨论：
+
+\skipline
+
+数学准备：
+
+对任意实标量场$\chi$存在一个实标量场$\gamma$使得$\partial_\mu \partial^\mu \gamma = \chi$。
+
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{洛仑兹规范}
+\bch
+对规范场$A_\mu$，显然$q\partial_\mu A^\mu$为标量场。根据上述数学引理我们可以取$\gamma(x)$使得$\partial_\mu \partial^\mu \gamma = q\partial_\mu A^\mu$并作定域规范变换
+$$\tilde{A}^\mu = A^\mu - \frac{1}{q}\partial^\mu \gamma\, .$$
+于是
+$$\partial_\mu \tilde{A}^\mu = \partial_\mu A^\mu - \frac{1}{q}\partial_\mu\partial^\mu \gamma = 0 \, .$$
+
+\skipline
+这说明我们总可以通过定域规范变换使得$A_\mu$满足
+$$\partial_\mu A^\mu = 0\, .$$
+这个附加条件称为洛仑兹规范（“规范”这个词有点滥用了…）,它可以去除$A_\mu$的一个冗余自由度。
+
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{静态规范场和库仑规范}
 \bch
+如果场$A_\mu$是静态的，$\partial_0 A^0 = 0$，那么洛仑兹规范就变成
+\begin{equation}
+\nabla \cdot \mathbf{A} = 0\, .
+\end{equation}
+在洛仑兹规范下,根据Maxwell方程
+$$j^\nu = \partial_\mu F^{\mu\nu} = \partial_\mu \partial^\mu A^\nu - \partial^\nu (\partial_\mu A^\mu) =  \partial_\mu \partial^\mu A^\nu \, .$$
+取$\nu = 0$有
+$$\ddot A^0 - \nabla^2 A^0 = j^0\, .$$
+
+并考虑到$j^0$的物理意义是守恒荷密度(按电磁学习惯写作$\rho$)，静态场$\ddot A^0=0$，我们就得到:
+\begin{equation}
+\nabla^2 A^0 = - \rho
+\end{equation}
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{静态规范场和库仑规范}
 \bch
+上述(1)和(2)联立起来给出了库仑规范。对于静态场，库仑规范是一个自然的选择。对于非静态场，虽然仍然可以强行选取库仑规范，但未必能简化计算。
+
+\skipline
+以后我们会看到，规范场由于没有静质量，它在每个时空点的真实物理自由度仅为2，也就是说洛仑兹规范并没有完全去除冗余自由度。而库仑规范附加了两个方程，可以去除所有的冗余自由度。
+
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{角动量理论}
 \bch
+下节课我们要讨论矢量场的角动量理论。为此需要一点数学准备。
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{角动量理论的数学准备（线性代数回顾）}
 \bch
+矩阵的一般函数：
+\skipline
+
+1. 如果矩阵$A$可以对角化为$A = U^{-1} \mathrm{diag}\{\lambda_1, \lambda_2, \ldots\} U$, 则$A^n = P^{-1} \mathrm{diag}\{\lambda_1^n, \lambda_2^n, \ldots\} P$。
+
+\skipline
+2. 一般性的，对任意多项式$f(x) = c_0 + c_1 x + c_2 x^2 + \ldots $，有$f(A) =   P^{-1} \mathrm{diag}\{f(\lambda_1), f(\lambda_2), \ldots\} P$。
+
+\skipline
+3. 对一般解析函数$f(x)$可以假设它能够展开为收敛的级数并定义$f(A) =   P^{-1} \mathrm{diag}\{f(\lambda_1), f(\lambda_2), \ldots\} P$。
+
+
 \ech
 \end{frame}
 
