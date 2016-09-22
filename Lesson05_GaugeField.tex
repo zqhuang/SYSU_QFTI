@@ -229,16 +229,18 @@ $$\ddot A^0 - \nabla^2 A^0 = j^0\, .$$
 矩阵的一般函数：
 \skipline
 
-1. 如果矩阵$A$可以对角化为$A = U^{-1} \mathrm{diag}\{\lambda_1, \lambda_2, \ldots\} U$, 则$A^n = P^{-1} \mathrm{diag}\{\lambda_1^n, \lambda_2^n, \ldots\} P$。
+1. 如果矩阵$A$可以对角化为$A = U^{-1} \mathrm{diag}\{\lambda_1, \lambda_2, \ldots\} U$, 则$A^n = U^{-1} \mathrm{diag}\{\lambda_1^n, \lambda_2^n, \ldots\} U$。
 
 \skipline
-2. 一般性的，对任意多项式$f(x) = c_0 + c_1 x + c_2 x^2 + \ldots $，有$f(A) =   P^{-1} \mathrm{diag}\{f(\lambda_1), f(\lambda_2), \ldots\} P$。
+2. 一般性的，对任意多项式$f(x) = c_0 + c_1 x + c_2 x^2 + \ldots $，有$f(A) =   U^{-1} \mathrm{diag}\{f(\lambda_1), f(\lambda_2), \ldots\} U$。
 
 \skipline
-3. 对一般解析函数$f(x)$可以假设它能够展开为收敛的级数并定义$f(A) =   P^{-1} \mathrm{diag}\{f(\lambda_1), f(\lambda_2), \ldots\} P$。
+3. 对一般解析函数$f(x)$可以假设它能够展开为收敛的级数并定义$f(A) =   U^{-1} \mathrm{diag}\{f(\lambda_1), f(\lambda_2), \ldots\} U$。
 
-
+\skipline
+4. 如果$A$，$B$是对易的两个矩阵，则$ e^{iA} e^{iB} = e^{iB} e^{iA} =  e^{i(A+B)}$.
 \ech
 \end{frame}
+
 
 \end{document}
