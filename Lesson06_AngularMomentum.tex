@@ -52,7 +52,7 @@ https://github.com/zqhuang/SYSU\_QFTI
 \bch
 任意三维矢量$\vecv$绕方向$\vecn$（我们约定方向矢总是归一化的，即$\vecn^2=1$）旋转无穷小角度$\epsilon$总是可以写成：
 $$\vecv \rightarrow \vecv - \ii\epsilon \hatJn \vecv = e^{-\ii\epsilon\hatJn}\vecv\,.$$
-其中$\hatJn$是$3\times 3$的转动矩阵，它只跟$\vecn$有关。为了防止同三维空间指标$i$混淆，以后我们用符号$\ii$来表示复数单位。
+其中$\hatJn$是$3\times 3$的转动矩阵，它只跟$\vecn$有关。为了防止同三维空间指标$i$混淆，以后我们用符号$\ii$来表示虚数单位。
 
 对于有限大小的转动角$\theta$，因为总是可以把转动划分成很多份的小转动，所以取足够大的$N$即有
 $$\vecv\rightarrow (e^{-\ii(\theta/N)\hatJn})^N\vecv = e^{-\ii\theta \hatJn}\vecv$$
@@ -86,7 +86,7 @@ $$\vecv\rightarrow (e^{-\ii(\theta/N)\hatJn})^N\vecv = e^{-\ii\theta \hatJn}\vec
 首先，我们形式上把三维转动矩阵$\hatJn$拓写成四维张量$J^{\mu}_{\;\nu}$，规定$J^0_{\;\nu} = J^\mu_{\;0} = 0$，对$i$, $j$均不为零的情况$J^i_{\;j}$则是$\hatJn$矩阵的第$i$行第$j$列元素。(显然，这样定义的$J^\mu_{\;\nu}$并不是任意坐标变换下的张量，我们这里仅仅讨论三维空间的转动则没有问题。)由转动带来的坐标变动为
 $$ \delta x^\mu =   \ii \epsilon J^\mu_{\;\nu} x^\nu$$
 
-这样，对拉氏密度中的所有标量自由度$\phi$而言，$\phi$在转动后的$x^\mu$的位置的值，等于$\phi$在转动之前的坐标$x^\mu + \ii\epsilon J^\mu_{\;\nu} x^\nu$处的值。所以
+这样，对拉氏密度中的所有标量自由度$\phi$而言，$\phi$在转动后的$x^\mu$的位置的值，等于$\phi$在转动之前的坐标$x^\mu - \ii\epsilon J^\mu_{\;\nu} x^\nu$处的值。所以
 $$\delta \phi = (-\ii \epsilon J^\mu_{\;\nu} x^\nu)\partial_\mu \phi$$
 
 \ech
