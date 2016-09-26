@@ -1,0 +1,153 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Lesson 06 - Angular Momentum}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第五课 角动量理论
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{矩阵的函数简要回顾}
+\bch
+上节课末尾讲到，对任意的解析函数$f(x)$总能定义矩阵的函数$f(A)$。它有如下性质。
+\begin{itemize}
+\item{若$A$的本征值和本征矢为$(\lambda_1, \vecv_1)$; $(\lambda_2, \vecv_2)$;$\ldots$ 则$f(A)$有相同的本征矢，相应的本征值则变为$f(\lambda_1)$, $f(\lambda_2)$, $\ldots$}
+\item{矩阵的函数满足复合函数规则，即：若解析函数$f$, $g$, $h$满足$h(x) = f(g(x))$，则对任意矩阵$A$有$h(A)=f(g(A))$。特别地，$(e^A)^n = e^{nA}$。}
+\item{共轭转置和函数可以交换位置。即$\left(f(A)\right)^\dagger = f(A^\dagger)$。由此得出若$A$是厄米矩阵($A=A^\dagger$)，则$f(A)$也是厄米矩阵。注意厄米矩阵的本征值都是实数。}
+\item{若两个矩阵$A$, $B$对易，则它们的任意函数$f(A)$与$g(B)$也对易。特别地，$ e^{A}e^{B} = e^{B}e^{A}=e^{A+B}$。}
+\end{itemize}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{三维空间转动算符}
+\bch
+任意三维矢量$\vecv$绕方向$\vecn$（我们约定方向矢总是归一化的，即$\vecn^2=1$）旋转无穷小角度$\epsilon$总是可以写成：
+$$\vecv \rightarrow \vecv - \ii\epsilon \hatJn \vecv = e^{-\ii\epsilon\hatJn}\vecv\,.$$
+其中$\hatJn$是$3\times 3$的转动矩阵，它只跟$\vecn$有关。为了防止同三维空间指标$i$混淆，以后我们用符号$\ii$来表示复数单位。
+
+对于有限大小的转动角$\theta$，因为总是可以把转动划分成很多份的小转动，所以取足够大的$N$即有
+$$\vecv\rightarrow (e^{-\ii(\theta/N)\hatJn})^N\vecv = e^{-\ii\theta \hatJn}\vecv$$
+也就是说绕$\vecn$旋转$\theta$的操作仍然可以写成$e^{-\ii\theta \hatJn}$。算符$\hatJn$是对应于$\vecn$方向的转动算符，它不依赖于坐标系而存在。仅当我们需要写出$\hatJn$的具体矩阵表达式时，才需要选定一个坐标系。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{课堂互动}
+\bch
+对三个形成右手正交系的方向$\vecn_1$, $\vecn_2$, $\vecn_3$,对应的转动算符分别为$\hatj{1} $, $\hatj{2} $, $\hatj{3} $。试证明
+\begin{itemize}
+\item{对任意角度$\theta$，有$e^{-\ii\theta\hatj{3} }\vecn_1 =  \vecn_1 \cos\theta + \vecn_2 \sin\theta$, $e^{-\ii\theta\hatj{3} }\vecn_2 = \vecn_2 \cos\theta - \vecn_1 \sin\theta$, $e^{-\ii\theta\hatj{3}}\vecn_3 = \vecn_3$. }
+\item{对任意角度$\theta$, 算符$e^{-\ii\theta\hatj{3} }$的三组本征矢量和本征值分别为$(\vecn_3, 1)$, $(\vecn_1+\ii\vecn_2, e^{-\ii\theta})$, $(\vecn_1-\ii\vecn_2, e^{\ii\theta})$。}
+\item{根据上题结论，证明$\hatj{3}$的三组本征矢量和本征值分别$(\vecn_3, 0)$, $(\vecn_1+\ii\vecn_2, 1)$, $(\vecn_1-\ii\vecn_2, -1)$}.
+\item{根据上题结论，证明$\hatj{3}\vecn_1=\ii\vecn_2$, $\hatj{3} \vecn_2 = -\ii\vecn_1$。通过置换$1,2,3$可以得到$\hatj{i}\vecn_j = \ii\epsilon_{ijk}\vecn_k$。其中$\epsilon_{ijk}$为完全反对称张量（当$ijk$为$123$的偶置换时为$\epsilon_{ijk}=1$，当$ijk$为$123$的奇置换时$\epsilon_{ijk}=-1$, $ijk$有重复指标时$\epsilon_{ijk} = 0$)。}
+\item{$[\hatj{i}, \hatj{j} ] = \ii \epsilon_{ijk}\hatj{k} $}
+\end{itemize}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{空间转动对称性和角动量守恒}
+\bch
+由于作用量是拉氏密度在全空间的积分，所以对固定的$\vecn$，整体空间的转动$e^{i\epsilon\hatJn}$保持作用量不变。对应的Noether定理中的守恒量就是角动量。
+
+\skipline
+首先，我们形式上把三维转动矩阵$\hatJn$拓写成四维张量$J^{\mu}_{\;\nu}$，规定$J^0_{\;\nu} = J^\mu_{\;0} = 0$，对$i$, $j$均不为零的情况$J^i_{\;j}$则是$\hatJn$矩阵的第$i$行第$j$列元素。(显然，这样定义的$J^\mu_{\;\nu}$并不是任意坐标变换下的张量，我们这里仅仅讨论三维空间的转动则没有问题。)由转动带来的坐标变动为
+$$ \delta x^\mu =   \ii \epsilon J^\mu_{\;\nu} x^\nu$$
+
+这样，对拉氏密度中的所有标量自由度$\phi$而言，$\phi$在转动后的$x^\mu$的位置的值，等于$\phi$在转动之前的坐标$x^\mu + \ii\epsilon J^\mu_{\;\nu} x^\nu$处的值。所以
+$$\delta \phi = (-\ii \epsilon J^\mu_{\;\nu} x^\nu)\partial_\mu \phi$$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{空间转动对称性和角动量守恒}
+\bch
+于是我们得到
+$$\frac{\delta \phi}{\delta\epsilon} = -\ii  J^\mu_{\;\nu} x^\nu \partial_\mu \phi$$.
+
+\skipline
+对矢量分量$A^\sigma$，则由于$A$本身也会发生旋转，所以多了额外一项。
+$$\frac{\delta A^\sigma}{\delta\epsilon} = -\ii  J^\mu_{\;\nu} x^\nu\partial_\mu A^\sigma + \ii J^\sigma_{\;\nu}A^\nu$$.
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{空间转动对称性和角动量守恒}
+\bch
+最后，拉氏密度作为一个标量，它的变化仅仅由坐标变动而引起：
+$$ \delta \langr = (-\ii \epsilon J^\mu_{\;\nu} x^\nu)\partial_\mu \langr $$
+另外，有
+$$\partial_\mu(J^\mu_{\;\nu} x^\nu) = J^\mu_{\;\nu} \delta^nu_\mu = J^\mu_\mu = 0 $$
+最后一个等号是因为$\hatJn$的迹(Trace)是所有本征值的和($=1+(-1)+0 = 0$).
+
+所以我们得到
+$$\delta \langr = \epsilon \partial_\mu (-\ii  J^\mu_{\;\nu} x^\nu \langr) $$
+
+也就是Noether定理中的$F^\mu = -\ii  J^\mu_{\;\nu} x^\nu \langr$. 显然$F^0 = 0$.
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{空间转动对称性和角动量守恒}
+\bch
+综上所述，我们得到Noether定理守恒荷密度：
+$$j^0 =   \sum_q(\ii  J^\mu_{\;\nu} x^\nu \partial_\mu q) \frac{\partial \langr}{\partial(\partial_0 q)} - \ii J^\sigma_{\;\nu}A^\nu \frac{\partial \langr}{\partial(\partial_0 A^\sigma)}$$
+其中 $q$取遍标量自由度和矢量所有分量自由度。因为$J^0_{\;\nu} = J^\mu_{\;0} = 0$，上式也可写成仅对空间坐标求和
+$$j^0 =  -\ii  J^i_{\;j} x^j \sum_q(\partial_i q )\frac{\partial \langr}{\partial(\partial_0 q)} - \ii J^i_{\;j}A^j \frac{\partial \langr}{\partial(\partial_0 A^i)}$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{空间转动对称性和角动量守恒}
+\bch
+最后，利用上节课的结论$\frac{\langr}{\partial(\partial_0 A^i)} = - F^0_{\; i}$，以及以前讨论过的空间平移带来的动量密度
+$p_i = \sum_q(\partial_i q )\frac{\partial \langr}{\partial(\partial_0 q)} $，有
+$$j^0 =  \ii  J^i_{\;j} (x^j p_i - F^0_{\;i} A^j)$$
+注意到$F^0_{\;i}$即为“电场强度”$\mathbf{E}$, 第一项取共轭转置并注意到$\hatJn$是厄米矩阵，最终角动量密度可以写成 
+$$j^0=-\ii(\vecx^\dagger \hatJn \vecp + \mathbf{E}^\dagger \hatJn \mathbf{A})$$
+取$\vecn$沿$\vecn_3$轴方向，并根据$\hatj{3}\vecn_1 = i \vecn_2$, $\hatj{3}\vecn_2 = - i\vecn_1$，$\hatj{3}\vecn_3 = 0$, 上面的式子可以写成
+$$j^0 = \vecx \times \vecp + \mathbf{E} \times \mathbf{A}$$
+第一项为轨道角动量（包含了所有自由度），第二项是由于空间转动时矢量会随之变化而带来的“自旋”。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\end{frame}
+
+\end{document}
