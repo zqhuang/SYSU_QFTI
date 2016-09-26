@@ -16,7 +16,7 @@
 
 {\vskip 0.3in}
 
-第五课 角动量理论
+第六课 角动量理论和矢量场的自旋
 
 \ech
 \end{Large}
@@ -111,7 +111,7 @@ $$\frac{\delta A^\sigma}{\delta\epsilon} = -\ii  J^\mu_{\;\nu} x^\nu\partial_\mu
 最后，拉氏密度作为一个标量，它的变化仅仅由坐标变动而引起：
 $$ \delta \langr = (-\ii \epsilon J^\mu_{\;\nu} x^\nu)\partial_\mu \langr $$
 另外，有
-$$\partial_\mu(J^\mu_{\;\nu} x^\nu) = J^\mu_{\;\nu} \delta^nu_\mu = J^\mu_\mu = 0 $$
+$$\partial_\mu(J^\mu_{\;\nu} x^\nu) = J^\mu_{\;\nu} \delta^\nu_\mu = J^\mu_\mu = 0 $$
 最后一个等号是因为$\hatJn$的迹(Trace)是所有本征值的和($=1+(-1)+0 = 0$).
 
 所以我们得到
@@ -127,7 +127,7 @@ $$\delta \langr = \epsilon \partial_\mu (-\ii  J^\mu_{\;\nu} x^\nu \langr) $$
 综上所述，我们得到Noether定理守恒荷密度：
 $$j^0 =   \sum_q(\ii  J^\mu_{\;\nu} x^\nu \partial_\mu q) \frac{\partial \langr}{\partial(\partial_0 q)} - \ii J^\sigma_{\;\nu}A^\nu \frac{\partial \langr}{\partial(\partial_0 A^\sigma)}$$
 其中 $q$取遍标量自由度和矢量所有分量自由度。因为$J^0_{\;\nu} = J^\mu_{\;0} = 0$，上式也可写成仅对空间坐标求和
-$$j^0 =  -\ii  J^i_{\;j} x^j \sum_q(\partial_i q )\frac{\partial \langr}{\partial(\partial_0 q)} - \ii J^i_{\;j}A^j \frac{\partial \langr}{\partial(\partial_0 A^i)}$$
+$$j^0 =  \ii  J^i_{\;j} x^j \sum_q(\partial_i q )\frac{\partial \langr}{\partial(\partial_0 q)} - \ii J^i_{\;j}A^j \frac{\partial \langr}{\partial(\partial_0 A^i)}$$
 \ech
 \end{frame}
 
@@ -137,17 +137,45 @@ $$j^0 =  -\ii  J^i_{\;j} x^j \sum_q(\partial_i q )\frac{\partial \langr}{\partia
 最后，利用上节课的结论$\frac{\langr}{\partial(\partial_0 A^i)} = - F^0_{\; i}$，以及以前讨论过的空间平移带来的动量密度
 $p_i = \sum_q(\partial_i q )\frac{\partial \langr}{\partial(\partial_0 q)} $，有
 $$j^0 =  \ii  J^i_{\;j} (x^j p_i - F^0_{\;i} A^j)$$
-注意到$F^0_{\;i}$即为“电场强度”$\mathbf{E}$, 第一项取共轭转置并注意到$\hatJn$是厄米矩阵，最终角动量密度可以写成 
-$$j^0=-\ii(\vecx^\dagger \hatJn \vecp + \mathbf{E}^\dagger \hatJn \mathbf{A})$$
-取$\vecn$沿$\vecn_3$轴方向，并根据$\hatj{3}\vecn_1 = i \vecn_2$, $\hatj{3}\vecn_2 = - i\vecn_1$，$\hatj{3}\vecn_3 = 0$, 上面的式子可以写成
+注意到$F^0_{\;i}$即为“电场强度”$\mathbf{E}$, 可以不失一般性地取右手正交坐标系，并设$\vecn$沿$\vecn_3$轴方向，根据$\hatj{3}\vecn_1 = i \vecn_2$, $\hatj{3}\vecn_2 = - i\vecn_1$，$\hatj{3}\vecn_3 = 0$, 上面的式子可以写成
 $$j^0 = \vecx \times \vecp + \mathbf{E} \times \mathbf{A}$$
 第一项为轨道角动量（包含了所有自由度），第二项是由于空间转动时矢量会随之变化而带来的“自旋”。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{$U(1)$规范场的量子化}
+\bch
+现在考虑一个自由$U(1)$规范场
+$$\langr = -\frac{1}{4}\Fup\Fdown$$
+怎样把它量子化？
+
+\skipline
+显然，由于矢量场存在自旋，它不能看成许多不相关的谐振子的叠加。我们首先需要建立自旋为$1$的粒子的量子理论。
+
+大致思路是, 仍然把时间维特殊化，取库仑规范排除冗余自由度，然后把$A^\mu$场进行傅立叶变换。由于拉氏密度仍然是二次的，所以傅立叶变换后每一个傅立叶波矢$\veck$对拉氏量的贡献都是独立的。我们就只要对固定$\veck$的拉氏量研究其量子化。
 
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{$U(1)$规范场的量子化}
+\bch
+我们先猜测一个形式解，由于$A^\mu$是实数场，它必须是互为共轭的两组算符的和。跟标量场不同的是，现在对每一个$\veck$，粒子均可能有自旋$s$：
+$$\vecA(x) = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \mathbf{e}_{\veck s}\left(\hata_{\veck s} e^{-ik_\mu x^\mu} + \adag_{\veck s}e^{ik_\mu x^\mu}\right) $$
+
+对每个$\veck$，自旋均按$\hat{J_\veck}$的本征矢进行分解。我们前面讨论过，本征值为零的本征矢$\mathbf{e}_0$就是$\veck$方向的单位矢量，取了库仑规范$\nabla\cdot A=0$之后$\vecA$不能有这个方向的分量，因此上面求和只要对自旋为$s=\pm 1$求和。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第二次作业已经可以下载}
+\bch
+第二次作业10月10日交。
+
+\skipline
+下节课发第一次作业并简要解答。
+\ech
 \end{frame}
 
 \end{document}
