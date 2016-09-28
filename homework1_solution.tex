@@ -169,13 +169,24 @@ $$ S = \int dx dt \   \frac{1}{2} \left[\left(\frac{\partial \phi}{\partial t}\r
 \begin{eqnarray}
 0 &=& \frac{1}{dt} \left [ -\frac{\phi(x, t+dt) - \phi(x,t)}{dt} + \frac{\phi(x, t) - \phi(x,t-dt)}{dt}\right]  \newl
   && -\frac{1}{dx}\left [- \frac{\phi(x+dx, t) - \phi(x,t)}{dx} + \frac{\phi(x, t) - \phi(x-dx,t)}{dx}\right] \newl
-  && -V'\left(\phi(x, t)\right) \newl 
+  && -\frac{1}{2}V'\left(\phi(x, t)\right) \newl 
   &=& \frac{1}{dt}\left[-\partial_t\phi(x, t+dt/2) + \partial_t\phi(x, t-dt/2)\right] \newl
    &&- \frac{1}{dx}\left[-\partial_x\phi(x+dx/2, t) + \partial_x\phi(x-dx/2, t)\right] \newl
-   &&-  V'\left(\phi(x, t)\right)  \newl
-  &=& (- \partial_t^2 + \partial_x^2 )\phi - V'(\phi) \nonumber 
+   &&-  \frac{1}{2} V'\left(\phi(x, t)\right)  \newl
+  &=& (- \partial_t^2 + \partial_x^2 )\phi -\frac{1}{2} V'(\phi) \nonumber 
 \end{eqnarray}
-最终得到运动方程：$(\partial_t^2 - \partial_x^2 )\phi + V'(\phi) = 0 \,.$，和Euler-Lagrange方程一致。
+最终得到运动方程：$(\partial_t^2 - \partial_x^2 )\phi + \frac{1}{2} V'(\phi) = 0 \,.$，和Euler-Lagrange方程一致。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题解答（续）}
+\bch
+注意：一般习惯上写拉氏密度时写成
+$$\langr = \frac{1}{2} \left[\left(\frac{\partial \phi}{\partial t}\right)^2 - \left(\frac{\partial \phi}{\partial x}\right)^2\right] - V(\phi) $$
+按这种定义推导出来的运动方程就是$(\partial_t^2 - \partial_x^2 )\phi + V'(\phi) = 0 \,.$
+
+题目采取了比较奇怪的定义（逻辑上完全没有问题，但会对以后阅读文献有不好影响），完全是因为我出题不够仔细。对此非常抱歉。
 \ech
 \end{frame}
 
