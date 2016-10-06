@@ -54,7 +54,7 @@ $$ A_\mu \rightarrow A_\mu - \frac{1}{q} \partial_\mu \gamma\, ,$$
 按上述定义
 $$D_\mu \equiv \partial_\mu + iq A_\mu$$
 证明在定域规范变换$\phi \rightarrow e^{i\gamma(x)}\phi$, $A_\mu \rightarrow A_\mu - \frac{1}{q}\partial\gamma$下，拉氏密度
-$$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi$$
+$$\lagr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi$$
 是不变量。因此作用量也是不变量。
 
 \skipline
@@ -108,7 +108,7 @@ $$\int_\Sigma (\partial_\mu A_\nu - \partial_\nu A_\mu)(dx^\mu\wedge dx^\nu) = \
 \item{幸运的是，由$A_\mu$构造的次简单的标量$F_{\mu\nu}F^{\mu\nu}$在定域规范变换下是不变量。}
 \end{itemize}
 因此，满足定域规范不变性的拉氏密度还可以进一步拓展为
-$$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
+$$\lagr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
 这里的$-1/4$因子是为了和电磁场的矢量势的习惯约定一致。
 \ech
 \end{frame}
@@ -117,8 +117,8 @@ $$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_
 \chtitle{守恒流}
 \bch
 对拉氏密度
-$$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
-仍然考虑规范变换$\phi\rightarrow \phi e^{iq\epsilon}$,显然拉氏密度在该变换下不变（即Noether定理中$F^\mu=0$仍然成立）,并且$\frac{\delta\phi}{\delta\epsilon} = iq\phi$, $\frac{\delta\phi^\dagger}{\delta\epsilon} = -iq\phi^\dagger$均不变，发生变化的仅仅是$\frac{\partial\langr}{\partial(\partial_\mu\phi)} = (D^\mu\phi)^\dagger$和$\frac{\partial\langr}{\partial(\partial_\mu\phi^\dagger)} = D^\mu\phi$，因此守恒流就简单地变成了：
+$$\lagr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
+仍然考虑规范变换$\phi\rightarrow \phi e^{iq\epsilon}$,显然拉氏密度在该变换下不变（即Noether定理中$F^\mu=0$仍然成立）,并且$\frac{\delta\phi}{\delta\epsilon} = iq\phi$, $\frac{\delta\phi^\dagger}{\delta\epsilon} = -iq\phi^\dagger$均不变，发生变化的仅仅是$\frac{\partial\lagr}{\partial(\partial_\mu\phi)} = (D^\mu\phi)^\dagger$和$\frac{\partial\lagr}{\partial(\partial_\mu\phi^\dagger)} = D^\mu\phi$，因此守恒流就简单地变成了：
 $$j^\mu = iq\left(\phi^\dagger D^\mu\phi - \phi (D^\mu \phi)^\dagger\right)\, .$$
 
 \ech
@@ -128,13 +128,13 @@ $$j^\mu = iq\left(\phi^\dagger D^\mu\phi - \phi (D^\mu \phi)^\dagger\right)\, .$
 \chtitle{课堂互动}
 \bch
 对拉氏密度
-$$\langr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
+$$\lagr = (D_\mu\phi)^\dagger D^\mu\phi - m^2\phi^\dagger \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} \,.$$
 
 1. 证明$\phi$满足的Euler-Lagrange方程为：$(D_\mu D^\mu + m^2)\phi = 0\,$.
 
-2. 证明$\frac{\partial\langr}{\partial A_\mu} = - j^\mu\,$.
+2. 证明$\frac{\partial\lagr}{\partial A_\mu} = - j^\mu\,$.
 
-3. 证明$\frac{\partial\langr}{\partial (\partial_\mu A_\nu)} = - F^{\mu\nu}\,$.
+3. 证明$\frac{\partial\lagr}{\partial (\partial_\mu A_\nu)} = - F^{\mu\nu}\,$.
 
 4. 证明$A_\mu$满足的Euler-Lagrange方程为：$\partial_\mu F^{\mu\nu} = j^\nu\,$.
 \ech

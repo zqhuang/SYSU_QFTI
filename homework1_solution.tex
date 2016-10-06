@@ -185,7 +185,7 @@ $$ S = \int dx dt \   \frac{1}{2} \left[\left(\frac{\partial \phi}{\partial t}\r
 \skipline
 
 注意：一般习惯上写拉氏密度时把$V$单独拿出来不乘$1/2$因子。
-$$\langr = \frac{1}{2} \left[\left(\frac{\partial \phi}{\partial t}\right)^2 - \left(\frac{\partial \phi}{\partial x}\right)^2\right] - V(\phi) $$
+$$\lagr = \frac{1}{2} \left[\left(\frac{\partial \phi}{\partial t}\right)^2 - \left(\frac{\partial \phi}{\partial x}\right)^2\right] - V(\phi) $$
 按这种定义推导出来的运动方程就是$(\partial_t^2 - \partial_x^2 )\phi + V'(\phi) = 0 \,.$
 
 题目采取了比较奇怪的定义，虽然逻辑上完全没有问题，但会对以后阅读文献有不好影响。这是因为我出题不够仔细。对此非常抱歉。
@@ -223,7 +223,7 @@ $$\ddot\phi + \omega^2\phi = 0$$
 \chtitle{第5题题目和思路}
 \bch
 作用量
-$$S = \int d^4x\ \langr(\phi, \partial_\mu\phi)\,.$$
+$$S = \int d^4x\ \lagr(\phi, \partial_\mu\phi)\,.$$
 在坐标平移下显然具有不变性。由此用Noether定理推导场$\phi$的能量动量守恒方程。
 
 \skipline
@@ -246,9 +246,9 @@ $$\frac{\delta\phi}{\delta\epsilon^r} = -\delta_r^\mu \partial_\mu \phi = -\part
 \skipline
 
 同理
-$$\delta\langr = - \epsilon^r \delta_r^\mu \partial_\mu\langr$$
+$$\delta\lagr = - \epsilon^r \delta_r^\mu \partial_\mu\lagr$$
 对固定的$r$而言$ \delta_r^\mu$是不依赖于坐标$x^\mu$的常数，所以上式可写成
-$$\delta\langr =\epsilon^r \partial_\mu (-  \delta_r^\mu \langr)$$
+$$\delta\lagr =\epsilon^r \partial_\mu (-  \delta_r^\mu \lagr)$$
 
 \ech
 \end{frame}
@@ -257,11 +257,11 @@ $$\delta\langr =\epsilon^r \partial_\mu (-  \delta_r^\mu \langr)$$
 \chtitle{第5题解答(续)}
 \bch
 根据Noether定理，有
-$$j^\mu_r = - \delta_r^\mu \langr +  \partial_r \phi\frac{\partial \langr}{\partial (\partial_\mu \phi)}$$
+$$j^\mu_r = - \delta_r^\mu \lagr +  \partial_r \phi\frac{\partial \lagr}{\partial (\partial_\mu \phi)}$$
 为守恒流。
 
 写成更对称的“能量动量张量”形式：
-$$T^{\mu\nu} = \frac{\partial \langr}{\partial (\partial_\mu \phi)}\partial^\nu\phi- \langr g^{\mu\nu}$$
+$$T^{\mu\nu} = \frac{\partial \lagr}{\partial (\partial_\mu \phi)}\partial^\nu\phi- \lagr g^{\mu\nu}$$
 满足
 $$\partial_\mu T^{\mu\nu} = 0$$
 积分$\int T^{00} d^3\vecx$, $\int T^{0i}d^3\vecx$ ($i=1,2,3$)分别对应总能量和三个方向的动量。它们都是守恒的。

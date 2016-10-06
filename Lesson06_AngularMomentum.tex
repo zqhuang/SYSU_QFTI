@@ -109,15 +109,15 @@ $$\frac{\delta A^\sigma}{\delta\epsilon} = -\ii  J^\mu_{\;\nu} x^\nu\partial_\mu
 \chtitle{空间转动对称性和角动量守恒}
 \bch
 最后，拉氏密度作为一个标量，它的变化仅仅由坐标变动而引起：
-$$ \delta \langr = (-\ii \epsilon J^\mu_{\;\nu} x^\nu)\partial_\mu \langr $$
+$$ \delta \lagr = (-\ii \epsilon J^\mu_{\;\nu} x^\nu)\partial_\mu \lagr $$
 另外，有
 $$\partial_\mu(J^\mu_{\;\nu} x^\nu) = J^\mu_{\;\nu} \delta^\nu_\mu = J^\mu_\mu = 0 $$
 最后一个等号是因为$\hatJn$的迹(Trace)是所有本征值的和($=1+(-1)+0 = 0$).
 
 所以我们得到
-$$\delta \langr = \epsilon \partial_\mu (-\ii  J^\mu_{\;\nu} x^\nu \langr) $$
+$$\delta \lagr = \epsilon \partial_\mu (-\ii  J^\mu_{\;\nu} x^\nu \lagr) $$
 
-也就是Noether定理中的$F^\mu = -\ii  J^\mu_{\;\nu} x^\nu \langr$. 显然$F^0 = 0$.
+也就是Noether定理中的$F^\mu = -\ii  J^\mu_{\;\nu} x^\nu \lagr$. 显然$F^0 = 0$.
 \ech
 \end{frame}
 
@@ -125,17 +125,17 @@ $$\delta \langr = \epsilon \partial_\mu (-\ii  J^\mu_{\;\nu} x^\nu \langr) $$
 \chtitle{空间转动对称性和角动量守恒}
 \bch
 综上所述，我们得到Noether定理守恒荷密度：
-$$j^0 =   \sum_q(\ii  J^\mu_{\;\nu} x^\nu \partial_\mu q) \frac{\partial \langr}{\partial(\partial_0 q)} - \ii J^\sigma_{\;\nu}A^\nu \frac{\partial \langr}{\partial(\partial_0 A^\sigma)}$$
+$$j^0 =   \sum_q(\ii  J^\mu_{\;\nu} x^\nu \partial_\mu q) \frac{\partial \lagr}{\partial(\partial_0 q)} - \ii J^\sigma_{\;\nu}A^\nu \frac{\partial \lagr}{\partial(\partial_0 A^\sigma)}$$
 其中 $q$取遍标量自由度和矢量所有分量自由度。因为$J^0_{\;\nu} = J^\mu_{\;0} = 0$，上式也可写成仅对空间坐标求和
-$$j^0 =  \ii  J^i_{\;j} x^j \sum_q(\partial_i q )\frac{\partial \langr}{\partial(\partial_0 q)} - \ii J^i_{\;j}A^j \frac{\partial \langr}{\partial(\partial_0 A^i)}$$
+$$j^0 =  \ii  J^i_{\;j} x^j \sum_q(\partial_i q )\frac{\partial \lagr}{\partial(\partial_0 q)} - \ii J^i_{\;j}A^j \frac{\partial \lagr}{\partial(\partial_0 A^i)}$$
 \ech
 \end{frame}
 
 \begin{frame}
 \chtitle{空间转动对称性和角动量守恒}
 \bch
-最后，利用上节课的结论$\frac{\langr}{\partial(\partial_0 A^i)} = - F^0_{\; i}$，以及以前讨论过的空间平移带来的动量密度
-$p_i = \sum_q(\partial_i q )\frac{\partial \langr}{\partial(\partial_0 q)} $，有
+最后，利用上节课的结论$\frac{\lagr}{\partial(\partial_0 A^i)} = - F^0_{\; i}$，以及以前讨论过的空间平移带来的动量密度
+$p_i = \sum_q(\partial_i q )\frac{\partial \lagr}{\partial(\partial_0 q)} $，有
 $$j^0 =  \ii  J^i_{\;j} (x^j p_i - F^0_{\;i} A^j)$$
 注意到$F^0_{\;i}$即为“电场强度”$\mathbf{E}$, 可以不失一般性地取右手正交坐标系，并设$\vecn$沿$\vecn_3$轴方向，根据$\hatj{3}\vecn_1 = i \vecn_2$, $\hatj{3}\vecn_2 = - i\vecn_1$，$\hatj{3}\vecn_3 = 0$, 上面的式子可以写成
 $$j^0 = \vecx \times \vecp + \mathbf{E} \times \mathbf{A}$$
@@ -147,7 +147,7 @@ $$j^0 = \vecx \times \vecp + \mathbf{E} \times \mathbf{A}$$
 \chtitle{$U(1)$规范场的量子化}
 \bch
 现在考虑一个自由$U(1)$规范场
-$$\langr = -\frac{1}{4}\Fup\Fdown$$
+$$\lagr = -\frac{1}{4}\Fup\Fdown$$
 怎样把它量子化？
 
 \skipline
