@@ -136,7 +136,25 @@ $$\lagr = -\frac{1}{4}\Fup\Fdown + \frac{m^2}{2} A^\mu A_\mu $$
 \begin{frame}
 \chtitle{课堂互动}
 \bch
+1. 证明可以把重矢量场的拉氏密度写成：
+$$\lagr = \frac{1}{2} \left( |\nabla A^0|^2  + |\dot\vecA|^2 + 2 \nabla A^0 \cdot \dot\vecA \right) - \frac{1}{2}|\nabla \times \vecA|^2 + \frac{1}{2}m^2 \left[(A^0)^2 - |\vecA|^2\right]$$ 
 
+2. 仍然按照我们之前的方法，在固定时间把$A^0$和$\vecA$都进行傅立叶变换，利用$A^0 = \frac{i\veck \cdot \vecA}{\omega^2}$(其中$\omega^2 \equiv m^2 + \veck^2$)，证明可以把$\vecA_\veck$对拉氏量的贡献写成：
+$$\frac{\lagr}{d^3\veck} = \frac{1}{2}|\dot\vecA|^2 - \frac{1}{2}m^2|\vecA|^2- \frac{1}{2}|\veck\times\vecA|^2 - \frac{(\veck\cdot\dot\vecA)^2}{2\omega^2}$$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{课堂互动}
+\bch
+证明重矢量场$\vecA$的解为：
+$$\hat{\vecA}(x) = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2|\veck|}} \sum_{s=-1,0,1}\mathbf{e}_{\veck s}\left(\hata_{\veck s} e^{-ik_\mu x^\mu} + \adag_{\veck s}e^{ik_\mu x^\mu}\right) $$
+其中$\vece_{\veck,\pm 1} = \vecn_1 \pm \ii \vecn_2$; $\vece_{\veck, 0} = \frac{\omega}{m} \veck/|\veck|$。这里的$\vecn_1$, $\vecn_2$, $\veck/|\veck|$是构成正交右手系的单位矢量，并约定$\vece_{-\veck, \pm 1} = \vece_{\veck,\pm 1}^*$。 
+
+\skipline
+
+讨论：在重矢量场的解中令$m\rightarrow 0$是否给出$U(1)$规范场的解？
 \ech
 \end{frame}
 
