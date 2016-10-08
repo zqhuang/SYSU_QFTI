@@ -16,7 +16,7 @@
 
 {\vskip 0.3in}
 
-第七课 光子
+第七课 $U(1)$规范场的量子化
 
 \ech
 \end{Large}
@@ -36,7 +36,7 @@ https://github.com/zqhuang/SYSU\_QFTI
 \begin{frame}
 \chtitle{$U(1)$规范场的量子化}
 \bch
-上节课我们留了一个问题还没有解决：自由$U(1)$规范场的粒子是怎样完成量子化的，这种粒子和谐振子又有何不同？
+上节课我们留了一个问题还没有解决：$U(1)$规范场的粒子是怎样完成量子化的，这种粒子和谐振子又有何不同？
 
 \skipline
 这个问题的主要难点是每个时空点的$A^\mu$场仅有两个物理自由度，一旦我们要对这两个自由度进行量子化，就要取特定的规范来固定这两个自由度。不难想象，这样的推导并不会十分“优美”。
@@ -62,7 +62,7 @@ $$L = \int d^3\veck \left[\frac{1}{2} |\dot\vecA_\veck|^2  - \frac{1}{2}|\veck \
 \begin{frame}
 \chtitle{第一种方案：库仑规范}
 \bch
-对固定的$\veck$，我们可以取三个方向$\vecn_1$, $\vecn_2$, $\vecn_3 = \veck / |\veck|$构成右手正交系。库仑规范要求$\vecA\cdot\veck = 0$, 所以$\vecA$可分解为$\vecA = u_{\veck,+1} \vece_{\veck,+1} + u_{\veck,-1} \vece_{\veck,-1}$。其中$\vece_{\veck,\pm 1} = \frac{1}{\sqrt{2}}(\vecn_1\pm \ii \vecn_2)$是$\hat{J}_{\vecn_3}$的本征值为$\pm 1$的归一化本征矢（参考上节课角动量的内容，添加了$1/\sqrt{2}$因子是为了归一化）。
+对固定的$\veck$，我们可以取三个方向$\vecn_1$, $\vecn_2$, $\vecn_3 = \veck / |\veck|$构成右手正交系。库仑规范要求$\vecA\cdot\veck = 0$, 所以$\vecA$可分解为$\vecA = u_{\veck,+1} \vece_{\veck,+1} + u_{\veck,-1} \vece_{\veck,-1}$。其中$\vece_{\veck,\pm 1} = \frac{1}{\sqrt{2}}(\vecn_1\pm \ii \vecn_2)$是$\hat{J}_{\vecn_3}$的本征值为$\pm 1$的归一化本征矢（参考上节课角动量的内容，添加了$1/\sqrt{2}$因子是为了归一化），$u_{\veck,\pm 1}$是待定的复系数。
 
 利用正交归一条件$\vece_{\veck,+1}^\dagger \cdot \vece_{\veck,+1} = \vece_{\veck,-1}^\dagger \cdot \vece_{\veck,-1} = 1$, $\vece_{\veck,+1}^\dagger \cdot \vece_{\veck,-1} = \vece_{\veck,-1}^\dagger \cdot \vece_{\veck,+1} = 0$，可以得到：
 
@@ -118,7 +118,26 @@ $$\hat{\vecA}(x) = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2|\veck|}} 
 \end{frame}
 
 \begin{frame}
-\chtitle{第二种方案：重矢量场}
-拉氏密度里加质量项：
-$$\lagr
+\chtitle{第二种方案：重矢量场 - 课堂互动}
+\bch
+我们尝试在拉氏密度里加个质量项然后让质量趋向于$0^+$，看看会得到什么结果：
+$$\lagr = -\frac{1}{4}\Fup\Fdown + \frac{m^2}{2} A^\mu A_\mu $$
+对$m>0$，
+\begin{itemize}
+\item{证明$A^\mu$场的Euler-Lagrange方程为：$\partial_\mu \Fup + m^2 A^\nu = 0$}
+\item{证明洛仑兹规范条件对重矢量场自动成立： $\partial_\nu A^\nu = 0$}
+\item{证明$A^\nu$满足Klein-Gordon方程：$(\partial^2 + m^2) A^\nu = 0$}
+\item{证明$(-\nabla^2+m^2)A^0 = \nabla \cdot \frac{d\vecA}{dt}$}
+\end{itemize}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{课堂互动}
+\bch
+
+\ech
+\end{frame}
+
 \end{document}
