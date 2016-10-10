@@ -136,12 +136,16 @@ $$P_+^2 = P+;\, P_-^2 = P_-; P_+P_- = P_-P_+ = 0$$
 \begin{frame}
 \chtitle{数学准备:$\gamma$矩阵}
 \bch
-矩阵$\gamma^\mu$的洛仑兹变换和原矩阵相似，且相似变换矩阵不依赖于指标$\mu$。也就是说：存在矩阵$\Lambda$，使得对$\mu=0,1,2,3$均有
-$$\Lambda^{-1}\gamma^\mu\Lambda = a^\mu_{\ \nu} \gamma^\nu$$
-其中$a^\mu_{\ \nu}$为洛仑兹变换矩阵，满足$a^\mu_{\ \lambda} a^\lambda_{\ \nu} = g^\mu_{\ \nu}$。我们称$\Lambda$为该洛仑兹变换下的旋量变换矩阵。
+对洛仑兹变换$x^\mu = a^\mu_{\ \nu}x^\nu$ (变换矩阵$a^\mu_{\ \nu}$满足$a^\mu_{\ \lambda} a^\lambda_{\ \nu} = g^\mu_{\ \nu}$)，存在一个矩阵$\Lambda$，使得对$\mu=0,1,2,3$均有
+$$\Lambda^{-1}\gamma^\mu\Lambda = a^\mu_{\ \nu} \gamma^\nu\, .$$
+我们称$\Lambda$为该洛仑兹变换下的旋量变换矩阵。
 
 \skipline
-非常重要的概念澄清：$\Lambda$为$n\times n$矩阵，它作用于旋量的内部$n$维空间，而$a^\mu_{\ \nu}$作用于普通的坐标空间。只不过刚好在Dirac表示下取$n=4$使得$\Lambda$看起来跟$a^\mu_{\ \nu}$类似。
+重要的概念澄清：
+\begin{itemize}
+\item{$\Lambda$为$n\times n$矩阵，它作用于旋量的内部$n$维空间，而$a^\mu_{\ \nu}$作用于普通的坐标空间。只不过刚好在Dirac表示下取$n=4$使得$\Lambda$看起来跟$a^\mu_{\ \nu}$类似。}
+\item{不要把$a^\mu_\nu\gamma^\nu$看成$\gamma$矩阵的坐标变换规则。事实上，$\gamma$矩阵在洛仑兹变换下是不变的。}
+\end{itemize}
 
 
 \skipline
