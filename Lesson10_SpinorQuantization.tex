@@ -161,7 +161,7 @@ $$\hat{Q}_{\veck,s} =  q\left(\adag_{\veck,s}\hata_{\veck,s} + \hatb_{-\veck,s}\
 假设已知$[\adag_{\veck,s}\hata_{\veck,s},\bdag_{-\veck,s}]=[\adag_{\veck,s}\hata_{\veck,s},\hatb_{-\veck,s}]=0$, 证明
 
 \begin{itemize}
-\item{$\hatb_{-\veck,s}\bdag_{-\veck,s}$的本征值是非负实数}
+\item{“空穴数算符”$\hatb_{-\veck,s}\bdag_{-\veck,s}$的本征值是非负实数}
 \item{若把$\hatb_{-\veck,s}\bdag_{-\veck,s}$本征值为$n$的本征态记作$|n\rangle$，则$\bdag_{-\veck,s}|n\rangle = \sqrt{n}|n-1\rangle$}
 \item{$\hatb_{-\veck,s}\bdag_{-\veck,s}$的本征值谱是连续的正整数$0,\, 1,\, 2,\, \ldots$。}
 \item{若存在$|n+1\rangle$，则$\hatb_{-\veck,s}|n\rangle = \sqrt{n+1}|n+1\rangle$。若不存在$|n+1\rangle$，则$\hatb_{-\veck,s}|n\rangle =0$}
@@ -242,12 +242,27 @@ $$\{\hatb_{\veck,s}, \hatb_{\veck,s} \} = \{ \bdag_{\veck,s}, \bdag_{\veck,s}\} 
 
 
 \begin{frame}
-\chtitle{不同自由度之间的产生湮灭算符的反对易关系}
+\chtitle{守恒量}
 \bch
-对于不同自由度的产生湮灭算符，我们可以人为地规定它们反对易，因为可观测量都是产生湮灭算符的偶数次乘积，这样可观测量之间还是对易的。
+利用反对易关系，我们重新写出守恒量的算符表达式：
+
+Hamilton量为
+$$\hat{H}_{\veck,s} =  \omega\left(\adag_{\veck,s}\hata_{\veck,s} + \bdag_{-\veck,s}\hatb_{-\veck,s} -1\right)$$
+三维动量为
+$$\hat{\mathbf{P}}_{\veck,s} =  \veck\left(\adag_{\veck,s}\hata_{\veck,s} - \bdag_{-\veck,s}\hatb_{-\veck,s} + 1 \right)$$
+守恒荷为
+$$\hat{Q}_{\veck,s} =  q\left(\adag_{\veck,s}\hata_{\veck,s} - \bdag_{-\veck,s}\hatb_{-\veck,s} + 1 \right)$$
+
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{不同自由度的产生湮灭算符到底该对易还是反对易？}
+\bch
+
+因为可观测量都是产生湮灭算符的偶数次，所以这个问题不重要。我们在旋量理论里人为地规定它们反对易。当然，这样可观测量的算符还是对易的。
+\ech
+\end{frame}
 
 \end{document}
 
