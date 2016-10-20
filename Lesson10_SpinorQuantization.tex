@@ -195,7 +195,7 @@ $$\hat{Q}_{\veck,s} =  q\left(\adag_{\veck,s}\hata_{\veck,s} + \hatb_{-\veck,s}\
 固定$\veck$的单个Fourier mode的拉氏量为
 $$L_\veck = d^3\veck \left[ i\psi^\dagger\dot\psi + i\psi^\dagger\gamma^0\gamma^j\partial_j\psi - m \psi^\dagger\gamma^0 \psi \right]$$
 设概率幅为$w(\psi;t)$，取足够小的时间$\Delta t$使得$\psi$的变化为均匀变化$\dot\psi = v$。则按照量子作用量原理，$t+\Delta t$时刻的概率振幅可写成
-$$w(\psi, t+\Delta t) = \int \sqrt{|g_v|}dv\, w(\psi - v \Delta t, t) e^{\ii d^3\veck\,[\ii\psi^\dagger v + \ldots]}$$
+$$w(\psi, t+\Delta t) = \int \sqrt{|g_v|}dv\, w(\psi - v \Delta t, t) e^{\ii d^3\veck\,[\ii\psi^\dagger v + \ldots]\Delta t}$$
 我们意识到两个问题，一是我们并不知道旋量空间的度规是否是平凡的，从而也不知道怎么写它的行列式$|g_v|$；二是现在指数里是积分变量$v$的一次式，这样的积分在全复平面都是发散的，解析延拓的办法似乎要失灵了。
 \ech
 \end{frame}
