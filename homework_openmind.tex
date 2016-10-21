@@ -1,0 +1,115 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Openmind Homework}
+  \author{}
+  \date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+脑洞大开作业 （10分，共5题每题2分，每题如有特别精彩巧妙的解法额外加1分bonus分, 但bonus分仅在期末总分不超过100分的情况下有效）
+
+\skipline
+允许搜索查阅讨论请教。允许使用任何文献（包括讲义）中的结论，但请指出出处。
+
+\skipline
+交作业时间: 期末考试前任何时间
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第1题 二维空间的Casimir力(2分）}
+\bch
+假设“脑洞大开世界”是2维空间加1维时间的平直时空，时空度量元为
+$$ds^2 = (dx^0)^2 - (dx^1)^2-(dx^2)^2$$
+在这个世界里的“脑洞大开人”发现真空中的相距为$d$的很长的（长度$\gg d$)两根平行金属线之间有大小为$F$的相互作用力，他们认为这是两条金属线之间的真空能的改变引起的作用力，并把这种力称为Casimir力。现在问，当把金属线之间的距离变为$d/2$，Casimir力变为多大？
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题 只有两个自由度的“量子场”(2分）}
+\bch
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=1.in]{shuangbai.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+如图，在一个长度为$\ell$，质量为$m$的理想刚性单摆下再悬挂一个相同的单摆。节点处都认为可以无阻力自由转动。本地重力常数为$g$。试求该系统的量子零点能。
+
+\end{minipage}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题 奇怪的一维量子场。(2分）}
+\bch
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=0.5in]{duobai.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+把上题推广到$N$个$\ell$，质量为$m$的理想刚性单摆首位连接挂起来(如左图给出了一个$N=5$的例子)。记系统的量子零点能为$E_N$。当$N\rightarrow \infty$时，所有自由度的平均零点能$E_N/N$趋向于一个常数，试计算这个常数（用$\ell$, $g$, $m$来表示）。
+
+\skipline
+{\scriptsize 
+注：精确解的求解需要比较巧妙的手段。如果你找不到求解精确解的办法，请尽你所能地估算一个范围。
+}
+\end{minipage}
+
+\ech
+\end{frame}
+
+
+
+
+\begin{frame}
+\chtitle{第4题 环上的量子场(2分）}
+\bch
+假设“脑洞大开世界”为一个一维圆环加上一维时间，时空度量元为
+$$ds^2 = dt^2 - R^2 d\theta^2$$
+其中$R>0$为固定常数，$(t,\theta)$为时空坐标。在这个时空里的质量为$m$的实标量场$\phi(t,\theta)$满足周期性边界条件
+$$\phi(t,\theta+2\pi) = \phi(t,\theta)$$
+其自由场拉氏量为
+$$L_{\rm free} = \int_0^{2\pi}d\theta\ \frac{1}{2}\left[\left(\frac{\partial\phi}{\partial t}\right)^2-\frac{1}{R^2}\left(\frac{\partial\phi}{\partial\theta}\right)^2-m^2\phi^2\right]$$
+试把$\phi$场量子化。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第5题 环上的量子场的散射问题(2分）}
+\bch
+给上题讨论的环形上的量子场增加一个相互作用表象下的描述相互作用的Hamilton量：
+$$\hat{H}_{\rm int} =  \int_0^{2\pi}d\theta\ \frac{\lambda}{4} \hat{\phi}^4$$
+其中$\lambda\ll 1$是描述相互作用的耦合常数。
+
+在这个表象下，态矢$|\psi\rangle$ 随时间的演化规律为
+$$\frac{d|\psi\rangle}{dt} = -\ii \hat{H}_{\rm int} |\psi\rangle$$
+如果系统的某个粒子散射过程的初态和末态不同，证明这个过程的初态和末态总共涉及至少8个粒子。
+
+\ech
+\end{frame}
+
+
+\end{document}
