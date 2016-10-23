@@ -1,0 +1,89 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Lesson 12 - The First Feynman diagram}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第十二课 第一个Feynman图
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+
+\begin{frame} 
+\chtitle{相互作用(Interaction)绘景} 
+\bch
+假设Hamilton算符可以拆成两部分: $\hat{H} = \hat{H}_0 + \hat{H}_I$, 则在各种绘景下态和可观测量算符的演化方程为：
+
+\begin{tabular}{c|c|c|c}
+\hline
+\hline
+            & Schr\"odinger & Heisenberg  & Interaction \\
+\hline
+State         & $\frac{d |\psi\rangle}{dt} = - \ii \hat{H}|\psi\rangle$ & constant & $\frac{d |\psi\rangle}{dt} = - \ii \hat{H}_I|\psi\rangle$  \\
+\hline
+Observable & const. & $\frac{d\hat{O}}{dt} = -\ii [ \hat{O}, \hat{H} ]$ & $\frac{d\hat{O}}{dt} = -\ii [ \hat{O}, \hat{H}_0 ]$ \\
+\hline
+\end{tabular}
+
+注意
+\begin{itemize}
+\item{非可观测量算符不一定遵循上述变化规律，例如密度矩阵$|\psi\rangle\langle\psi|$需要按态的演化方程去计算，而不遵循可观测量的算符演化方程。}
+\item{Schr\"odinger绘景和Heisenberg绘景都是Interaction绘景的特例，前者是取了$\hat{H}_0 = 0$，后者是取了$\hat{H}_I = 0$}
+\end{itemize}
+
+\ech
+\end{frame}
+
+\begin{frame} 
+\chtitle{证明一切绘景等价} 
+\bch
+{\small 
+我们只要证明一切Interaction绘景和Sch\"odinger绘景等价，Heisenberg绘景作为Interaction绘景的一种特殊情况则无须再额外证明。所谓两个绘景等价是指任何可观测量的矩阵元$\langle \psi_1 | \hat{O}|\psi_2\rangle$在两个绘景里都相同。
+\skipline
+
+把Sch\"odinger绘景下的可观测算符记为$(\hat{O})_S$， 态记为$|\psi\rangle_S$。Interaction绘景下的可观测算符记为$(\hat{O})_I$, 态记为$|\psi\rangle_I$。假设在$t=0$时刻两个绘景下的可观测算符和态均相同，之后分别按各自绘景下的演化方程进行演化。
+\begin{itemize}
+\item{证明$(\hatH_0)_I$不随时间变化，从而有$(\hatH_0)_I=(\hatH_0)_S$。 对$H_0$我们无须再注明是哪个绘景。}
+\item{证明$(\hat{O})_I = e^{\ii\hatH_0 t}(\hat{O})_S e^{-\ii\hatH_0 t}$, 特别地$(\hatH_I)_I= e^{\ii\hatH_0 t}(\hatH_I)_S e^{-\ii\hatH_0 t}$.}
+\item{证明$|\psi\rangle_I = e^{\ii\hatH_0 t} |\psi\rangle_S $}
+\item{证明对任何态$|\psi_1\rangle$和$|\psi_2\rangle$，$\langle \psi_1 | \hat{O}|\psi_2\rangle$在两个绘景下相同。}
+\end{itemize}
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame} 
+\chtitle{} 
+\bch
+
+\ech
+\end{frame}
+
+\end{document}
+
+
