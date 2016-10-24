@@ -1,0 +1,284 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Homework 3 solution}
+  \author{}
+  \date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第三次课后作业参考答案
+\skipline
+\skipline
+
+如发现参考答案有错误请不吝告知（微信zhiqihuang或邮箱huangzhq25@sysu.edu.cn)
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+\begin{frame}
+\chtitle{先乱入一下傅立叶变换的一些符号（据说你们经常搞错…）}
+\bch
+傅立叶变换
+$$\partial_\mu \rightarrow -\ii k_\mu $$
+$$\partial^\mu \rightarrow -\ii k^\mu $$
+$$\veck \equiv (k^1, k^2, k^3) = (-k_1, -k_2, -k_3)$$
+
+所有加粗的三维矢量字母都是上标，例如$\vecA$, $\vecx$等。而梯度符号则是
+$$\nabla \equiv (\frac{\partial}{\partial x^1}, \frac{\partial}{\partial x^2}, \frac{\partial}{\partial x^3}) = (\partial_1, \partial_2, \partial_3)$$ 
+因为默认上标的$\vecx$跑到了分母，所以$\nabla$是默认下标，所以有：
+$$\nabla \rightarrow -\ii(k_1, k_2, k_3) = \ii(k^1,k^2,k^3) = \ii \veck$$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题：题目和思路}
+\bch
+题目：{\small 证明自由$U(1)$规范场$A^\mu$在库仑规范$A^0=0, \nabla\cdot \vecA=0$下的Hamilton密度为
+$$\hamil = \frac{1}{2}|\dot\vecA|^2 + \frac{1}{2}|\nabla\times \vecA|^2$$
+并证明在傅立叶空间Hamilton量可以写成
+$$H = \int d^3\veck\left[\frac{1}{2}|\dot\vecA|^2 + \frac{1}{2}|\veck \times \vecA|^2\right]$$}
+
+\skipline
+思路：老套路不需要思考了……
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题解答}
+\bch
+在库仑规范下，
+$$F_0^i = \partial_0 A^i,\ F^0_i = \partial^0 A_i = -\partial_0 A^i$$ 
+$$F_{21}= \partial_2 A_1 - \partial_1 A_2 = - \partial_2 A^1 + \partial_1 A^2 = (\nabla \times \vecA)_3$$
+同理有$F_{13} = (\nabla\times \vecA)_2$, $F_{32} = (\nabla\times \vecA)_1$，都代入$\lagr = -\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$就得到
+$$\lagr = \frac{1}{2}|\dot\vecA|^2 - \frac{1}{2}|\nabla\times \vecA|^2$$
+于是$A^i$对应的广义动量密度$\pi_i = \dot A^i$，然后就有
+$$\hamil = \pi_i\dot{A^i} - \lagr = \frac{1}{2}|\dot\vecA|^2 + \frac{1}{2}|\nabla\times \vecA|^2$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题解答（续）}
+\bch
+$H$等于$\hamil$的全空间积分：
+$$H = \int d^3\vecx \,\frac{1}{2}\left[|\dot\vecA|^2 + |\nabla\times \vecA|^2\right]$$
+然后利用实空间二次项的积分等于傅立叶空间的同样二次项的积分，即得到
+$$H = \int d^3\veck\left[\frac{1}{2}|\dot\vecA|^2 + \frac{1}{2}|\veck \times \vecA|^2\right]$$
+
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第2题: 题目和思路}
+\bch
+题目：{\small
+利用上题的Hamilton量的表达式以及我们在课上得到的$\hat{\vecA}$在傅立叶空间的解：
+$$\hat{\vecA} = \frac{1}{\sqrt{2|\veck|d^3\veck}}\sum_{s=\pm 1} \vece_{\veck,s}\left(\hata_{\veck, s} + \adag_{-\veck, s}\right)$$
+证明Hamilton量的算符表达式为
+$$\hat{H} = \sum_{\veck} \sum_{s=\pm 1}(\hat{N}_{\veck,s}+1/2)|\veck|$$
+其中 $\hat{N}_{\veck, s} \equiv \adag_{\veck,s}\hata_{\veck, s}$是动量为$\veck$，自旋为$s$的粒子数算符。}
+\skipline
+思路：直接代入计算，利用产生湮灭算符的对易关系。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题解答}
+\bch
+由
+$$\hat{\vecA} = \frac{1}{\sqrt{2|\veck|d^3\veck}}\sum_{s=\pm 1} \vece_{\veck,s}\left(\hata_{\veck, s} + \adag_{-\veck, s}\right)$$
+{\scriptsize (抱歉一开始出题时这个式子打错了，由此引起的问题均不扣分）} 可得到
+$$\hat{\vecA^\dagger} = \frac{1}{\sqrt{2|\veck|d^3\veck}}\sum_{s=\pm 1} \vece^\dagger_{\veck,s}\left(\adag_{\veck, s} + \hata_{-\veck, s}\right)$$
+再利用$d\hata/dt = -\ii |\veck| \hata$, $d\adag/dt = \ii|\veck| \adag$，有
+$$\frac{d\hat{\vecA}}{dt} = \frac{-\ii\sqrt{|\veck|}}{\sqrt{2d^3\veck}}\sum_{s=\pm 1} \vece_{\veck,s}\left(\hata_{\veck, s} - \adag_{-\veck, s}\right)$$
+$$\frac{d\hat{\vecA^\dagger}}{dt} = \frac{\ii\sqrt{|\veck|}}{\sqrt{2 d^3\veck}}\sum_{s=\pm 1} \vece^\dagger_{\veck,s}\left(\adag_{\veck, s} - \hata_{-\veck, s}\right)$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题解答(续）}
+\bch
+利用$\vece_{\veck,s}$ ($s=\pm 1$)的正交归一性，得到
+\be
+\frac{d^3\veck}{2}\left\vert\frac{d\hat\vecA}{dt}\right\vert^2 =\frac{d^3\veck}{2}\frac{d\hat\vecA^\dagger}{dt}\frac{d\hat\vecA}{dt} =\frac{|\veck|}{4}\sum_s \left(\hata_{\veck, s} - \adag_{-\veck, s}\right)\left(\adag_{\veck, s} - \hata_{-\veck, s}\right) 
+\ee
+再利用$\frac{\veck}{|\veck|}\times\vece_{\veck,s}$ ($s=\pm 1$)的正交归一性，得到
+\bea
+ \frac{d^3\veck}{2}|\veck\times \hat{\vecA}|^2 &=& \frac{|k|^2 d^3\veck}{2}\left(\frac{\veck}{|\veck|}\times \hat{\vecA}^\dagger\right)\left(\frac{\veck}{|\veck|}\times \hat{\vecA}\right) \newl
+&=& \frac{|\veck|}{4}\sum_s\left(\adag_{\veck, s} + \hata_{-\veck, s}\right)\left(\hata_{\veck, s} + \adag_{-\veck, s}\right)
+\eea
+上面两个结果相加并对$\veck$求和即得:
+$$\hat{H} = \sum_{\veck,s} \frac{|\veck|}{4}\left(\hata_{\veck,s}\adag_{\veck,s} 
++ \adag_{\veck,s}\hata_{\veck,s}+ \hata_{-\veck,s}\adag_{-\veck,s} + \adag_{-\veck,s}\hata_{-\veck,s}\right)$$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题解答(续）}
+\bch
+
+因为是对所有$\veck$求和，可以把后面两项的$-\veck$换成$\veck$。这样后两项和前两项贡献相同, 就得到
+$$\hat{H} = \sum_{\veck,s} \frac{|\veck|}{2}\left(\hata_{\veck,s}\adag_{\veck,s}  + \adag_{\veck,s}\hata_{\veck,s}\right)$$
+再利用对易关系$\hata_{\veck,s}\adag_{\veck,s}  = \adag_{\veck,s}\hata_{\veck,s} + 1$，即得到
+$$\hat{H} = \sum_{\veck,s} |\veck|\left(\adag_{\veck,s}\hata_{\veck,s}+\frac{1}{2}\right)$$
+
+
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第3题题目和思路}
+\bch
+题目：{\small
+证明自由$U(1)$规范场$A^\mu$在库仑规范$A^0=0, \nabla\cdot \vecA=0$下的动量
+$$P^i = \int d^3\vecx\, (\partial^0\vecA \cdot \partial^i\vecA)$$
+是守恒量。并把它写成傅立叶空间的积分。
+}
+
+\skipline
+\skipline
+思路：默默祭出必杀技Noether定理
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题解答}
+\bch
+考虑沿第一个空间方向的空间整体（包括空间里的场）平移$x^\mu \rightarrow x^\mu+\epsilon \delta^\mu_1$，
+平移后坐标为$x^\mu$的点在平移前的坐标则为$x^\mu-\epsilon \delta^\mu_1$。
+$$\frac{\delta A^i}{\delta \epsilon} = -  \partial_1 A^i$$
+拉氏密度改变量$\delta \lagr = -  \epsilon \partial_1 \lagr = \epsilon \partial_\mu(-\delta^\mu_1 \lagr)$。
+所以Noether定理里可以取$F^\mu = -\delta^\mu_1\lagr$。
+
+守恒流为：
+$$j^\mu = F^\mu - \frac{\delta A^i}{\delta \epsilon}\frac{\partial\lagr}{\partial(\partial_\mu A^i)} =  -\delta^\mu_1\lagr -  \partial_1 A^i F^\mu_{\ i} $$
+这里我们用到了课上推导过的结论$\frac{\partial \lagr}{\partial F_{\mu\nu}} = - F^{\mu\nu}$。
+最后，$j^0$的全空间积分即为守恒量（沿第一个空间方向的动量）:
+$$P_1 = \int d^3\vecx\, \left(\partial_1 A^i \partial^0 A_i\right)=\int d^3\vecx\, \left( \partial^0 \vecA\cdot \partial_1 \vecA \right)$$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第3题解答（续）}
+\bch
+上式我们用到了$F^0_{\ i} = \partial^0 A_i$。
+重复同样的步骤，并把$P$的指标升上去，，我们可以得到对$i =1,2,3$均有
+$$P^i = \int d^3\vecx\, \left(\partial^0 \vecA\cdot \partial^i \vecA \right)$$
+
+因为这里的二次项不是对称的，在傅立叶空间有两种等价的方式来写这个积分：
+$$P^i = \int d^3\veck\, (-\ii k^i) \left(\partial^0 \vecA^\dagger  \cdot \vecA \right)=\int d^3\veck\, (\ii k^i) \left( \vecA^\dagger  \cdot \partial^0 \vecA \right)$$
+或更简洁地写成对称的形式：
+$$\mathbf{P} = \int d^3\veck \, \frac{\ii\veck}{2}\left( \vecA^\dagger  \cdot \partial^0\vecA-\partial^0 \vecA^\dagger  \cdot \vecA \right)$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第4题题目和思路}
+\bch
+题目：{\small
+利用上题的动量$P^i$的表达式以及我们在课上得到的$\hat{\vecA}$在傅立叶空间的解：
+$$\hat{\vecA} = \frac{1}{\sqrt{2|\veck|d^3\veck}}\sum_{s=\pm 1} \vece_{\veck,s}\left(\hata_{\veck, s} + \adag_{-\veck, s}\right)$$
+证明动量$\vecP \equiv (P^1, P^2, P^3)$的算符表达式为
+$$\hat{\vecP} = \sum_{\veck}\sum_{s = \pm 1} \veck \hat{N}_{\veck, s}$$
+其中 $\hat{N}_{\veck, s} \equiv \adag_{\veck,s}\hata_{\veck, s}$是动量为$\veck$，自旋为$s$的粒子数算符。
+}
+
+\skipline
+思路：直接代入计算。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第4题解答}
+\bch
+由
+$$\hat{\vecA} = \frac{1}{\sqrt{2|\veck|d^3\veck}}\sum_{s=\pm 1} \vece_{\veck,s}\left(\hata_{\veck, s} + \adag_{-\veck, s}\right)$$
+{\scriptsize (抱歉一开始出题时这个式子也打错了，由此引起的问题均不扣分）} 可得到
+$$\hat{\vecA^\dagger} = \frac{1}{\sqrt{2|\veck|d^3\veck}}\sum_{s=\pm 1} \vece^\dagger_{\veck,s}\left(\adag_{\veck, s} + \hata_{-\veck, s}\right)$$
+再利用$d\hata/dt = -\ii |\veck| \hata$, $d\adag/dt = \ii|\veck| \adag$，有
+$$\partial^0\hat{\vecA}= \frac{-\ii\sqrt{|\veck|}}{\sqrt{2d^3\veck}}\sum_{s=\pm 1} \vece_{\veck,s}\left(\hata_{\veck, s} - \adag_{-\veck, s}\right)$$
+$$\partial^0\hat{\vecA^\dagger} = \frac{\ii\sqrt{|\veck|}}{\sqrt{2 d^3\veck}}\sum_{s=\pm 1} \vece^\dagger_{\veck,s}\left(\adag_{\veck, s} - \hata_{-\veck, s}\right)$$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第4题解答(续）}
+\bch
+{\scriptsize
+\bea
+\hat{\mathbf{P}}&=&\int d^3\veck\,\frac{\ii\veck}{2} \left(\hat\vecA^\dagger  \cdot \partial^0\hat\vecA -\partial^0 \hat\vecA^\dagger  \cdot \hat\vecA\right) \newl
+&=&\frac{1}{4}\sum_{\veck,s}\veck\left[\left(\adag_{\veck, s} + \hata_{-\veck, s}\right)\left(\hata_{\veck, s} - \adag_{-\veck, s}\right) + \left(\adag_{\veck, s} - \hata_{-\veck, s}\right)\left(\hata_{\veck, s} + \adag_{-\veck, s}\right)\right] \newl
+&=&\frac{1}{2}\sum_{\veck,s}\veck\left(\adag_{\veck, s}\hata_{\veck, s} -\hata_{-\veck,s}\adag_{-\veck, s}\right)\newl
+&=&\frac{1}{2}\sum_{\veck,s}\veck \hat{N}_{\veck,s} + \frac{1}{2}\sum_{\veck,s}(-\veck) \left(\hat{N}_{-\veck,s}+1\right) \newl 
+&=&\frac{1}{2}\sum_{\veck,s}\veck \hat{N}_{\veck,s} + \frac{1}{2}\sum_{\veck,s}\veck \left(\hat{N}_{\veck,s}+1\right) \newl
+&=&\sum_{\veck,s}\veck \hat{N}_{\veck,s} + \sum_{\veck,s} \veck \newl
+&=&\sum_{\veck,s}\veck \hat{N}_{\veck,s}
+\eea
+
+注：“真空动量”$\sum_{\veck,s}\veck$两两反向的动量抵消，总和为零。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第5题题目和思路}
+\bch
+题目：{\small
+对旋量$\psi$，证明$\bar\psi\slashed{\partial}\psi$是洛仑兹变换下的标量。
+}
+
+\skipline
+
+思路：利用$\Lambda$矩阵的性质$\Lambda^\dagger = \gamma^0\Lambda^{-1}\gamma^0$。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第5题解答}
+\bch
+{\scriptsize
+设有洛仑兹变换$x^\mu \rightarrow a^\mu_{\ \nu} x^\nu$，对应的旋量变换矩阵为$\Lambda$矩阵。课上我们已经证明了$\Lambda^\dagger = \gamma^0\Lambda^{-1}\gamma^0$(或者两边右乘$\gamma^0$得到$\Lambda^\dagger \gamma^0= \gamma^0\Lambda^{-1}$)，再者根据定义有$\Lambda^{-1}\gamma^\mu\Lambda = a^\mu_{\ \lambda}\gamma^\lambda$。我们利用这两条性质以及洛仑兹变换矩阵的正交性质$a^\mu_{\ \lambda}a_\mu^{\ \nu}=\delta^\nu_\lambda$来完成证明：
+
+$\bar\psi\slashed{\partial}\psi$在洛仑兹变换下成为（注意洛仑兹变换的变换矩阵不依赖于坐标，偏导符号只作用到$\psi$上）： 
+\bea
+&& (\psi^\dagger\Lambda^\dagger\gamma^0)(\gamma^\mu\partial_\mu)(\Lambda\psi) \newl
+&=& (\psi^\dagger\gamma^0\Lambda^{-1})(\gamma^\mu a_\mu^{\ \nu}\partial_\nu)(\Lambda\psi) \newl
+&=& (\bar\psi \Lambda^{-1}\gamma^\mu\Lambda \Lambda^{-1} a_\mu^{\ \nu}\partial_\nu) (\Lambda\psi) \newl
+&=& \bar\psi a^\mu_{\ \lambda}\gamma^\lambda \Lambda^{-1} a_\mu^{\ \nu}\Lambda \partial_\nu \psi \newl
+&=& \bar\psi a^\mu_{\ \lambda}a_\mu^{\ \nu}\gamma^\lambda \partial_\nu \psi \newl 
+&=& \bar\psi \delta^\nu_\lambda\gamma^\lambda \partial_\nu \psi \newl
+&=& \bar\psi \gamma^\nu \partial_\nu \psi \newl
+&=& \bar\psi \slashed{\partial} \psi 
+\eea
+}
+\ech
+\end{frame}
+
+\end{document}

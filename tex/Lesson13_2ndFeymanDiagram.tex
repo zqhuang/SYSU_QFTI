@@ -40,53 +40,46 @@ $$\lagr = \frac{1}{2}\partial^\mu\phi\partial_\mu\phi - \frac{1}{2}m^2\phi^2 - \
 的实标量场。其中$\lambda>0$和$g$都是耦合常数。我们仅考虑它很小($\lambda \ll 1$, $g\ll m$)的情况。
 
 我们取如下的相互作用表象：
-$$ H_0 = H_{\rm free},\ H_I = \frac{\lambda}{4!} \int d^3\vecx\, \phi^4$$
+$$ H_0 = H_{\rm free},\ H_I = \int d^3\vecx\, \left(\frac{g}{3!}\phi^3 + \frac{\lambda}{4!} \phi^4\right)$$
 其中$H_{\rm free} = \int d^3\vecx\, \frac{1}{2}(\dot\phi^2 + |\nabla \phi|^2 + m^2\phi^2)$是我们以前学过的自由场的Hamilton量。
 
 \ech
 \end{frame}
 
 \begin{frame} 
-\chtitle{热身问题} 
+\chtitle{继续上节课的热身问题} 
 \bch
-我们的热身问题是：
+上节课的热身问题是：
+\skipline
 
 求两个动量为$\vecp_1$, $\vecp_2$的粒子发生散射，变为两个动量为$\vecp_3$, $\vecp_4$的粒子的概率幅。
-$$\calM T/V= \langle \vecp_3, \vecp_4|  e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}|\vecp_1,\vecp_2\rangle$$
-空间总体积$V\rightarrow \infty$和总时间长度$T\rightarrow \infty$。我们在定义概率振幅时引入了$T/V$的因子来描述空间越大两个自由粒子越难碰到发生散射，以及时间越长越越容易发生散射。在最后的表达式中两边会约去$T/V$。
+$$\calM T/V \delta(p_1+p_2-p_3-p_4)d^4k= \langle \vecp_3, \vecp_4|  e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}|\vecp_1,\vecp_2\rangle$$
+如上节课末尾所讲，我们已经把$\delta(p_1+p_2-p_3-p_4)d^4k$引入了左边的定义式。
+\skipline
 
-为了讨论简单起见，我们假设这四个动量$\vecp_1$, $\vecp_2$, $\vecp_3$, $\vecp_4$互不相同。
+我们仍假设这四个动量$\vecp_1$, $\vecp_2$, $\vecp_3$, $\vecp_4$互不相同，即初态和末态粒子都是可以区分的。
 \ech
 \end{frame}
 
 \begin{frame} 
 \chtitle{一阶微扰展开} 
 \bch
+{\small 
+我们做微扰展开，对带$\lambda$的项我们仍展开到一次，对带$g$的项我们要展开到二次。这是因为单个$g\phi^3$最多只能提供三个产生湮灭算符的乘积，无法湮灭两个粒子并产生两个新粒子。
 
-我们做一阶微扰展开：
-$$e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}\approx 1 -\ii\int_{-\infty}^\infty \hat{H}_I dt = 1-\ii\int d^4x\, \frac{\lambda}{4!}\hat\phi^4 $$
+$$e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}\approx 1-\ii\int d^4x\,\frac{g}{3!}\hat\phi(x)^3 -\frac{1}{2}\left(\int d^4x\,\frac{g}{3!}\hat\phi(x)^3\right)^2- \ii\int d^4x\, \frac{\lambda}{4!}\hat\phi^4 $$
 
-若末态与初态不同则第一项$1$没有贡献。我们来计算最低阶的非零贡献：
-$$\calM T/V \approx -\ii \langle \vecp_3, \vecp_4| \int d^4x\, \frac{\lambda}{4!}\hat\phi^4 |\vecp_1,\vecp_2\rangle$$
-
+第一项和第二项均没有贡献，第四项的贡献我们上节课算了。我们这节课来计算第三项的非零贡献：
+$$ -\frac{g^2}{2(3!)^2} \langle \vecp_3, \vecp_4| \int d^4x\, \hat\phi(x)^3 \int d^4y\, \hat\phi(y)^3 |\vecp_1,\vecp_2\rangle$$
+}
 \ech
 \end{frame}
 
 \begin{frame} 
-\chtitle{写成产生湮灭算符} 
+\chtitle{写法上还要仔细想想} 
 \bch
-
 {\small
-由于该相互作用表象下$\hatphi$仍按$d\hat\phi/dt = - \ii [\hatphi,  \hatH_{\rm free}]$演化，$\hatphi$的解就和自由场相同
-$$\hatphi = \frac{1}{(2\pi)^{3/2}}\int \sqrt{\frac{d^3\veck}{2\omega}} \left(\hata_{\veck}e^{-ikx}+\adag_{\veck}e^{ikx}\right)$$
-代入要求解的概率幅后得到
-\be
-\calM T/V \approx \frac{-\ii\lambda}{4!(2\pi)^6} \int d^4x \langle \vecp_3, \vecp_4|\left[\int \sqrt{\frac{d^3\veck}{2\omega}} \left(\hata_{\veck}e^{-ikx}+\adag_{\veck}e^{ikx}\right)\right]^4 |\vecp_1,\vecp_2\rangle
-\ee
-显然，要使得矩阵元非零，在四个括号里必须分别取出动量为$\vecp_1$, $\vecp_2$的湮灭算符以及动量为$\vecp_3$, $\vecp_4$的产生算符。这样一共有$4!$种取法，刚好和外面分母里的$4!$抵消了，于是得到：
-\be
-\calM T/V \approx \frac{-\ii\lambda}{(2\pi)^6} \int d^4x\, \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}} e^{-i(p_1+p_2-p_3-p_4)x} 
-\ee
+
 }
 \ech
 \end{frame}
