@@ -1,0 +1,130 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Lesson 13 - The Second Feynman diagram}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第十三课 第二个Feynman图
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+\begin{frame}
+\chtitle{关于形式解的小bug}
+\bch
+
+$$|\psi\rangle_{t_2} \qeq e^{-\ii\int_{t_1}^{t_2} \hatH_I(t) dt} |\psi\rangle_{t_1}$$
+
+\bmini{0.35}
+\includegraphics[width=1.2in]{douwone.jpg}
+\emini
+\bmini{0.55}
+上节课我们讲到的Interaction绘景的态的形式解其实有bug。
+
+当你把$e^{-\ii\int H_Idt}$展开到二阶以上时这个bug就可能被触发。
+
+\emini
+
+
+\skipline
+{\small
+出bug的原因：在不同时刻的$\hatH_I$如果不对易，则$\frac{d e^{-\ii\int^t \hatH_I dt'}}{dt} \ne -\ii \hatH_I(t) e^{-\ii\int^t \hatH_I dt'}$
+}
+\skipline
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{神奇的编时算符}
+\bch
+我们引入编时算符$\calT$，它作用于一串算符的乘积时把算符乘积顺序按时间从晚到早排序，而等时的算符保持乘积次序不变。例如，若$t_1>t_2 = t_3>t_4$，则
+$$\torder{\hat{A}(t_3)\hat{B}(t_2)\hat{C}(t_4)\hat{D}(t_1)} = \hat{D}(t_1)\hat{A}(t_3)\hat{B}(t_2)\hat{C}(t_4)$$
+
+\skipline
+试证明：对任意算符$\hat{O}$均有
+$$\frac{d \left(\torder{e^{\int^t_{t_0} \hat{O}(t')dt'}}\right)}{dt} = \hat{O}(t)$$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{神奇的编时超算符}
+\bch
+在相互作用表象，
+$$|\psi\rangle_{t_2} = \torder{ e^{-\ii\int_{t_1}^{t_2} \hatH_I(t) dt} }|\psi\rangle_{t_1}$$
+
+（这次真的没bug了）
+\ech
+\end{frame}
+
+\begin{frame} 
+\chtitle{三次项的相互作用} 
+\bch
+考虑拉氏密度为
+$$\lagr = \frac{1}{2}\partial^\mu\phi\partial_\mu\phi - \frac{1}{2}m^2\phi^2 - \frac{g}{3!}\phi^3- \frac{\lambda}{4!}\phi^4$$
+的实标量场。其中$\lambda>0$和$g$都是耦合常数。我们仅考虑它们很小($\lambda \ll 1$, $g\ll m$)的情况。
+
+我们取如下的相互作用表象：
+$$ H_0 = H_{\rm free},\ H_I = \int d^3\vecx\, \left(\frac{g}{3!}\phi^3 + \frac{\lambda}{4!} \phi^4\right)$$
+其中$H_{\rm free} = \int d^3\vecx\, \frac{1}{2}(\dot\phi^2 + |\nabla \phi|^2 + m^2\phi^2)$是我们以前学过的自由场的Hamilton量。
+
+\ech
+\end{frame}
+
+
+
+
+\begin{frame} 
+\chtitle{继续上节课的热身问题} 
+\bch
+上节课的热身问题是：
+\skipline
+
+求两个动量为$\vecp_1$, $\vecp_2$的粒子发生散射，变为两个动量为$\vecp_3$, $\vecp_4$的粒子的概率幅。
+$$\calM T/V \delta(p_1+p_2-p_3-p_4)d^4k= \langle \vecp_3, \vecp_4|  e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}|\vecp_1,\vecp_2\rangle$$
+如上节课末尾所讲，我们已经把$\delta(p_1+p_2-p_3-p_4)d^4k$引入了左边的定义式。
+\skipline
+
+我们仍假设这四个动量$\vecp_1$, $\vecp_2$, $\vecp_3$, $\vecp_4$互不相同，即初态和末态粒子都是可以区分的。
+\ech
+\end{frame}
+
+\begin{frame} 
+\chtitle{一阶微扰展开} 
+\bch
+{\small 
+我们做微扰展开，对带$\lambda$的项我们仍展开到一次，对带$g$的项我们要展开到二次。这是因为单个$g\phi^3$最多只能提供三个产生湮灭算符的乘积，无法湮灭两个粒子并产生两个新粒子。
+
+$$\torder{e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}}\approx 1-\ii\int d^4x\,\frac{g}{3!}\hat\phi(x)^3 -\frac{1}{2}\torder{\left(\int d^4x\,\frac{g}{3!}\hat\phi(x)^3\right)^2}- \ii\int d^4x\, \frac{\lambda}{4!}\hat\phi^4 $$
+
+第一项和第二项均没有贡献，第四项的贡献我们上节课算了。我们这节课来计算第三项的非零贡献：
+$$ -\frac{g^2}{2(3!)^2} \int d^4x\, \int d^4y\,\langle \vecp_3, \vecp_4|  \hat\phi(x)^3 \hat\phi(y)^3 |\vecp_1,\vecp_2\rangle$$
+}
+\ech
+\end{frame}
+
+\end{document}
+
+
