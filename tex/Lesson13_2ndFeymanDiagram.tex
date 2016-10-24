@@ -37,7 +37,7 @@ https://github.com/zqhuang/SYSU\_QFTI
 \bch
 考虑拉氏密度为
 $$\lagr = \frac{1}{2}\partial^\mu\phi\partial_\mu\phi - \frac{1}{2}m^2\phi^2 - \frac{g}{3!}\phi^3- \frac{\lambda}{4!}\phi^4$$
-的实标量场。其中$\lambda>0$和$g$都是耦合常数。我们仅考虑它很小($\lambda \ll 1$, $g\ll m$)的情况。
+的实标量场。其中$\lambda>0$和$g$都是耦合常数。我们仅考虑它们很小($\lambda \ll 1$, $g\ll m$)的情况。
 
 我们取如下的相互作用表象：
 $$ H_0 = H_{\rm free},\ H_I = \int d^3\vecx\, \left(\frac{g}{3!}\phi^3 + \frac{\lambda}{4!} \phi^4\right)$$
@@ -70,17 +70,18 @@ $$\calM T/V \delta(p_1+p_2-p_3-p_4)d^4k= \langle \vecp_3, \vecp_4|  e^{-\ii\int_
 $$e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}\approx 1-\ii\int d^4x\,\frac{g}{3!}\hat\phi(x)^3 -\frac{1}{2}\left(\int d^4x\,\frac{g}{3!}\hat\phi(x)^3\right)^2- \ii\int d^4x\, \frac{\lambda}{4!}\hat\phi^4 $$
 
 第一项和第二项均没有贡献，第四项的贡献我们上节课算了。我们这节课来计算第三项的非零贡献：
-$$ -\frac{g^2}{2(3!)^2} \langle \vecp_3, \vecp_4| \int d^4x\, \hat\phi(x)^3 \int d^4y\, \hat\phi(y)^3 |\vecp_1,\vecp_2\rangle$$
+$$ -\frac{g^2}{2(3!)^2} \int d^4x\, \int d^4y\,\langle \vecp_3, \vecp_4|  \hat\phi(x)^3 \hat\phi(y)^3 |\vecp_1,\vecp_2\rangle$$
 }
 \ech
 \end{frame}
 
 \begin{frame} 
-\chtitle{等等，有了新问题。} 
+\chtitle{有了新问题。} 
 \bch
-{\small
-上节课中出现的算符是$\hatphi^4(x)$，不存在次序问题。现在如果出现了$\hatphi^3(x)\hatphi^3(y)$这样的项，它和$\hatphi^3(y)\hatphi^3(x)$不是等价的，到底该怎么排序呢？
-}
+等等，这样直接写下来的式子还不完全正确。
+\skipline
+
+上节课中出现的算符是$\hatphi^4(x)$，不存在次序问题。现在出现了$\hatphi^3(x)\hatphi^3(y)$这样的项，它和$\hatphi^3(y)\hatphi^3(x)$不是等价的，到底该怎么排序呢？
 \ech
 \end{frame}
 
