@@ -64,7 +64,7 @@ $$\torder{\hat{A}(t_3)\hat{B}(t_2)\hat{C}(t_4)\hat{D}(t_1)} = \hat{D}(t_1)\hat{A
 
 \skipline
 试证明：对任意算符$\hat{O}$均有
-$$\frac{d \left(\torder{e^{\int^t_{t_0} \hat{O}(t')dt'}}\right)}{dt} = \hat{O}(t)$$
+$$\frac{d \left(\torder{e^{\int^t_{t_0} \hat{O}(t')dt'}}\right)}{dt} = \hat{O}(t) \left(\torder{e^{\int^t_{t_0} \hat{O}(t')dt'}}\right)$$
 
 \ech
 \end{frame}
@@ -88,7 +88,7 @@ $$\lagr = \frac{1}{2}\partial^\mu\phi\partial_\mu\phi - \frac{1}{2}m^2\phi^2 - \
 
 我们取如下的相互作用表象：
 $$ H_0 = H_{\rm free},\ H_I = \int d^3\vecx\, \left(\frac{g}{3!}\phi^3 + \frac{\lambda}{4!} \phi^4\right)$$
-其中$H_{\rm free} = \int d^3\vecx\, \frac{1}{2}(\dot\phi^2 + |\nabla \phi|^2 + m^2\phi^2)$是我们以前学过的自由场的Hamilton量。
+其中$H_{\rm free} = \int d^3\vecx\, \frac{1}{2}(\dot\phi^2 + |\nabla \phi|^2 + m^2\phi^2)$是自由场的Hamilton量。
 
 \ech
 \end{frame}
@@ -114,14 +114,16 @@ $$\calM T/V \delta(p_1+p_2-p_3-p_4)d^4k= \langle \vecp_3, \vecp_4|  e^{-\ii\int_
 \begin{frame} 
 \chtitle{一阶微扰展开} 
 \bch
-{\small 
 我们做微扰展开，对带$\lambda$的项我们仍展开到一次，对带$g$的项我们要展开到二次。这是因为单个$g\phi^3$最多只能提供三个产生湮灭算符的乘积，无法湮灭两个粒子并产生两个新粒子。
 
-$$\torder{e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}}\approx 1-\ii\int d^4x\,\frac{g}{3!}\hat\phi(x)^3 -\frac{1}{2}\torder{\left(\int d^4x\,\frac{g}{3!}\hat\phi(x)^3\right)^2}- \ii\int d^4x\, \frac{\lambda}{4!}\hat\phi^4 $$
+\bea
+\torder{e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}}\approx 1-\ii\int d^4x\,\frac{g}{3!}\hat\phi(x)^3  \\
+&& -\frac{1}{2}\torder{\left(\int d^4x\,\frac{g}{3!}\hat\phi(x)^3\right)\left(\int d^4y\,\frac{g}{3!}\hat\phi(y)^3\right)}- \ii\int d^4x\, \frac{\lambda}{4!}\hat\phi^4 
+\ee
 
 第一项和第二项均没有贡献，第四项的贡献我们上节课算了。我们这节课来计算第三项的非零贡献：
 $$ -\frac{g^2}{2(3!)^2} \int d^4x\, \int d^4y\,\langle \vecp_3, \vecp_4|  \hat\phi(x)^3 \hat\phi(y)^3 |\vecp_1,\vecp_2\rangle$$
-}
+
 \ech
 \end{frame}
 
