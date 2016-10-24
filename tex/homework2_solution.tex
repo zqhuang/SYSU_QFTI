@@ -1,0 +1,222 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Homework 2 solution}
+  \author{}
+  \date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第二次课后作业参考答案
+\skipline
+\skipline
+
+如发现参考答案有错误请不吝告知（微信zhiqihuang或邮箱huangzhq25@sysu.edu.cn)
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题：题目和思路}
+\bch
+题目：对质量为$m$的自由实标量场$\phi$，四维动量$k$满足$k^0 = \omega \equiv \sqrt{\veck^2+m^2}$，其中$\veck\equiv (k^1, k^2, k^3)$为三维动量。对任意洛仑兹变换下不变的函数$f(k)$，证明积分$\int \frac{d^3\veck}{2\omega} f(k)$ 也是洛仑兹变换下的不变量。
+
+\skipline
+思路：对任意标量函数$h(k)$，积分$\int d^4k\, h(k)$也是洛仑兹变换下的标量，所以问题就简化为：能不能找到洛仑兹变换下的标量函数$h(k)$，使得 $\int h(k)d k^0 = \frac{f(k)}{2\omega}$。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题解答}
+\bch
+取$h(k) = \frac{1}{2} \delta(k^2 - m^2) f(k)$，
+
+首先，因为$k^2 \equiv k^\mu k_\mu$是洛仑兹不变量，所以它的函数$\delta(k^2 - m^2)$也是洛仑兹不变量，乘上另一个洛仑兹不变量$f(k)$之后得到$h(k)$也是洛仑兹不变量。
+
+其次, 利用$\delta$函数性质(每个零点附近作变量替换$y=f(x)$可证)
+ $$\int \delta\left(f(x)\right) dx= \sum_{x*:\,f(x*) = 0}\frac{1}{|f'(x*)|}$$
+可以得到
+$$\int h(k) dk^0 = \frac{1}{4\omega}(f(\omega, \veck) + f(-\omega, \veck))$$
+因为$f(k)$是任意洛仑兹变换下的不变量，故在时间反演下也是不变量，两项贡献相等。
+从而有$\int h(k) dk^0 = \frac{1}{2\omega}f(\omega, \veck)$
+
+综上我们证明了$\int \frac{d^3\veck}{2\omega} f(k) = \int h(k) d^4k$ 是洛仑兹不变量
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{第2题: 题目和思路}
+\bch
+题目：对质量为$m$的自由实标量场$\phi$，证明四维时空下的任意两点场算符的对易$[\hatphi(x),\hatphi(x')]$是洛仑兹变换下的不变量。(提示：利用$\hatphi$的算符表达式和第1题结论。）
+
+\skipline
+思路：利用课上得到的$\hatphi$表达式硬算就行。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题解答}
+\bch
+利用课上得到的
+$$\hatphi(x) = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \left(\hata_{\veck} e^{-ik_\mu x^\mu} + \adag_{\veck}e^{ik_\mu x^\mu}\right) $$
+得到
+{\scriptsize
+\begin{eqnarray}
+&& \left[\hatphi(x),\hatphi(x')\right] \newl
+&=& \frac{1}{(2\pi)^3}\sum_{\veck,\veck'} \frac{\sqrt{d^3\veck\, d^3\veck'}}{2\sqrt{\omega \omega'}}\left([\hata_\veck, \adag_{\veck'}]e^{-\ii (k_\mu x^\mu-k'_\mu x'^\mu)} + [\adag_\veck, \hata_{\veck'}]e^{\ii (k_\mu x^\mu-k'_\mu x'^\mu) }\right) \newl
+&=& \frac{1}{(2\pi)^3} \sum_{\veck} \frac{d^3\veck}{2\omega}\left(e^{-\ii k_\mu (x^\mu - x'^\mu)} - e^{\ii k_\mu (x^\mu - x'^\mu)}\right) \nonumber
+\end{eqnarray}
+}
+把求和号换成积分号，再根据上题结论即得证。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题题目和思路}
+\bch
+题目：
+{\scriptsize 
+质量为$m$的自由复标量场，
+$$\lagr = \partial_\mu\phi^\dagger \partial^\mu \phi - m^2\phi^\dagger\phi\, $$
+把$\phi$和$\phi^\dagger$分别看作独立自由度，它们对应的正则动量分别为
+$$\pi = \frac{\partial \lagr}{\partial \dot\phi} = \dot\phi^\dagger, \,\pi^\dagger = \frac{\partial \lagr}{\partial \dot\phi^\dagger} = \dot\phi $$
+于是Hamilton密度为
+$$\hamil = \dot\phi^\dagger \pi^\dagger +\dot\phi \pi - \lagr = \pi^\dagger \pi + \nabla\phi^\dagger \cdot\nabla\phi + m^2\phi^\dagger \phi $$
+我们在课堂上推到了量子化后的$\phi$为
+$$\hatphi(x) = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \left(\hata_{\veck} e^{-ik_\mu x^\mu} + \bdag_{\veck}e^{ik_\mu x^\mu}\right) $$
+试求量子化后的总Hamilton量$\hat{H}$.
+}
+
+\skipline
+思路：题目提示的思路是直接代入并利用产生湮灭算符的对易性质，这样计算实际上比较繁复。也可以考虑把$H$写成傅立叶空间的积分来简化计算。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题第一种解答}
+\bch
+我们先考虑固定时间$t=0$的$\hat{H}$，把$\hat{H}$写成傅立叶空间的积分
+$$\hat{H} = \int d^3\veck\, \frac{1}{2}\left(\hatpi^\dagger\hatpi + \omega^2\hatphi^\dagger\hatphi\right)$$ 
+在傅立叶空间
+$$\hatphi = \frac{\hata_{\veck}+\bdag_{-\veck}}{\sqrt{2\omega\,d^3\veck}}$$
+$$\hatphi^\dagger =  \frac{\adag_{\veck}-\hatb_{-\veck}}{\sqrt{2\omega\,d^3\veck}}$$
+$$\hatpi^\dagger = \dot\hatphi = -\ii\omega \frac{\hata_{\veck}-\bdag_{-\veck}}{\sqrt{2\omega\,d^3\veck}}$$
+$$\hatpi = \dot\hatphi^\dagger = \ii \omega\frac{\adag_{\veck}+\hatb_{-\veck}}{\sqrt{2\omega\,d^3\veck}} $$
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第3题第一种解答（续）}
+\bch
+直接代入得到
+$$\hat{H} = \sum_{\veck} \frac{\omega}{2}\left(\adag_{\veck}\hata_{\veck} + \hata_{\veck}\adag_{\veck} + \bdag_{\veck}\hatb_{\veck} + \hatb_{\veck}\bdag_{\veck}\right)$$ 
+利用产生湮灭算符对易关系上式也可写成
+$$\hat{H} = \sum_{\veck} \omega(\adag_{\veck}\hata_{\veck} + \bdag_{\veck}\hatb_{\veck} + 1)$$
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{第3题第二种解答}
+\bch
+先求出
+$$\hatpi^\dagger = \dot\hatphi = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \ii \omega \left(-\hata_{\veck} e^{-ik_\mu x^\mu} + \bdag_{\veck}e^{ik_\mu x^\mu}\right) $$
+$$\hatpi = \dot\hatphi^\dagger = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \ii \omega \left(\adag_{\veck} e^{ik_\mu x^\mu} - \hatb_{\veck}e^{-ik_\mu x^\mu}\right) $$
+$$\nabla\hatphi = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \ii\veck \left(\hata_{\veck} e^{-ik_\mu x^\mu} - \bdag_{\veck}e^{ik_\mu x^\mu}\right) $$
+$$\nabla\hatphi^\dagger = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \ii \veck \left(-\adag_{\veck} e^{ik_\mu x^\mu} + \hatb_{\veck}e^{-ik_\mu x^\mu}\right) $$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题第二种解答（续）}
+\bch
+把上述表达式代入
+$$\hat{H}(t) = \int d^3\vecx\, \hat{\hamil}(t, \vecx)$$
+并利用
+$$\frac{1}{(2\pi)^3}\int d^3\vecx\, e^{-i(\veck-\veck')\cdot\vecx} = \delta(\veck - \veck')$$ 
+化简得到
+$$\hat{H} = \sum_{\veck} \omega(\adag_{\veck}\hata_{\veck} + \bdag_{\veck}\hatb_{\veck} + 1)$$
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{第4题题目和思路}
+\bch
+题目：考虑和规范场耦合的复标量场的拉氏密度：
+$$\lagr = (D^\mu\phi)^\dagger D_\mu \phi - m^2\phi^\dagger \phi  - \frac{1}{4}\Fup\Fdown$$
+利用Euler-Lagrange方程
+$$\partial_\mu \Fup = j^\nu$$
+证明$j_\mu$是守恒流.
+
+\skipline
+思路：太简单不需要思路。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第4题解答}
+\bch
+$$\partial_\nu j^\nu = \partial_\nu \partial_\mu \Fup$$
+$$\partial_\mu j^\mu = \partial_\mu \partial_\nu F^{\nu\mu}$$
+两式相加并利用$F$反对称即得证$\partial_\mu j^\mu = 0$。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第5题题目和思路}
+\bch
+题目：
+{\small 关于三维空间转动算符
+\begin{itemize}
+\item{证明相反方向的角动量算符相差一个负号$\hat{J}_{-\vecn} = - \hatJn$}
+\item{因为绕固定轴转动$2\pi$的没有任何效果，所以转动算符$e^{-2\pi\ii\hatJn}=1$，由此证明$\hatJn$的本征值一定是整数。}
+\item{三个形成右手正交系的方向$\vecn_1$, $\vecn_2$, $\vecn_3$,对应的转动算符分别为$\hatj{1} $, $\hatj{2} $, $\hatj{3}$，证明$\hatj{1}^2+\hatj{2}^2+\hatj{3}^2 = 2$。.}
+\end{itemize}
+}
+
+\skipline
+
+思路：直接利用课上介绍的$\hatJn$性质。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第5题解答}
+\bch
+\begin{itemize}
+\item{显然沿$\vecn$转$\theta$和沿$-\vecn$转$-\theta$等效，所以 $ e^{\ii \theta \hat{J}_{-\vecn}}= e^{-\ii\theta \hatJn}  $。两边对$\theta$求导并令$\theta = 0$即得$\hat{J}_{-\vecn} = - \hatJn$}
+\item{根据算符的解析函数的本征值等于算符的本征值取该解析函数，若$\hatJn$有本征值$\lambda$，则$e^{-2\pi\ii\hatJn}$有本征值$e^{-2\pi\ii\lambda}$。又单位矩阵只有本征值1，所以$e^{-2\pi\ii\lambda}=1$。即$\lambda$必须是整数。}
+\item{利用$\hatj{i}\vecn_j = \ii\epsilon_{ijk}\vecn_k$可以得到
+$(\sum_i\hat{J}_i^2)\vecn_{j} = \ii \sum_{ik} \epsilon_{ijk} \hat{J}_i \vecn_k = -\sum_{ikl} \epsilon_{ijk}\epsilon_{ikl}\vecn_l =\sum_{ikl} \epsilon_{ikj}\epsilon_{ikl}\vecn_l = \sum_{ik} \epsilon_{ikj}\epsilon_{ikj}\vecn_j =2\vecn_j$。因为任何三维矢量均可写成$\vecn_1,\vecn_2,\vecn_3$的线性组合，所以对任何三维矢量$\vecv$均有$(\sum_i\hat{J}_i^2)\vecv = 2\vecv$。从而证明了算符等式：$\sum_i\hat{J}_i^2 =2$。
+}
+\end{itemize}
+\ech
+\end{frame}
+
+\end{document}

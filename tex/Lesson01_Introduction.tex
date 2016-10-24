@@ -1,0 +1,259 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Lesson 01 - Introduction}
+  \author{}
+  \date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I \\
+第一课：坐标系和张量场简介
+
+{\vskip 0.3in}
+
+授课: 黄志琦
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+教材：《简明量子场论》，王正行，北京大学出版社
+\ech
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\bch
+助教：暂无（实在有问题可在微信上问，微信号zhiqihuang)
+\ech
+\end{frame}
+
+\begin{frame}
+\frametitle{\bch 评分 \ech (Evaluation)}
+\bch
+总分 = 作业30分 + 课堂表现20分  + 期末考试50分
+\ech
+\begin{itemize}
+\item{\bch {\bf 平时作业20分}： 每次平时作业2.5分（不足半分取半分），共8次平时作业。平时作业判分标准：{\bf 抄袭一次，该次作业0分；抄袭两次以上，全部作业0分；}（判定抄袭的标准：无法叙述自己作业大部分内容。）未能按时完成可以要求延时（按延时长短酌情扣0.5或1分；病事假原因不扣分），最多延到发作业前一天。 \ech }
+\item{\bch {\bf 特殊作业10分}： 期末考试前一周交。允许搜索查阅任何文献，允许讨论，允许请教他人。拱5题每题2分。做出巧妙解法加1分（若最后期末总分超过100分则不加了）。 \ech }
+\item{\bch {\bf 课堂表现20分}：鼓励积极发言。发言正确或部分正确加分。发言错误不扣分。\ech}
+\item{\bch {\bf 期末考试}： 闭卷独立答题。\ech}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\bch 互相简单介绍 \ech}
+\bch
+自我介绍：
+\begin{itemize}
+\item{名字}
+\item{物理基础：高等数学，线性代数，理论力学，狭义相对论，量子力学这五门课的学习情况（没学过，学过大部分忘了，学过大部分还会，精通）}
+\item{对评分方法的意见和建议}
+\end{itemize}
+\ech
+\end{frame}
+
+\begin{frame}
+\frametitle{\bch 第一章需掌握内容 \ech}
+\begin{itemize}
+\bch 
+\item{自然单位制和量纲}
+\item{坐标，度规和张量}
+\item{作用量和拉氏密度的概念}
+\item{Euler-Lagrange方程的推导}
+\item{Noether定理的推导}
+\ech
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{\bch 自然单位制和量纲 \ech}
+\bch 自然单位制 \ech $c = \hbar  = 1$
+
+\bch
+长度量纲 = 时间量纲 = 质量量纲$^{-1}$ = 能量量纲$^{-1}$ 
+\ech
+
+{\vskip 0.2in}
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=1in]{jugelizi.png}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+\bch
+力的量纲 \\
+= 质量量纲 $\times$ 长度量纲/时间量纲$^2$ \\
+= 质量量纲$^2$
+\ech
+\end{minipage}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{\bch 课堂互动\ech}
+\bch
+讨论下面这些物理量的量纲：
+
+速度$v$
+
+角速度$\omega$
+
+角动量$L$
+
+加速度$a$
+
+能量密度$\rho$
+
+压强$p$
+
+牛顿引力常数$G$
+
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\bch 时空坐标的标记以及一些约定 \ech}
+\bch
+\begin{itemize}
+\item{时空用坐标$(x^0, x^1, x^2, x^3)$来标记，其中$x^0$为时间坐标，有时也写作$t$；省略上标的坐标$x$是$(x^0, x^1, x^2, x^3)$的简写。}
+\item{希腊字母指标$\mu, \nu, \rho, \sigma,\ldots$ 默认跑遍0，1，2，3}
+\item{拉丁字母指标$i, j,  k, l,\ldots$ 默认跑遍1，2，3}
+\item{黑体表示三维空间矢量，例如 $\mathbf{dx} \equiv (dx^1, dx^2, dx^3)$}
+\item{爱因斯坦求和规则：重复出现的指标默认求和。例如：$dx^\mu dx_{\mu}$若无特殊说明等价于$\sum_{\mu = 0}^3 dx^\mu dx_{\mu}$} 
+\item{空间坐标的偏微分$\frac{\partial}{\partial x^\mu}$经常简写成$\partial_\mu$. 省略下标的偏微分符号$\partial$是$(\partial_0,\partial_1,\partial_2,\partial_3)$的简写。算符$\nabla$则仅是空间偏微分$(\partial_1, \partial_2, \partial_3)$的简写。}
+\item{克罗内克符号(Kronecker delta) $\delta^\mu_\nu$当$\mu = \nu$时为1，否则为0.}
+\end{itemize}
+\ech
+
+\end{frame}
+
+\begin{frame}
+\frametitle{\bch 度规 (metric) \ech}
+\bch 时空间隔元：\ech
+
+$ds^2 = g_{\mu\nu} dx^\mu dx^\nu$
+
+\bch $g_{\mu\nu}$称为度规(metric) \ech
+
+{\vskip 0.1in}
+
+\bch 量子场论与广义相对论的统一尚未完成。本课程仅讨论狭义相对论的平直时空，也叫闵氏空间(Minkowski spacetime). \ech
+
+\begin{equation} 
+g_{\mu\nu} =  \left( \begin{array}{rrrr} 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{array} \right) \nonumber
+\end{equation}
+
+\bch 这样时空间隔元可以简写成 $ds^2 = dt^2 - \mathbf{dx}^2$ \ech
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\bch 一般性张量(tensor)的定义 \ech}
+\bch
+一般性张量在坐标变换$x \rightarrow \tilde{x}$下的变化：
+\ech
+
+$$\tilde{T}^{\mu\nu\ldots}_{\alpha\beta\ldots} = \left(\frac{\partial \tilde{x}^\mu}{\partial x^\rho}\frac{\partial \tilde{x}^\nu}{\partial x^\sigma} \frac{\partial x^\gamma }{\partial \tilde{x}^\alpha}\frac{\partial x^\lambda}{\partial \tilde{x}^\beta} \ldots \right)T^{\rho\sigma\ldots}_{\gamma\lambda\ldots} $$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{\bch 课堂互动 \ech}
+\bch
+如果$\phi$是一个标量（0阶张量，在坐标变换下不变），时空度规为$g_{\mu\nu}$，时空度规的逆矩阵为$g^{\mu\nu}$。试证明：
+\begin{itemize}
+\item{任何常数都是标量}
+\item{时空微元$dx^\mu$是张量（一阶张量，也称为矢量）}
+\item{$g_{\mu\nu}$本身是张量 （二阶张量）}
+\item{$\partial_\mu\phi$是张量（矢量）}
+\item{克罗内克符号$\delta^{\mu}_{\nu}$是张量}
+\item{度规的逆矩阵$g^{\mu\nu}$是张量}
+\item{如果定义$dx_{\mu} \equiv g_{\mu\nu} dx^{\nu}$，则$dx_\mu$也是张量}
+\item{如果定义$\partial^\mu\phi \equiv g^{\mu\nu}\partial_\mu\phi$，则$\partial^\mu\phi$是张量}
+\item{如果$T^{\mu\nu}$是二阶张量，则$T^{\mu}_{\mu}$是标量}
+\item{如果$A^{\mu}$和$B^{\mu}$都是矢量，则$A^\mu B^\nu$是二阶张量}
+\end{itemize}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\bch 张量指标的升降\ech}
+\bch
+通过前面的讨论，我们发现张量的坐标可以通过度规$g_{\mu\nu}$和其逆矩阵$g^{\mu\nu}$来升降
+\ech
+{\vskip 0.1in}
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=1in]{jugelizi.png}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+$$F_{\mu\nu} = g_{\mu\rho}g_{\nu\sigma}F^{\rho\sigma}$$
+$$T^{\mu}_{\ \nu\rho} = g^{\mu\sigma} T_{\sigma\nu\rho}$$
+$$g^{\mu}_{\nu} = g^{\mu\rho}g_{\rho\nu} = \delta^{\mu}_{\nu}$$
+\end{minipage}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\bch 张量指标的相乘\ech}
+\bch
+通过前面的讨论，我们发现一个m阶张量和一个n阶张量可以直接相乘生成m+n阶张量。
+\ech
+{\vskip 0.1in}
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=1in]{jugelizi.png}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+\bch
+$dx^\mu dx^\nu$是二阶张量。
+
+$g_{\mu\nu}g^{\rho\sigma}$ 是四阶张量
+\ech
+\end{minipage}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\bch 张量指标的收缩\ech}
+\bch
+通过前面的讨论，我们发现张量的上下指标可以收缩，产生低两阶的张量。
+\ech
+{\vskip 0.1in}
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=1in]{jugelizi.png}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+$$dx^\mu dx_\mu = ds^2$$
+$$g^{\mu}_{\mu} = 4$$
+$$g^{\mu\rho}g_{\rho\nu} = g^{\mu}_{\nu}$$
+\end{minipage}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\bch课堂互动\ech}
+\bch
+如果$\phi$是标量，那么$\partial_\mu\partial_\nu\phi$是张量吗？
+\ech
+\end{frame}
+
+\end{document}

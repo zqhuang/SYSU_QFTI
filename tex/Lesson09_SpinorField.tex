@@ -1,0 +1,197 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Lesson 09 - Spinor Field}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第九课 旋量场
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+
+\begin{frame}
+\chtitle{旋量场的拉氏密度}
+\bch
+上节课我们介绍了旋量的定义。这节课我们考虑一个以时空坐标来标记的旋量场$\psi(x)$。如果取$N$个时空格点的话，则这个场有$4N$个物理自由度张成了场空间。
+\skipline
+
+我们定义$\gamma$矩阵和旋量的初衷是为了凑出方程$(\ii\slashed{\partial} - m) \psi = 0$，结合我们上节课末尾得到的一些标量和矢量的表达式，我们构造出如下的拉氏密度：
+
+$$\lagr = \bar\psi (\ii\slashed{\partial} - m) \psi$$
+
+\skipline
+
+在作业题中我们会证明该拉氏密度是洛仑兹变换下的标量。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{旋量场方程}
+\bch
+拉氏密度中的$\bar\psi$和$\psi$可以看成独立变量，对$\bar\psi$写出Euler-Lagrange方程：
+$$ (\ii\slashed{\partial} - m) \psi = 0 $$
+这就是历史上非常有名的Dirac方程，我们下面会看到，它直接预言了正电子的存在。
+
+\skipline
+对$\psi$写出Euler-Lagrange方程：
+$$-\ii\partial_\mu \bar\psi \gamma^\mu - m \bar\psi = 0$$
+
+\skipline
+讨论：证明这两个方程互相等价，且在洛仑兹变换下不变。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Dirac方程的经典场解}
+\bch
+对$\psi$进行四维傅立叶变换。注意按照习惯我们取三维傅立叶变换的$\nabla \rightarrow \ii \veck $，而四维$k_\mu = ( k_0, -\veck)$，所以四维情况下$\partial_\mu \rightarrow - \ii k_\mu$。于是我们得到Dirac方程的傅立叶空间形式：
+$$ (\slashed{k} - m) \psi = 0$$
+把上式写为
+$$\slashed{k} \psi = m \psi$$
+也就是说$\psi$是矩阵$\slashed{k}$（它是$\gamma$矩阵的线性组合）的本征值为$m$的本征态。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Dirac方程的经典场解}
+\bch
+在上述方程两边乘上$\slashed{k}$，并利用$\slashed{k}^2 = k^\mu k_\mu $ （见上节课内容），我们得到
+$$ (k^\mu k_\mu - m^2) \psi = 0$$
+如果非零解$\psi$存在，则必须有$k^\mu k_\mu = m^2 $ （否则两边除以 $k^\mu k_\mu - m^2$ 即矛盾）。
+
+\skipline
+在满足 $k^\mu k_\mu = m^2$的前提下，我们下面来求Dirac表示下的$\slashed{k}$的本征态。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Dirac方程的经典解}
+\bch
+在求解Dirac方程之前，我们先来推测下解的物理意义。
+
+\skipline
+对固定的三维动量$\veck$，我们可以选取$k_0 = \pm \omega \equiv \pm \sqrt{\veck^2+m^2}$。我们之后会证明，这两种符号选取分别对应了粒子与反粒子。
+\skipline
+
+在Dirac表示下, 所有$\gamma$矩阵都是无迹的，所以$\mathrm{Tr}(\slashed{k}) = 0$。
+\skipline
+
+因为$\slashed{k}^2 = m^2$，$\slashed{k}$只能有本征值$\pm m$。为了满足$\slashed{k}$无迹, 只能是两个本征值（简并）为$m$，另两个为$-m$。也就是说，对固定满足$k^\mu k_\mu = m^2$的四维动量$k$，$\slashed{k}$的本征值为$m$的线性无关的本征态有且仅有2个。这两个本征态分别对应了两个自旋为$s=\pm 1/2$的本征态。
+
+\skipline
+于是，对固定的三维动量$\veck$，我们期待四个解：分别对应电子的两个自旋本征态和正电子的两个自旋本征态。
+\ech
+
+\end{frame}
+
+\begin{frame}
+\chtitle{Dirac方程的经典解}
+\bch
+在Dirac表示下
+
+\begin{equation}
+\slashed{k} -m = 
+\bmat{cc}
+k_0 - m & -\vecsigma\cdot \veck \\
+\vecsigma \cdot \veck & - k^0 - m
+\emat \nonumber
+\end{equation}
+其中$\vecsigma\cdot\veck \equiv k^1\sigma^1 + k^2\sigma^2 + k^3\sigma^3 $。 
+
+
+我们在量子力学里面学过：$\vecsigma \cdot \veck$的本征值为$\pm |k|$，对应的本征态是$\veck$方向自旋为$\pm 1/2$的态$\zeta_{\veck,s}$ ($s=\pm 1/2$)。也就是说$(\vecsigma\cdot\veck)\zeta_{\veck,s} = (2s)  |\veck| \zeta_{\veck,s}$。 
+
+为了得到自旋为$s$的旋量解，我们大胆假设$\psi$可以写成上下两个$\zeta_s$的组合：
+\begin{equation}
+\psi_s = 
+\bmat{c}
+\zeta_{\veck,s} \cos\theta \\
+\zeta_{\veck,s} \sin\theta
+\emat\nonumber
+\end{equation}
+其中$\theta$待定。上式代入$(\slashed{k} - m) \psi_s = 0$，得到：
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Dirac方程的经典解}
+\bch
+$$(k_0-m)\cos\theta - 2s |\veck| \sin\theta = 0$$
+和
+$$ 2s|\veck| \cos\theta - (k_0+m) \sin\theta = 0$$
+要存在$\theta$使上面两式同时成立的充分必要条件是$(2s)^2 |\veck|^2 + m^2 = k_0^2$。显然这个条件是满足的。
+
+\skipline
+我们解出
+
+$$\theta = (2s) \tan^{-1} \frac{k_0-m}{|\veck|} = (2s) \tan^{-1} \frac{|\veck|}{k_0+m}$$
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{质量为零的旋量场}
+\bch
+如果$m = 0$，则 $k_0 = \pm |\veck|$， $\theta = (2s)\mathrm{sgn}(k_0)\frac{\pi}{4}$
+
+先来考虑正粒子也就是$\mathrm{sgn}(k_0) = 1$的情况。
+
+\begin{equation}
+\psi_s =  \bmat{c}
+\frac{1}{\sqrt{2}} \zeta_{\veck,s} \\
+\frac{2s}{\sqrt{2}} \zeta_{\veck,s} \nonumber
+\emat
+\end{equation}
+
+回忆上节课所说的左旋投影算符$P_L \equiv \frac{1}{2}(1-\gamma^5)$和右旋投影算符$P_R\equiv \frac{1}{2}(1+\gamma^5)$
+
+容易验证$P_R \psi_{1/2} = \psi_{1/2}$, $P_L\psi_{-1/2} = \psi_{-1/2}$，以及$P_R \psi_{-1/2} = P_L \psi_{1/2}= 0$。也就是说，$P_R$和$P_L$分别是自旋$\pm 1/2$的投影算符。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{反粒子}
+\bch
+在讨论反粒子解之前，我们必须先理解$k_0 = -\omega$（负能量)是什么意思。
+
+
+\skipline
+之后我们会看到，可以把产生一个$k_0 = -\omega$的动量为$\veck$自旋为$s$的粒子等效于湮灭一个$k_0 = \omega$,动量为$-\veck$自旋为$-s$的粒子。显然，对于谐振子这样做是不行的，因为把产生和湮灭算符的物理意义进行交换立刻就破坏了它们的对易关系$[\hata,\adag]=1$。那么是否旋量场的粒子遵从不同的对易关系呢？
+
+\skipline
+
+我们下节课要讨论这些问题。
+\ech
+\end{frame}
+
+
+\end{document}
+

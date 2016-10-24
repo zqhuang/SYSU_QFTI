@@ -1,0 +1,91 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Homework 3}
+  \author{}
+  \date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第三次课后作业 （共八次，每次2.5分）
+
+交作业时间: 10月24日，星期一，13：30pm
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题(0.5分）}
+\bch
+证明自由$U(1)$规范场$A^\mu$在库仑规范$A^0=0, \nabla\cdot \vecA=0$下的Hamilton密度为
+$$\hamil = \frac{1}{2}|\dot\vecA|^2 + \frac{1}{2}|\nabla\times \vecA|^2$$
+并证明在傅立叶空间Hamilton量可以写成
+$$H = \int d^3\veck\left[\frac{1}{2}|\dot\vecA|^2 + \frac{1}{2}|\veck \times \vecA|^2\right]$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题(0.5分）}
+\bch
+利用上题的Hamilton量的表达式以及我们在课上得到的$\hat{\vecA}$在傅立叶空间的解：
+$$\hat{\vecA} = \frac{1}{\sqrt{2|\veck|d^3\veck}}\sum_{s=\pm 1} \vece_{\veck,s}\left(\hata_{\veck, s} + \adag_{-\veck, s}\right)$$
+证明Hamilton量的算符表达式为
+$$\hat{H} = \sum_{\veck} \sum_{s=\pm 1}(\hat{N}_{\veck,s}+1/2)|\veck|$$
+其中 $\hat{N}_{\veck, s} \equiv \adag_{\veck,s}\hata_{\veck, s}$是动量为$\veck$，自旋为$s$的粒子数算符。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题(0.5分）}
+\bch
+证明自由$U(1)$规范场$A^\mu$在库仑规范$A^0=0, \nabla\cdot \vecA=0$下的动量
+$$P^i = \int d^3\vecx\, (\partial^0\vecA \cdot \partial^i\vecA)$$
+是守恒量。并把它写成傅立叶空间的积分。
+\skipline
+\skipline
+
+提示：用Nother定理和三个方向的空间平移不变性。 
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第4题(0.5分）}
+\bch
+利用上题的动量$P^i$的表达式以及我们在课上得到的$\hat{\vecA}$在傅立叶空间的解：
+$$\hat{\vecA} = \frac{1}{\sqrt{2|\veck|d^3\veck}}\sum_{s=\pm 1} \vece_{\veck,s}\left(\hata_{\veck, s} + \adag_{-\veck, s}\right)$$
+证明动量$\vecP \equiv (P^1, P^2, P^3)$的算符表达式为
+$$\hat{\vecP} = \sum_{\veck}\sum_{s = \pm 1} \veck \hat{N}_{\veck, s}$$
+其中 $\hat{N}_{\veck, s} \equiv \adag_{\veck,s}\hata_{\veck, s}$是动量为$\veck$，自旋为$s$的粒子数算符。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第5题(0.5分）}
+\bch
+对旋量$\psi$，证明$\bar\psi\slashed{\partial}\psi$是洛仑兹变换下的标量。
+\ech
+\end{frame}
+
+
+\end{document}

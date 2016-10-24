@@ -1,0 +1,271 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Homework 1 solution}
+  \author{}
+  \date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第一次课后作业参考答案
+\skipline
+\skipline
+
+如发现参考答案有错误请不吝告知（微信zhiqihuang或邮箱huangzhq25@sysu.edu.cn)
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题：题目和思路}
+\bch
+题目：若算得的截面为$\sigma = 10^{-3}/m_W^2$, $m_W \approx 80 GeV$是$W^{\pm}$的粒子质量，试换算出以$\mathrm{cm}^2$为单位的截面值。若算得的寿命的$\tau = 100/m_w$，试问等于多少秒？
+
+\skipline
+思路：这道题要求把自然单位制表示的物理量用普通单位制表示出来。首先要理解$\sigma = 10^{-3}/m_W^2$这种自然单位制写法的含义：它表示在普通单位制里选取适当的$p$,$q$可以使$\sigma = 10^{-3}/m_W^2 c^p\hbar^q$，在自然单位制下规定$c=\hbar=1$所以可以不写$c^p\hbar^q$。我们只要求出$p$和$q$就能知道$\sigma$在普通单位制下的表示。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题：第一种解法}
+\bch
+设在普通单位制下$\sigma = 10^{-3}/m_W^2 c^p \hbar^q$。我们用$M$, $L$, $T$分别表示普通单位制下的质量，长度，时间量纲。则无论是按”截面”的字面意思，还是按题目要求（普通单位制下用$\mathrm{cm}^2$表示)，都能确定左边是一个面积，量纲为$L^2$；右边的量纲为$M^{-2} (LT^{-1})^p(ML^2T^{-1})^q = M^{q-2}L^{p+2q}T^{-p-q}$。很显然要两边在普通单位制下量纲一致必须有$p=-2$, $q=2$。 所以
+$$\sigma = 10^{-3}\hbar^2 /m_W^2/c^2$$
+注意题目给的$m_W$以能量单位$\mathrm{GeV}=1.6022\times 10^{-10}J$表示，实际上是普通单位制里的$m_Wc^2$。所以我们把上式写成：
+\begin{eqnarray}
+\sigma &=& 10^{-3}\hbar^2 c^2/(m_Wc^2)^2 \newl
+       &=& 10^{-3}\times \frac{(1.0546 \times 10^{-34} \mathrm{J\cdot s})^2(2.9979\times10^{10}\SIcm\,\SIs^{-1})^2}{(80\times 1.6022 \times 10^{-10} \mathrm{J})^2} \newl
+       &=& 6.08\times 10^{-35} \mathrm{cm}^2 \nonumber
+\end{eqnarray}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题：第一种解法(续）}
+\bch
+同样，可以假设$\tau = 100/m_W c^p \hbar^q$。左边的量纲为$T$，右边的量纲为$M^{q-1}L^{p+2q}T^{-p-q}$。于是$p=-2$, $q=1$。
+\begin{eqnarray}
+\tau &=& 100 \hbar/(m_Wc^2) \newl
+     &=& 100 \times (1.0546\times 10^{-34} \mathrm{J\cdot s}) /(80\times 1.6022 \times 10^{-10} \mathrm{J}) \newl
+     &=& 8.23 \times 10^{-25}\SIs \nonumber
+\end{eqnarray}
+
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题：第二种解法}
+\bch
+在自然单位制下可以任意地乘或除$c$和$\hbar$。所以我们总结出：
+\begin{itemize}
+\item{显然时间和长度可以用乘或除$c$来互相转化。}
+\item{根据$E=mc^2$,能量和质量可以通过乘或除$c^2$互相转化。}
+\item{根据量子力学的能量测不准原理$\Delta E\Delta t \gtrsim \hbar$, 时间和能量可以用$\hbar$去除相互转化。}
+\item{根据量子力学的动量测不准原理$\Delta (mv) \Delta x \gtrsim \hbar$, $v$和$c$量纲相同，所以质量和长度可以用$\hbar/c$去除互相转化。}
+\end{itemize}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题：第二种解法(续)}
+\bch
+我们先把$\SIGeV$（能量）换算成时间：
+$$ 1 \SIGeV = \frac{1.6022\times 10^{-10}J}{1.0546\times 10^{-34}\SIJ\cdot\SIs} = \frac{1}{6.582\times 10^{-25}\SIs}$$
+然后把时间转化为长度。
+$$ 6.582\times 10^{-25}\SIs =  (6.582\times 10^{-25}\SIs)  (2.9979\times 10^{10} \SIcm/\SIs) = 1.973\times 10^{-14} \SIcm $$
+所以第一问答案为：
+$$\sigma = \frac{10^{-3}}{80^2} \SIGeV^{-2} = \frac{10^{-3}}{80^2}\times  (1.973\times 10^{-14} \SIcm)^2 = 6.08\times 10^{-35}\SIcm^2$$
+第二问答案为：
+$$\tau = 100/80 \SIGeV^{-1} = 1.25 \times (6.582\times 10^{-25}\SIs) = 8.23\times 10^{-25}\SIs$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题: 题目和思路}
+\bch
+题目：证明任意四维时空坐标系$(x^0, x^1, x^2, x^3)$的积分元$\sqrt{-g}d^4x$是一个标量。其中$g$是度规矩阵$g_{\mu\nu}$的行列式的简写，$d^4x$是积分元$dx^1dx^2dx^3dx^4$的简写。
+\skipline
+
+思路：$g_{\mu\nu}$矩阵的变换规则按张量定义可以写出来。$d^4x$的变化在微积分课程里学过:多元函数积分进行变量替换时，积分元要乘Jacobian行列式的绝对值的倒数。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题解答}
+\bch
+假设坐标变换为$x \rightarrow \tilde{x}$，则Jacobian矩阵为$J^\mu_{\,\nu} = \frac{\partial \tilde{x}^\mu}{\partial x^\nu}$， 其行列式简写为$\det{J}$。按多元函数积分的变量替换规则，
+\begin{equation}
+ d^4x = |\det{J}|^{-1} d^4\tilde{x} \label{eq:dd}
+\end{equation}
+张量$g_{\mu\nu}$的变换规则为$ g_{\mu\nu} =  \frac{\partial \tilde{x}^\alpha}{\partial x^\mu} \frac{\partial \tilde{x}^\beta}{\partial x^\nu} \tilde{g}_{\alpha\beta} $
+
+把$g_{\mu\nu}$矩阵简写为$G$，上式可写成矩阵乘法$ G = J^T \tilde{G} J$
+
+两边取行列式，并根据“积的行列式等于行列式的积”，以及“矩阵转置不改变行列式”，得到:
+\begin{equation}
+\det{G} = |\det{J}|^2 \det{\tilde{G}} \label{eq:gg}
+\end{equation}
+结合\eqref{eq:dd}和\eqref{eq:gg}即得所求证的结论$\sqrt{-g}d^4x = \sqrt{-\tilde{g}}d^4\tilde{x}$。
+
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{第3题题目和思路}
+\bch
+题目： 考虑一维空间x和一维时间t构成的时空里的标量场$\phi(x,t)$，若其作用量为
+$$ S = \int dx dt \   \frac{1}{2} \left[\left(\frac{\partial \phi}{\partial t}\right)^2 - \left(\frac{\partial \phi}{\partial x}\right)^2 - V(\phi)\right]\, ,$$
+其中$V(\phi)$为给定的势能函数。试用求作用量稳定点的方法推导$\phi(x, t)$的运动方程并将结果与Euler-Lagrange方程做比较。
+
+\skipline
+思路：仿照课上的离散化方法取作用量的稳定点。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题解答}
+\bch
+把时间和空间均进行离散化。固定格点的间隔$dx$和$dt$。该物理系统的所有自由度为$\phi(x+idx, t+j dt)$ ($i, j = 0, \pm 1, \pm 2\ldots$)。
+作用量可以写成离散求和:
+\begin{eqnarray}
+\frac{S}{dx\,dt} &=& \frac{1}{2}\left(\frac{\phi(x, t+dt) - \phi(x,t)}{dt}\right)^2 + \frac{1}{2}\left(\frac{\phi(x, t) - \phi(x,t-dt)}{dt}\right)^2 \newl
+ &-&\frac{1}{2}\left(\frac{\phi(x+dx, t) - \phi(x,t)}{dx}\right)^2 - \frac{1}{2}\left(\frac{\phi(x, t) - \phi(x-dx,t)}{dx}\right)^2 \newl
+ &-&\frac{1}{2}V(\phi(x, t)) \newl
+ &+&\ldots \nonumber
+\end{eqnarray}
+其中$\ldots$代表所有跟$\phi(x, t)$这个自由度无关的项。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题解答（续）}
+\bch
+作用量对$\phi(x, t)$求偏导并令其为零，得到
+\begin{eqnarray}
+0 &=& \frac{1}{dt} \left [ -\frac{\phi(x, t+dt) - \phi(x,t)}{dt} + \frac{\phi(x, t) - \phi(x,t-dt)}{dt}\right]  \newl
+  && -\frac{1}{dx}\left [- \frac{\phi(x+dx, t) - \phi(x,t)}{dx} + \frac{\phi(x, t) - \phi(x-dx,t)}{dx}\right] \newl
+  && -\frac{1}{2}V'\left(\phi(x, t)\right) \newl 
+  &=& \frac{1}{dt}\left[-\partial_t\phi(x, t+dt/2) + \partial_t\phi(x, t-dt/2)\right] \newl
+   &&- \frac{1}{dx}\left[-\partial_x\phi(x+dx/2, t) + \partial_x\phi(x-dx/2, t)\right] \newl
+   &&-  \frac{1}{2} V'\left(\phi(x, t)\right)  \newl
+  &=& (- \partial_t^2 + \partial_x^2 )\phi -\frac{1}{2} V'(\phi) \nonumber 
+\end{eqnarray}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题解答（续）}
+\bch
+最终得到运动方程：$(\partial_t^2 - \partial_x^2 )\phi + \frac{1}{2} V'(\phi) = 0 \,.$，和Euler-Lagrange方程一致。
+\skipline
+
+注意：一般习惯上写拉氏密度时把$V$单独拿出来不乘$1/2$因子。
+$$\lagr = \frac{1}{2} \left[\left(\frac{\partial \phi}{\partial t}\right)^2 - \left(\frac{\partial \phi}{\partial x}\right)^2\right] - V(\phi) $$
+按这种定义推导出来的运动方程就是$(\partial_t^2 - \partial_x^2 )\phi + V'(\phi) = 0 \,.$
+
+题目采取了比较奇怪的定义，虽然逻辑上完全没有问题，但会对以后阅读文献有不好影响。这是因为我出题不够仔细。对此非常抱歉。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第4题题目和思路}
+\bch
+题目：谐振子
+$$ S = \int_{-\infty}^\infty \frac{m}{2}\left[(\frac{d\phi}{dt})^2 - \omega^2\phi^2\right] dt$$
+把时间维特殊化以后就只有一个自由度$\phi$。写出$\phi$对应的正则动量$\pi$，系统的Hamilton量，以及Hamilton方程。试把$\pi$从两个Hamilton方程中消去，得到的结果和Euler-Lagrange方程一致吗？
+
+\skipline
+思路：世上再也没有比套公式更令人愉快的事了。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第4题解答}
+\bch
+$$\pi = \frac{\partial L}{\partial (\dot\phi)} = m\dot\phi \, $$
+$$ H = \dot\phi \pi - L = \frac{\pi^2}{2m} +  \frac{1}{2}m\omega^2\phi^2 \, $$
+Hamilton方程：
+$$\dot\pi = -\frac{\partial H}{\partial\phi} = - m\omega^2\phi$$  
+$$\dot\phi = \frac{\partial H}{\partial \pi} = \frac{\pi}{m} $$
+消去$\pi$后得到,
+$$\ddot\phi + \omega^2\phi = 0$$
+和Euler-Lagrange方程相同。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第5题题目和思路}
+\bch
+作用量
+$$S = \int d^4x\ \lagr(\phi, \partial_\mu\phi)\,.$$
+在坐标平移下显然具有不变性。由此用Noether定理推导场$\phi$的能量动量守恒方程。
+
+\skipline
+
+思路：能量动量守恒是由时间平移和空间平移对称性导致的。所以我们考虑四种无穷小变换$x^\mu \rightarrow x^\mu + \epsilon^r \delta_r^\mu$ ($r = 0, 1, 2, 3$)。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第5题解答}
+\bch
+考虑无穷小变换（即坐标系不动，时空以及时空里的场一起相对于坐标系平移）$x^\mu \rightarrow x^\mu + \epsilon^r \delta_r^\mu$（这里不对$r$求和，分别考虑固定$r=0,1,2,3$时的守恒流）。
+
+移动后在坐标$x^\mu$处的$\phi$实际上是移动前在$x^\mu - \epsilon^r \delta_r^\mu$处的$\phi$。所以$\phi$的变化为:
+$$\delta\phi = - \epsilon^r \delta_r^\mu \partial_\mu\phi$$
+即
+$$\frac{\delta\phi}{\delta\epsilon^r} = -\delta_r^\mu \partial_\mu \phi = -\partial_r\phi$$
+
+\skipline
+
+同理
+$$\delta\lagr = - \epsilon^r \delta_r^\mu \partial_\mu\lagr$$
+对固定的$r$而言$ \delta_r^\mu$是不依赖于坐标$x^\mu$的常数，所以上式可写成
+$$\delta\lagr =\epsilon^r \partial_\mu (-  \delta_r^\mu \lagr)$$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第5题解答(续)}
+\bch
+根据Noether定理，有
+$$j^\mu_r = - \delta_r^\mu \lagr +  \partial_r \phi\frac{\partial \lagr}{\partial (\partial_\mu \phi)}$$
+为守恒流。
+
+写成更对称的“能量动量张量”形式：
+$$T^{\mu\nu} = \frac{\partial \lagr}{\partial (\partial_\mu \phi)}\partial^\nu\phi- \lagr g^{\mu\nu}$$
+满足
+$$\partial_\mu T^{\mu\nu} = 0$$
+积分$\int T^{00} d^3\vecx$, $\int T^{0i}d^3\vecx$ ($i=1,2,3$)分别对应总能量和三个方向的动量。它们都是守恒的。
+\ech
+\end{frame}
+
+\end{document}

@@ -1,0 +1,91 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Homework 2}
+  \author{}
+  \date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第二次课后作业 （共八次，每次2.5分）
+
+交作业时间: 10月10日，星期一，13：30pm
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题(0.5分）}
+\bch
+对质量为$m$的自由实标量场$\phi$，四维动量$k$满足$k^0 = \omega \equiv \sqrt{\veck^2+m^2}$，其中$\veck\equiv (k^1, k^2, k^3)$为三维动量。对任意洛仑兹变换下不变的函数$f(k)$，证明积分$\int \frac{d^3\veck}{2\omega} f(k)$ 也是洛仑兹变换下的不变量。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题(0.5分）}
+\bch
+对质量为$m$的自由实标量场$\phi$，证明四维时空下的任意两点场算符的对易$[\hatphi(x),\hatphi(x')]$是洛仑兹变换下的不变量。(提示：利用$\hatphi$的算符表达式和第1题结论。）
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题(0.5分）}
+\bch
+质量为$m$的自由复标量场，
+$$\lagr = \partial_\mu\phi^\dagger \partial^\mu \phi - m^2\phi^\dagger\phi\, $$
+把$\phi$和$\phi^\dagger$分别看作独立自由度，它们对应的正则动量分别为
+$$\pi = \frac{\partial \lagr}{\partial \dot\phi} = \dot\phi^\dagger, \,\pi^\dagger = \frac{\partial \lagr}{\partial \dot\phi^\dagger} = \dot\phi $$
+于是Hamilton密度为
+$$\hamil = \dot\phi^\dagger \pi^\dagger +\dot\phi \pi - \lagr = \pi^\dagger \pi + \nabla\phi^\dagger \cdot\nabla\phi + m^2\phi^\dagger \phi $$
+我们在课堂上推到了量子化后的$\phi$为
+$$\hatphi(x) = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \left(\hata_{\veck} e^{-ik_\mu x^\mu} + \bdag_{\veck}e^{ik_\mu x^\mu}\right) $$
+试求量子化后的总Hamilton量$\hat{H}$.
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第4题(0.5分）}
+\bch
+考虑和规范场耦合的复标量场的拉氏密度：
+$$\lagr = (D^\mu\phi)^\dagger D_\mu \phi - m^2\phi^\dagger \phi  - \frac{1}{4}\Fup\Fdown$$
+利用Euler-Lagrange方程
+$$\partial_\mu \Fup = j^\nu$$
+证明$j_\mu$是守恒流.
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第5题(0.5分）}
+\bch
+关于三维空间转动算符
+\begin{itemize}
+\item{证明相反方向的角动量算符相差一个负号$\hat{J}_{-\vecn} = - \hatJn$}
+\item{因为绕固定轴转动$2\pi$的没有任何效果，所以转动算符$e^{-2\pi\ii\hatJn}=1$，由此证明$\hatJn$的本征值一定是整数。}
+\item{三个形成右手正交系的方向$\vecn_1$, $\vecn_2$, $\vecn_3$,对应的转动算符分别为$\hatj{1} $, $\hatj{2} $, $\hatj{3}$，证明$\hatj{1}^2+\hatj{2}^2+\hatj{3}^2 = 2$。.}
+\end{itemize}
+\ech
+\end{frame}
+
+
+\end{document}
