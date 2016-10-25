@@ -2,5 +2,5 @@
 filename=`basename ${1}`
 cd tex
 pdflatex ${filename} 
-cp ${filename/\.tex/\.pdf} ../
+mv ${filename/\.tex/\.pdf} ../
 cd ..
