@@ -135,7 +135,7 @@ $$|\psi\rangle_{t_2} = \torder{ e^{-\ii\int_{t_1}^{t_2} \hatH_I(t) dt} }|\psi\ra
 
 \begin{frame}
 \bch
-是不是觉得这种排序什么的很好玩？
+是不是觉得这种排序什么的很神奇？
 
 那我们再来一种……
 \ech
@@ -172,6 +172,12 @@ $$\rorder{\hata_{\veck_1}\adag_{\veck_2}\bdag_{\veck_3}\hatb_{\veck_4}\adag_{\ve
 \ee
 
 注意：{\bf 收缩是普通的数}
+
+如果是隔着其他算符收缩，则需要添加费米子$(\pm 1)$因子，例如
+\be
+\contraction{}{A}{BCD}{E}ABCDEF = (\pm 1)\contraction{}{A}{}{E}AEBCDF
+\ee
+其中$\pm 1$因子当且仅当$E$为费米子且$B,C,D$中有奇数个费米子算符时取到$-1$。
 
 \ech
 \end{frame}
@@ -272,8 +278,8 @@ $$\torder{ABC} = \rorder{ABC +  \contraction{}{A}{}{B}ABC + \contraction{}{A}{B}
 \skipline
 
 记这串算符乘积为 $X_1X_2\ldots X_n$，不妨设其中时间最早的算符为$X_i$ (如果有多于一个时间最早的则取最右边那个)。显然有
-$$\torder{X_1X_2\ldots X_n} = \pm \torder{X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n} X_i$$  
-前面的$\pm$符号：当且仅当$X_i$是费米子的产生或湮灭算符，且$X_{i+1}X_{i+2}\ldots X_n$中有奇数个费米子的产生或湮灭算符时才取"$-$"号
+$$\torder{X_1X_2\ldots X_n} = \theta_F \torder{X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n} X_i$$  
+前面的符号因子$\theta_i = \pm 1$。我们更一般地对$j\ge i$规定$theta_j = \pm 1$符号：当且仅当$X_i$是费米子的产生或湮灭算符，且$X_{j+1}X_{j+2}\ldots X_n$中有奇数个费米子的产生或湮灭算符时才取$\theta_j = -1$.
 \skipline
 
 按假设Wick定理对n-1个算符成立，$ \torder{X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n}$就等于$X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n$含一切可能收缩的正规乘积的和。
@@ -285,20 +291,12 @@ $$\torder{X_1X_2\ldots X_n} = \pm \torder{X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n}
 \chtitle{Wick定理的证明}
 \bch
 {\small
-任取一项$X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n$含某些收缩的正规乘积，不妨设所有收缩给出的因子为$\lambda$, 剩下的未收缩掉的正规乘积为
-$$\rorder{X_{j_1}X_{j_2}\ldots X_{j_k} X_{j_{k+1}} \ldots X_{j_m}}$$
-其中$1\le j_1<j_2<\ldots<j_k<i < j_{k+1}< \ldots < j_m\le n$。
-\skipline
-
-我们来证明
-\bea
-&&\rorder{X_{j_1}X_{j_2}\ldots X_{j_k} X_{j_{k+1}} \ldots X_{j_m}}X_i \newl
-&=& \rorder{X_{j_1}X_{j_2}\ldots X_{j_k}X_i X_{j_{k+1}} \ldots X_{j_m}} \newl
-&& + \rorder{\contraction{}{X_{j_1}}{X_{j_2}\ldots X_{j_k}}{X_i}X_{j_1}X_{j_2}\ldots X_{j_k}X_i X_{j_{k+1}} \ldots X_{j_m}} \newl
-&& + \rorder{\contraction{X_{j_1}}{X_{j_2}}{\ldots X_{j_k}}{X_i}X_{j_1}X_{j_2}\ldots X_{j_k}X_i X_{j_{k+1}} \ldots X_{j_m}}\newl
-&& \ldots \newl
-&& + \rorder{\contraction{X_{j_1}X_{j_2}\ldots X_{j_k}}{X_i}{X_{j_{k+1}}\ldots}{X_{j_m}}X_{j_1}X_{j_2}\ldots X_{j_k}X_i X_{j_{k+1}}\ldots X_{j_m}}\newl
-\eea
+任取一项 $\theta_F X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n$含某些收缩的正规乘积，在右边乘以$X_i$，并考虑由$X_i$带来的新的收缩的贡献。分两种情况讨论：
+\begin{itemize}
+\item{若$X_i$是湮灭算符，我们需要在正则乘积中把$X_i$移动到所有满足$j>i$的湮灭算符$X_j$的左边，就还原到$\rorder{X_1X_2\ldots X_{i-1}X_iX_{i+1}\ldots X_n}$加一堆收缩的形式（这样顺便把$\theta_i$因子又抵消了）。然后再证明由$X_i$带来的新的收缩均为零：首先湮灭算符之间的收缩是零。其次对于产生算符$X_j$, 因编时序和正则序相同，$X_j$与$X_i$的收缩为零。}
+\item{若$X_i$是产生算符，则需要把$X_i$移到所有湮灭算符和所有满足$j>i$的产生算符$X_j$的左边。对于产生算符$X_j$, $X_j$与$X_i$的收缩为零，交换$X_i$与$X_j$次序也仅仅产生$\pm 1$的因子（累计的$\pm 1$因子最后和$\theta_i$抵消，可忽略它的效果）。对湮灭算符$X_j$, $X_i$与$X_j$的收缩为$\pm(X_jX_i - X_iX_j)$, 恰好是把$X_i$从$X_j$右边换到$X_j$左边时产生的差（同样符号因子可忽略)。这样当我们完成移动时，恰好需要补偿所有由加入$X_i$带来的新的收缩。}
+\end{itemize}
+综上我们完成了归纳证明。
 }
 \ech
 \end{frame}
@@ -328,8 +326,8 @@ $$ H_0 = H_{\rm free},\ H_I = \int d^3\vecx\, \left(\frac{g}{3!}\phi^3 + \frac{\
 \skipline
 
 求两个动量为$\vecp_1$, $\vecp_2$的粒子发生散射，变为两个动量为$\vecp_3$, $\vecp_4$的粒子的概率幅。
-$$\calM T/V \delta(p_1+p_2-p_3-p_4)d^4k= \langle \vecp_3, \vecp_4|  e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}|\vecp_1,\vecp_2\rangle$$
-如上节课末尾所讲，我们已经把$\delta(p_1+p_2-p_3-p_4)d^4k$引入了左边的定义式。
+$$\calM T/V \delta(p_1+p_2-p_3-p_4)d^4k= \langle \vecp_3, \vecp_4| \torder{ e^{-\ii\int_{-\infty}^\infty \hat{H}_I dt}}|\vecp_1,\vecp_2\rangle$$
+如上节课末尾所讲，我们已经把$\delta(p_1+p_2-p_3-p_4)d^4k$引入了左边的定义式。同时，我们修正了Interaction表象的态的时间演化公式。
 \skipline
 
 我们仍假设这四个动量$\vecp_1$, $\vecp_2$, $\vecp_3$, $\vecp_4$互不相同，即初态和末态粒子都是可以区分的。
@@ -351,6 +349,17 @@ $$ -\frac{g^2}{2(3!)^2} \int d^4x\, \int d^4y\,\langle \vecp_3, \vecp_4| \torder
 
 \ech
 \end{frame}
+
+\begin{frame} 
+\chtitle{Feynman传播子} 
+\bch
+利用Wick定理把编时乘积写成正则乘积之和。显然，只要考虑两个$\hat\phi$被收缩，剩下的四个$\hat\phi$分别提供动量为$\vecp_1$, $\vecp_2$的湮灭算符和动量为$\vecp_3$和$\vecp_4$的产生算符。为此，我们先来计算两个$\hatphi$
+的收缩：
+$$\contr{\hatphi(x)}{\hatphi(y)}$$
+它就是大名鼎鼎的“Feynman传播子”
+\ech
+\end{frame}
+
 
 \end{document}
 
