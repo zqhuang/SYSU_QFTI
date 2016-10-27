@@ -117,7 +117,7 @@ $$\torder{\hat{A}(t_3)\hat{B}(t_2)\hat{C}(t_4)\hat{D}(t_1)} = \hat{D}(t_1)\hat{A
 \ee
 }}
 \item{再利用上面结论证明
-$$\frac{d\,\torder{e^{\int_{t_0}^t\hat{O}(t')dt'}}}{dt} = \hat{O}(t)\,e^{\int_{t_0}^t\hat{O}(t')dt'}$$
+$$\frac{d\,\torder{e^{\int_{t_0}^t\hat{O}(t')dt'}}}{dt} = \hat{O}(t)\,\torder{e^{\int_{t_0}^t\hat{O}(t')dt'}}$$
 }
 \end{itemize}
 \ech
@@ -471,8 +471,8 @@ $$\contr{\hatphi(x)}{\hatphi(y)}$$
 \emini
 {\scriptsize
 \bea
-&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^6} \int d^4x\, \int d^4y\, e^{-\ii (p_1+p_2) x + (p_3+p_4)y} \contr{\hatphi{x}}{\hatphi(y)} \newl
-&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^{10}} \int d^4x \int d^4y \int d^4 p\, e^{-\ii (p_1+p_2) x + (p_3+p_4)y} \frac{\ii e^{-ip(x-y)}}{p^2-m^2+i\epsilon} \newl
+&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^6} \int d^4x\, \int d^4y\, e^{-\ii (p_1+p_2) x + \ii(p_3+p_4)y} \contr{\hatphi{x}}{\hatphi(y)} \newl
+&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^{10}} \int d^4x \int d^4y \int d^4 p\, e^{-\ii (p_1+p_2) x + \ii(p_3+p_4)y} \frac{\ii e^{-ip(x-y)}}{p^2-m^2+i\epsilon} \newl
 && = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^2} \int d^4 p\, \delta(p_1+p_2+p)\delta(p_3+p_4+p) \frac{\ii}{p^2-m^2+i\epsilon} \newl
 && = (-\ii g)^2 \frac{1}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}} \frac{\ii}{(p_1+p_2)^2-m^2}  \left(\frac{T}{V} \delta(p_1+p_2-p_3-p_4)d^4k\right) \newl
 \eea
@@ -489,7 +489,7 @@ $$\contr{\hatphi(x)}{\hatphi(y)}$$
 \includegraphics[width=2.5in]{feynman2_s_channel_diagram.png}
 \begin{itemize}
 \item{外线给出因子$\frac{1}{\sqrt{2\omega}}$}
-\item{顶点给出因子$-ig$}
+\item{顶点给出因子$-\ii g$}
 \item{内线给出因子$\frac{\ii}{q^2-m^2}$}
 \end{itemize}
 \ech
