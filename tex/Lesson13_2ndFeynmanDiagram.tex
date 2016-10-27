@@ -412,19 +412,19 @@ $$\contr{\hatphi(x)}{\hatphi(y)}$$
 {\small
 上面的两种情况可以统一写为：
 \be
- \contr{\hatphi(x)}{\hatphi(y)} = \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-ik(x-y)}}{k^2-m^2+\ii\epsilon} 
+ \contr{\hatphi(x)}{\hatphi(y)} = \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-\ii k(x-y)}}{k^2-m^2+\ii\epsilon} 
 \ee
 其中$\epsilon$为趋向于$0^+$的正数。
 
-上式只要用留数定理对$k_0$进行积分即可简单证明。例如当$x^0<y^0$时，$|e^{-ik(x-y)}|$在$k_0$的上半平面有上限。故可以把$(-\infty, \infty)$的积分路径补充上半平面的大圆成为围道积分。在这个围道里只有$k_0 = -\omega $一个奇点。在该奇点的留数为$(2\pi \ii)\frac{e^{i\omega(x^0-y^0)+ \ii \veck\cdot(\vecx-\vecy)}}{-2\omega}$
+上式只要用留数定理对$k_0$进行积分即可简单证明。例如当$x^0<y^0$时，$|e^{-\ii k(x-y)}|$在$k_0$的上半平面有上限。故可以把$(-\infty, \infty)$的积分路径补充上半平面的大圆成为围道积分。在这个围道里只有$k_0 = -\omega $一个奇点。在该奇点的留数为$(2\pi \ii)\frac{e^{i\omega(x^0-y^0)+ \ii \veck\cdot(\vecx-\vecy)}}{-2\omega}$
 
 
 \be
- \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-ik(x-y)}}{k^2-m^2+\ii\epsilon} = \frac{1}{(2\pi)^3} \int \frac{d^3\veck}{2\omega}\, e^{\ii\omega(x^0-y^0)+\ii \veck\cdot(\vecx-\vecy)}
+ \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-\ii k(x-y)}}{k^2-m^2+\ii\epsilon} = \frac{1}{(2\pi)^3} \int \frac{d^3\veck}{2\omega}\, e^{\ii\omega(x^0-y^0)+\ii \veck\cdot(\vecx-\vecy)}
 \ee
 上式是对$\veck$全空间积分，所以可以把$\veck$换成$-\veck$，得到
 \be
- \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-ik(x-y)}}{k^2-m^2+\ii\epsilon}  = \frac{1}{(2\pi)^3} \int \frac{d^3\veck}{2\omega}\, e^{\ii k(x-y)}
+ \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-\ii k(x-y)}}{k^2-m^2+\ii\epsilon}  = \frac{1}{(2\pi)^3} \int \frac{d^3\veck}{2\omega}\, e^{\ii k(x-y)}
 \ee
 }
 \ech
@@ -472,7 +472,7 @@ $$\contr{\hatphi(x)}{\hatphi(y)}$$
 {\scriptsize
 \bea
 && = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^6} \int d^4x\, \int d^4y\, e^{-\ii (p_1+p_2) x + \ii(p_3+p_4)y} \contr{\hatphi{x}}{\hatphi(y)} \newl
-&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^{10}} \int d^4x \int d^4y \int d^4 p\, e^{-\ii (p_1+p_2) x + \ii(p_3+p_4)y} \frac{\ii e^{-ip(x-y)}}{p^2-m^2+i\epsilon} \newl
+&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^{10}} \int d^4x \int d^4y \int d^4 p\, e^{-\ii (p_1+p_2) x + \ii(p_3+p_4)y} \frac{\ii e^{-\ii p(x-y)}}{p^2-m^2+i\epsilon} \newl
 && = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^2} \int d^4 p\, \delta(p_1+p_2+p)\delta(p_3+p_4+p) \frac{\ii}{p^2-m^2+i\epsilon} \newl
 && = (-\ii g)^2 \frac{1}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}} \frac{\ii}{(p_1+p_2)^2-m^2}  \left(\frac{T}{V} \delta(p_1+p_2-p_3-p_4)d^4k\right) \newl
 \eea
