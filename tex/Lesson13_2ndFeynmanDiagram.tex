@@ -74,6 +74,7 @@ $$\torder{\hat{A}(t_3)\hat{B}(t_2)\hat{C}(t_4)\hat{D}(t_1)} = \hat{D}(t_1)\hat{A
 \begin{itemize}
 \item{如果编时算符作用于多个乘积之和，就把编时算符分别作用于每一项。}
 \item{编时算符对乘积中的普通数无影响，因为普通数可以放在乘积的任何位置。}
+\item{但如果把产生湮灭算符写成显含时间因子的，则要先把算符排序再提取时间因子，例如$\hata(t) = e^{-\ii\omega t}\hata(0)$，则要把$e^{-\ii\omega t}\hata(0)$看成一个$t$时刻的算符整体进行排序后再提取普通数因子$e^{-\ii\omega t}$到外面。}
 \end{itemize}
 }
 \ech
@@ -279,7 +280,7 @@ $$\torder{ABC} = \rorder{ABC +  \contraction{}{A}{}{B}ABC + \contraction{}{A}{B}
 
 记这串算符乘积为 $X_1X_2\ldots X_n$，不妨设其中时间最早的算符为$X_i$ (如果有多于一个时间最早的则取最右边那个)。显然有
 $$\torder{X_1X_2\ldots X_n} = \theta_F \torder{X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n} X_i$$  
-前面的符号因子$\theta_i = \pm 1$。我们更一般地对$j\ge i$规定$theta_j = \pm 1$符号：当且仅当$X_i$是费米子的产生或湮灭算符，且$X_{j+1}X_{j+2}\ldots X_n$中有奇数个费米子的产生或湮灭算符时才取$\theta_j = -1$.
+前面的符号因子$\theta_F = \pm 1$: 当且仅当$X_i$是费米子的产生或湮灭算符，且$X_{i+1}X_{i+2}\ldots X_n$中有奇数个费米子的产生或湮灭算符时才取$\theta_F = -1$.
 \skipline
 
 按假设Wick定理对n-1个算符成立，$ \torder{X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n}$就等于$X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n$含一切可能收缩的正规乘积的和。
@@ -293,8 +294,8 @@ $$\torder{X_1X_2\ldots X_n} = \theta_F \torder{X_1X_2\ldots X_{i-1}X_{i+1}\ldots
 {\small
 任取一项 $\theta_F X_1X_2\ldots X_{i-1}X_{i+1}\ldots X_n$含某些收缩的正规乘积，在右边乘以$X_i$，并考虑由$X_i$带来的新的收缩的贡献。分两种情况讨论：
 \begin{itemize}
-\item{若$X_i$是湮灭算符，我们需要在正则乘积中把$X_i$移动到所有满足$j>i$的湮灭算符$X_j$的左边，就还原到$\rorder{X_1X_2\ldots X_{i-1}X_iX_{i+1}\ldots X_n}$加一堆收缩的形式（这样顺便把$\theta_i$因子又抵消了）。然后再证明由$X_i$带来的新的收缩均为零：首先湮灭算符之间的收缩是零。其次对于产生算符$X_j$, 因编时序和正则序相同，$X_j$与$X_i$的收缩为零。}
-\item{若$X_i$是产生算符，则需要把$X_i$移到所有湮灭算符和所有满足$j>i$的产生算符$X_j$的左边。对于产生算符$X_j$, $X_j$与$X_i$的收缩为零，交换$X_i$与$X_j$次序也仅仅产生$\pm 1$的因子（累计的$\pm 1$因子最后和$\theta_i$抵消，可忽略它的效果）。对湮灭算符$X_j$, $X_i$与$X_j$的收缩为$\pm(X_jX_i - X_iX_j)$, 恰好是把$X_i$从$X_j$右边换到$X_j$左边时产生的差（同样符号因子可忽略)。这样当我们完成移动时，恰好需要补偿所有由加入$X_i$带来的新的收缩。}
+\item{若$X_i$是湮灭算符，我们需要在正则乘积中把$X_i$移动到所有满足$j>i$的湮灭算符$X_j$的左边，就还原到$\rorder{X_1X_2\ldots X_{i-1}X_iX_{i+1}\ldots X_n}$加一堆收缩的形式（这样顺便把$\theta_F$因子又抵消了）。然后再证明由$X_i$带来的新的收缩均为零：首先湮灭算符之间的收缩是零。其次对于产生算符$X_j$, 因编时序和正则序相同，$X_j$与$X_i$的收缩为零。}
+\item{若$X_i$是产生算符，则需要把$X_i$移到所有湮灭算符和所有满足$j>i$的产生算符$X_j$的左边。对于产生算符$X_j$, $X_j$与$X_i$的收缩为零，交换$X_i$与$X_j$次序也仅仅产生$\pm 1$的因子（累计的$\pm 1$因子最后和$\theta_F$抵消，可忽略它的效果）。对湮灭算符$X_j$, $X_i$与$X_j$的收缩为$\pm(X_jX_i - X_iX_j)$, 恰好是把$X_i$从$X_j$右边换到$X_j$左边时产生的差（同样符号因子可忽略)。这样当我们完成移动时，恰好需要补偿所有由加入$X_i$带来的新的收缩。}
 \end{itemize}
 综上我们完成了归纳证明。
 }
@@ -345,7 +346,7 @@ $$\calM T/V \delta(p_1+p_2-p_3-p_4)d^4k= \langle \vecp_3, \vecp_4| \torder{ e^{-
 \eea
 
 第一项和第二项均没有贡献，第三项的贡献我们上节课算了。我们这节课来计算第四项的贡献：
-$$ -\frac{g^2}{2(3!)^2} \int d^4x\, \int d^4y\,\langle \vecp_3, \vecp_4| \torder{ \hat\phi(x)^3 \hat\phi(y)^3} |\vecp_1,\vecp_2\rangle$$
+$$ \frac{(-\ii g)^2}{2(3!)^2} \int d^4x\, \int d^4y\,\langle \vecp_3, \vecp_4| \torder{ \hat\phi(x)^3 \hat\phi(y)^3} |\vecp_1,\vecp_2\rangle$$
 
 \ech
 \end{frame}
@@ -357,6 +358,161 @@ $$ -\frac{g^2}{2(3!)^2} \int d^4x\, \int d^4y\,\langle \vecp_3, \vecp_4| \torder
 的收缩：
 $$\contr{\hatphi(x)}{\hatphi(y)}$$
 它就是大名鼎鼎的“Feynman传播子”
+\ech
+\end{frame}
+
+\begin{frame} 
+\chtitle{Feynman传播子} 
+\bch
+我们分两种情况讨论：
+
+1. $x^0>y^0$
+{\small
+\bea
+&& \contr{\hatphi(x)}{\hatphi(y)} \newl
+&=& \frac{1}{(2\pi)^3}\int  \sqrt{\frac{d^3\veck } {2\omega}}  \int \sqrt{\frac{d^3\veck' }{2\omega'}}\contraction{(}{\hata_{\veck}}{ e^{-\ii kx} + \adag_{\veck} e^{\ii kx})(\hata_{\veck'} e^{-\ii k'y} + }{\adag_{\veck'}}
+\bcontraction[2ex]{(}{\hata_{\veck}}{ e^{-\ii kx} + \adag_{\veck} e^{\ii kx})(}{\hata_{\veck'}}
+\bcontraction{(\hata_{\veck} e^{-\ii kx} + }{\adag_{\veck}}{e^{\ii kx})(}{\hata}
+\bcontraction[1.5ex]{(\hata_{\veck} e^{-\ii kx} + }{\adag_{\veck}}{e^{\ii kx})(\hata_{\veck'} e^{-\ii k'y} + }{\adag}
+(\hata_{\veck} e^{-\ii kx} + \adag_{\veck} e^{\ii kx})(\hata_{\veck'} e^{-\ii k'y} + \adag_{\veck'} e^{\ii k'y})  \newl
+&=&  \frac{1}{(2\pi)^3}\int \sqrt{\frac{d^3\veck }{2\omega}}\int \sqrt{\frac{d^3\veck' }{2\omega'}}e^{-\ii kx+\ii k'y}\delta_{\veck,\veck'} \newl
+&=&  \frac{1}{(2\pi)^3}\int \frac{d^3\veck }{2\omega} e^{-\ii k(x-y)} \newl
+\eea
+上式的收缩展开中，收缩不为零的仅有一项，为了看得更加清晰我们选择把它的收缩符号画在上面。
+}
+
+\ech
+\end{frame}
+
+\begin{frame} 
+\chtitle{Feynman传播子} 
+\bch
+2. $x^0<y^0$
+{\small
+\bea
+&& \contr{\hatphi(x)}{\hatphi(y)} \newl
+&=&  \frac{1}{(2\pi)^3} \int  \sqrt{\frac{d^3\veck }{2\omega}}  \int \sqrt{\frac{d^3\veck' }{2\omega'}}
+\bcontraction[1.5ex]{(}{\hata_{\veck}}{ e^{-\ii kx} + \adag_{\veck} e^{\ii kx})(\hata_{\veck'} e^{-\ii k'y} + }{\adag}
+\bcontraction[2ex]{(}{\hata_{\veck}}{ e^{-\ii kx} + \adag_{\veck} e^{\ii kx})(}{\hata_{\veck'}}
+\contraction{(\hata_{\veck} e^{-\ii kx} + }{\adag_{\veck}}{e^{\ii kx})(}{\hata}
+\bcontraction{(\hata_{\veck} e^{-\ii kx} + }{\adag_{\veck}}{e^{\ii kx})(\hata_{\veck'} e^{-\ii k'y} + }{\adag_{\veck'}}
+(\hata_{\veck} e^{-\ii kx} + \adag_{\veck} e^{\ii kx})(\hata_{\veck'} e^{-\ii k'y} + \adag_{\veck'} e^{\ii k'y})  \newl
+&=&  \frac{1}{(2\pi)^3} \int \sqrt{\frac{d^3\veck }{2\omega}}\int \sqrt{\frac{d^3\veck' }{2\omega'}}e^{\ii kx-\ii k'y}\delta_{\veck,\veck'} \newl
+&=&  \frac{1}{(2\pi)^3} \int \frac{d^3\veck }{2\omega} e^{-\ii k(y-x)} 
+\eea
+上式的收缩展开中，同样我们选择把不为零的收缩符号画在上面。
+}
+
+\ech
+\end{frame}
+
+\begin{frame} 
+\chtitle{Feynman传播子的四维积分表示} 
+\bch
+{\small
+上面的两种情况可以统一写为：
+\be
+ \contr{\hatphi(x)}{\hatphi(y)} = \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-ik(x-y)}}{k^2-m^2+\ii\epsilon} 
+\ee
+其中$\epsilon$为趋向于$0^+$的正数。
+
+上式只要用留数定理对$k_0$进行积分即可简单证明。例如当$x^0<y^0$时，$|e^{-ik(x-y)}|$在$k_0$的上半平面有上限。故可以把$(-\infty, \infty)$的积分路径补充上半平面的大圆成为围道积分。在这个围道里只有$k_0 = -\omega $一个奇点。在该奇点的留数为$(2\pi \ii)\frac{e^{i\omega(x^0-y^0)+ \ii \veck\cdot(\vecx-\vecy)}}{-2\omega}$
+
+
+\be
+ \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-ik(x-y)}}{k^2-m^2+\ii\epsilon} = \frac{1}{(2\pi)^3} \int \frac{d^3\veck}{2\omega}\, e^{\ii\omega(x^0-y^0)+\ii \veck\cdot(\vecx-\vecy)}
+\ee
+上式是对$\veck$全空间积分，所以可以把$\veck$换成$-\veck$，得到
+\be
+ \frac{\ii}{(2\pi)^4} \int d^4k\, \frac{e^{-ik(x-y)}}{k^2-m^2+\ii\epsilon}  = \frac{1}{(2\pi)^3} \int \frac{d^3\veck}{2\omega}\, e^{\ii k(x-y)}
+\ee
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Feynman图还是有点用}
+\bch
+我们将只考虑$\contr{\hatphi(x)}{\hatphi(y)}$的收缩形式（左图）。
+
+\includegraphics[width=2in]{feynman2.png}  \includegraphics[width=2in]{feynman2_loop.png}
+
+
+\skipline
+包含$\contr{\hatphi(x)}{\hatphi(x)}$（右图）或者$\contr{\hatphi(y)}{\hatphi(y)}$的项里必然有一个粒子单独地未和其他粒子发生作用，所以描述的不是散射过程。关于这种圈图的物理诠释，我们以后再讲。
+
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{要算的几个Feynman图}
+\bch
+所以我们要算的六个图为：
+\includegraphics[width=1.5in]{feynman2_s_channel.png}  \includegraphics[width=1.5in]{feynman2_t_channel.png} \includegraphics[width=1.5in]{feynman2_u_channel.png}
+
+和三个把$x$，$y$互换的图
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{s道Feynman图}
+\bch
+
+\bmini{0.5}
+\includegraphics[width=1.5in]{feynman2_s_channel.png}
+\emini
+\bmini{0.4}
+ + ($x$, $y$互换)
+\emini
+{\scriptsize
+\bea
+&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^6} \int d^4x\, \int d^4y\, e^{-\ii (p_1+p_2) x + (p_3+p_4)y} \contr{\hatphi{x}}{\hatphi(y)} \newl
+&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^{10}} \int d^4x \int d^4y \int d^4 p\, e^{-\ii (p_1+p_2) x + (p_3+p_4)y} \frac{\ii e^{-ip(x-y)}}{p^2-m^2+i\epsilon} \newl
+&& = (-\ii g)^2 \frac{(d^3\veck)^2}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}}  \frac{1}{(2\pi)^2} \int d^4 p\, \delta(p_1+p_2+p)\delta(p_3+p_4+p) \frac{\ii}{p^2-m^2+i\epsilon} \newl
+&& = (-\ii g)^2 \frac{1}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}} \frac{\ii}{(p_1+p_2)^2-m^2}  \left(\frac{T}{V} \delta(p_1+p_2-p_3-p_4)d^4k\right) \newl
+\eea
+注：上面的计算中，把三个$\hatphi(x)$排序以及三个$\hatphi(y)$排序抵消了$\frac{1}{(3!)^2}$的因子，把$x$和$y$互换抵消了$\frac{1}{2}$因子。
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{总结一下Feynman规则}
+\bch
+\includegraphics[width=2.5in]{feynman2_s_channel_diagram.png}
+\begin{itemize}
+\item{外线给出因子$\frac{1}{\sqrt{2\omega}}$}
+\item{顶点给出因子$-ig$}
+\item{内线给出因子$\frac{\ii}{q^2-m^2}$}
+\end{itemize}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{利用Feynman规则来计算另两个图对散射振幅的贡献}
+\bch
+\includegraphics[width=2.2in]{feynman2_u_channel_simple.png} \includegraphics[width=2.2in]{feynman2_t_channel_simple.png} 
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{最终答案}
+\bch
+{
+\scriptsize
+\bea
+\calM &=& \frac{1}{4\sqrt{\omega_1\omega_2\omega_3\omega_4}} \newl
+&& \times  \left[-\ii\lambda -  g^2\left(\frac{\ii}{(p_1+p_2)^2-m^2} + \frac{\ii}{(p_1-p_3)^2-m^2} + \frac{\ii}{(p_1-p_4)^2-m^2} \right)\right]
+\eea
+}
 \ech
 \end{frame}
 
