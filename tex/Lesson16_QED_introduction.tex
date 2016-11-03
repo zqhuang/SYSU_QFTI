@@ -130,11 +130,15 @@ $$\contr{\hat\psi(x)}{\hat{\barpsi}(y)} = \frac{1}{(2\pi)^4}\int d^4k\, \frac{\i
 \item{对于一个初态的动量为$\vecp$,自旋为$s$的电子外线，我们需要从$\hat\psi$中提取一个湮灭算符$\hata_{\vecp,s}$，对应的系数为$u_{\vecp, s}$。}
 \item{对于一个末态的电子外线，则需要提取产生算符$\hat{\barpsi}$里的$\adag_{\vecp,s}$，随之带来的因子为$\bar{u}_{\vecp,s}$。}
 \item{初态的光子对应的因子为$\slashed{\vece}_{\vecp,s}/\sqrt{2\omega}$。}
-\item{末态的光子对应的因子为$\slashed{\vece}^\dagger_{\vecp,s}/\sqrt{2\omega}$。}
+\item{末态的光子对应的因子为$\slashed{\vece}^*_{\vecp,s}/\sqrt{2\omega}$。}
 \end{itemize}
 
 {\scriptsize
-注：体积元$d^3\vecp$和$e^{-ipx}$等的组合最后都会给出正确的$T/V\delta(p_\gamma+p_e - p_\gamma'-p_e')d^4k$因子，所以我们在推导Feynman规则时不再关注它们。}
+注：
+
+1. 体积元$d^3\vecp$和$e^{-ipx}$等的组合最后都会给出正确的$T/V\delta(p_\gamma+p_e - p_\gamma'-p_e')d^4k$因子，所以我们在推导Feynman规则时不再关注它们。
+
+2. 在库仑规范下矢量$\vece$仅有三个分量，补充第0分量为零后仍可定义Feynman符号$\slashed{\vece}$。}
 
 }
 
@@ -152,7 +156,7 @@ $$\contr{\hat\psi(x)}{\hat{\barpsi}(y)} = \frac{1}{(2\pi)^4}\int d^4k\, \frac{\i
  + ($x$, $y$ 互换)
 \emini
 \be
-= \frac{(-\ii q)^2}{2\sqrt{\omega_\gamma\omega_\gamma'}}\sum_{s_e, s_\gamma, s_e', s_\gamma'} \bar{u}_{p_e',s'_e} \slashed{\vece}_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e}  
+= \frac{(-\ii q)^2}{2\sqrt{\omega_\gamma\omega_\gamma'}}\sum_{s_e, s_\gamma, s_e', s_\gamma'} \bar{u}_{p_e',s'_e} \slashed{\vece}^*_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e}  
 \ee
 }
 \ech
@@ -169,7 +173,7 @@ $$\contr{\hat\psi(x)}{\hat{\barpsi}(y)} = \frac{1}{(2\pi)^4}\int d^4k\, \frac{\i
  + ($x$, $y$ 互换)
 \emini
 \be
-= \frac{(-\ii q)^2}{2\sqrt{\omega_\gamma\omega_\gamma'}}\sum_{s_e, s_\gamma, s_e', s_\gamma'} \bar{u}_{p_e',s'_e} \slashed{\vece}_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e}  
+= \frac{(-\ii q)^2}{2\sqrt{\omega_\gamma\omega_\gamma'}}\sum_{s_e, s_\gamma, s_e', s_\gamma'} \bar{u}_{p_e',s'_e} \slashed{\vece}^*_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e}  
 \ee
 }
 \ech
@@ -183,14 +187,16 @@ $$\contr{\hat\psi(x)}{\hat{\barpsi}(y)} = \frac{1}{(2\pi)^4}\int d^4k\, \frac{\i
 {\small
 \bea
 |\calM|^2 & = &\frac{q^4}{4 \omega_\gamma\omega_\gamma'} \newl
-& \times &\left\vert\sum_{s_e, s_\gamma, s_e', s_\gamma'}\bar{u}_{p_e',s'_e} \slashed{\vece}_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e} \right.\newl
-&& \left.+ \bar{u}_{p_e',s'_e} \slashed{\vece}_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e}   \right\vert^2
+& \times &\left\vert\sum_{s_e, s_\gamma, s_e', s_\gamma'}\bar{u}_{p_e',s'_e} \slashed{\vece}^*_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e} \right.\newl
+&& \left.+ \bar{u}_{p_e',s'_e} \slashed{\vece}^*_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e}   \right\vert^2
 \eea
-下节课我们来讨论计算它的技巧。
+下面我们来讨论计算它的技巧。
 
 }
 \ech
 \end{frame}
+
+
 
 \end{document}
 
