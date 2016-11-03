@@ -116,7 +116,7 @@ $$\contr{\hat\psi(x)}{\hat{\barpsi}(y)}$$
 $$ \ii\left(\ii \slashed{\partial}-m + \ii\epsilon\right)^{-1} \rightarrow \frac{\ii}{\slashed{k} - m + \ii\epsilon}$$
 在傅立叶空间计算矩阵元：
 $$\contr{\hat\psi(x)}{\hat{\barpsi}(y)} = \frac{1}{(2\pi)^4}\int d^4k\, \frac{\ii e^{-\ii k(x-y)}}{\slashed{k} - m + \ii\epsilon} $$
-当然，我们希望能绕开这些积分过程直接用Feynman规则进行计算。
+当然，我们希望能绕开这些积分过程直接用Feynman规则进行计算。体积元$d^3\vecp$和$e^{-\ii px}$等的组合最后都会给出正确的$T/V\delta(p_\gamma+p_e - p_\gamma'-p_e')d^4k$因子，所以我们在推导Feynman规则时不再关注它们。
 \ech
 \end{frame}
 
@@ -125,20 +125,20 @@ $$\contr{\hat\psi(x)}{\hat{\barpsi}(y)} = \frac{1}{(2\pi)^4}\int d^4k\, \frac{\i
 \bch
 {\small
 \begin{itemize}
-\item{顶点给出因子$-iq$}
+\item{顶点给出因子$-iq \gamma^\mu$}
 \item{电子内线给出Feynman传播子$\frac{\ii}{\slashed{k}-m}$}
 \item{对于一个初态的动量为$\vecp$,自旋为$s$的电子外线，我们需要从$\hat\psi$中提取一个湮灭算符$\hata_{\vecp,s}$，对应的系数为$u_{\vecp, s}$。}
 \item{对于一个末态的电子外线，则需要提取产生算符$\hat{\barpsi}$里的$\adag_{\vecp,s}$，随之带来的因子为$\bar{u}_{\vecp,s}$。}
-\item{初态的光子对应的因子为$\slashed{\vece}_{\vecp,s}/\sqrt{2\omega}$。}
-\item{末态的光子对应的因子为$\slashed{\vece}^*_{\vecp,s}/\sqrt{2\omega}$。}
+\item{初态的光子对应的因子为$\vece^\mu_{\vecp,s}/\sqrt{2\omega}$。这里的$\mu$为跟它连接的顶点的$-iq\gamma^\mu$里的指标$\mu$。}
+\item{末态的光子对应的因子为${\vece^\mu_{\vecp,s}}^*/\sqrt{2\omega}$。这里的$\mu$为跟它连接的顶点的$-iq\gamma^\mu$里的指标$\mu$。}
 \end{itemize}
 
 {\scriptsize
 注：
 
-1. 体积元$d^3\vecp$和$e^{-ipx}$等的组合最后都会给出正确的$T/V\delta(p_\gamma+p_e - p_\gamma'-p_e')d^4k$因子，所以我们在推导Feynman规则时不再关注它们。
+1. 如果是反粒子则把$u$换成$\upsilon$。
 
-2. 在库仑规范下矢量$\vece$仅有三个分量，补充第0分量为零后仍可定义Feynman符号$\slashed{\vece}$。}
+2. 在库仑规范下矢量$\vece$第0分量为零。} 
 
 }
 
@@ -180,22 +180,52 @@ $$\contr{\hat\psi(x)}{\hat{\barpsi}(y)} = \frac{1}{(2\pi)^4}\int d^4k\, \frac{\i
 \end{frame}
 
 \begin{frame}
-\chtitle{最后表达式}
+\chtitle{世界上最遥远的距离，就是Feynman图和最终结果之间的距离}
 \bch
 
-最后我们需要计算总散射截面的绝对值的平方：
+我们需要计算总散射截面的绝对值的平方：
 {\scriptsize
-\bea
-|\calM|^2 & = &\frac{q^4}{4 \omega_\gamma\omega_\gamma'} \newl
-& \times &\left\vert\sum_{s_e, s_\gamma, s_e', s_\gamma'}\bar{u}_{p_e',s'_e}\left( \slashed{\vece}^*_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\slashed{\vece}_{p_\gamma,s_\gamma}+ \slashed{\vece}^*_{p_\gamma',s_\gamma'}\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\slashed{\vece}_{p_\gamma,s_\gamma}\right) u_{p_e,s_e}   \right\vert^2
-\eea
-下面我们来讨论计算它的技巧。
-
+\be
+ |\calM|^2 = \frac{q^4}{4 \omega_\gamma\omega_\gamma'} \left\vert\sum_{s_e, s_\gamma, s_e', s_\gamma'}\bar{u}_{p_e',s'_e} \slashed{\vece}^*_{p_\gamma',s_\gamma'}\left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\slashed{\vece}_{p_\gamma,s_\gamma} u_{p_e,s_e}   \right\vert^2
+\ee
 }
+
+只要十来页纸的计算就能把上式化简到最后结果，但今天我们比较忙，这点小事先放一放，来聊点别的。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{最后一条Feynman规则}
+\bch
+先撇开那些令人赏心悦目（sh\={e}ng b\`{u} r\'{u} s\v{i})的计算不说，我们还差最后一条Feynman规则没讨论。如果初态和末态都是Dirac费米子，那么我们需要把两个$A$收缩掉。对应的Feynman图长成这样：
+
+\includegraphics[width=2.5in]{feynman4_sketch.png}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{最后一条Feynman规则}
+\bch
+我们还是用直接写出矩阵元的方法。
+在洛仑兹规范下写出傅立叶空间的拉氏密度：
+$$\ii\lagr = -\frac{1}{2}A_\mu (C)^{-1}_{\mu\nu} A_\nu$$ 
+其中
+$$C_{\mu\nu} = \lim_{\epsilon\rightarrow 0^+}\frac{-\ii g_{\mu\nu}}{k^2+\ii\epsilon}$$
+于是有了最后一条Feynman规则：
+\begin{itemize}
+\item{光子内线对应的$\frac{-\ii g_{\mu\nu}}{k^2}$，其中的$\mu$, $\nu$为跟它连接的两个顶点的指标(即这两个顶点分别为$-\ii q\gamma^\mu$和$-\ii q \gamma^\nu$)。}
+\end{itemize}
+
 \ech
 \end{frame}
 
 
+\begin{frame}
+\bch
+下节课我们讲那些计算的小事。
+\ech
+\end{frame}
 
 \end{document}
 
