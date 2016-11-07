@@ -257,15 +257,15 @@ $$|\calM^2| = |J^1|^2 + |J^2|^2 =  |J^1|^2 + |J^2|^2 + |J^3|^2 - |J_0|^2 = -g_{\
 利用迹可以轮换乘积的性质，把最右边的$\gamma^\nu u_{p_e}$移到左边，并利用$u\bar{u}$的自旋求和性质（见第11课前半部分），得到这个和为
 {\tiny
 \bea
- \trof{\gamma_\nu\frac{\slashed{p}_e+m}{2\omega_e} \gamma^\nu \left(\frac{-\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{-\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma^\mu  \frac{\slashed{p}_{e'}+m}{2\omega_{e'}} \gamma_\mu \left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right) } 
+ \trof{\gamma_\nu\frac{\slashed{p}_e+m}{2\omega_e} \gamma^\nu \left(\frac{-\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{-\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma^\mu  \frac{\slashed{p}_e'+m}{2\omega_e'} \gamma_\mu \left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right) } 
 \eea
 }
 这样我们顺利得到了电子的$1/\omega$因子，把它们都提取到外面，定义
 {\scriptsize 
-$$|\calM|^2 = \frac{q^4}{16 \omega_\gamma\omega_\gamma'\omega_e\omega_{e'}} K$$}
+$$|\calM|^2 = \frac{q^4}{16 \omega_\gamma\omega_\gamma'\omega_e\omega_e'} K$$}
 再利用$\gamma$矩阵形式下标的性质，得到
 {\tiny
-$$K =  \trof{(-\slashed{p}_e+2m) \left(\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)(-\slashed{p}_{e'}+2m)\left(\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)}$$
+$$K =  \trof{(-\slashed{p}_e+2m) \left(\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)(-\slashed{p}_e'+2m)\left(\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)}$$
 }
 
 \ech
@@ -274,11 +274,10 @@ $$K =  \trof{(-\slashed{p}_e+2m) \left(\frac{1}{\slashed{p}_e+\slashed{p}_\gamma
 \begin{frame}
 \chtitle{Compton散射}
 \bch
-{\scriptsize
-\bea
-K &=&  \trace\left[(\slashed{p}_e-2m) \left(\frac{\slashed{p}_e+\slashed{p}_\gamma+m}{(p_e+p_\gamma)^2-m^2}+\frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{(p_e-p_\gamma')^2-m^2}\right)\right. \newl
-&& \left. \times (\slashed{p}_{e'}-2m) \left(\frac{\slashed{p}_e+\slashed{p}_\gamma+m}{(p_e+p_\gamma)^2-m^2}+\frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{(p_e-p_\gamma')^2-m^2}\right)\right]
-\eea
+{\tiny
+\be
+K =  \trace\left[(\slashed{p}_e-2m) \left(\frac{\slashed{p}_e+\slashed{p}_\gamma+m}{2 p_e p_\gamma}-\frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{2p_e p_\gamma'}\right) (\slashed{p}_{e}'-2m) \left(\frac{\slashed{p}_e'+\slashed{p}_\gamma'+m}{2 p_e p_\gamma}-\frac{\slashed{p}_e'-\slashed{p}_\gamma+m}{2 p_e' p_\gamma}\right)\right]
+\ee
 }
 然后再利用Feynman符号乘积的迹的展开公式把上式展开成几十项的和…
 \ech
