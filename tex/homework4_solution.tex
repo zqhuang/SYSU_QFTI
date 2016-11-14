@@ -1,0 +1,236 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Homework 4 solution}
+  \author{}
+  \date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第四次课后作业参考答案
+\skipline
+\skipline
+
+如发现参考答案有错误请不吝告知（微信zhiqihuang或邮箱huangzhq25@sysu.edu.cn)
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题：题目和思路}
+\bch
+题目：对两个矢量$A^\mu$, $B^\mu$，证明
+$$\mathrm{Tr}(\slashed{A}\slashed{B}) = 4A^\mu B_\mu$$
+其中$\mathrm{Tr}$表示矩阵求迹。
+
+
+\skipline
+思路：利用矩阵乘积的迹在轮换乘法次序时不变的性质
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第1题解答}
+\bch
+$$\mathrm{Tr}(\slashed{A}\slashed{B}) = A_\mu B_\nu \mathrm{Tr}\left(\gamma^\mu\gamma^\nu\right)$$
+因$\mathrm{Tr}(XY) = \mathrm{Tr}(YX)$，所以 
+$$\mathrm{Tr}(\slashed{A}\slashed{B}) = A_\mu B_\nu \mathrm{Tr}\left(\gamma^\nu\gamma^\mu\right)$$
+两式相加除以2，并利用$\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2 g^{\mu\nu}I_{4\times 4}$，
+$$\mathrm{Tr}(\slashed{A}\slashed{B}) = A_\mu B_\nu g^{\mu\nu} \mathrm{Tr}(I_{4\times 4}) = 4 A^\mu B_\mu$$
+ 
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题：题目和思路}
+\bch
+题目：对旋量$\psi$证明$\bar{\psi}\gamma^\mu\gamma^\nu\gamma^\rho\psi$为洛仑兹变换下的三阶张量。
+
+
+\skipline
+思路：这类题目总是要用$\Lambda^\dagger = \gamma^0\Lambda^{-1}\gamma^0$和$\Lambda$矩阵的定义
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第2题解答}
+\bch
+设洛仑兹变换$x^\mu \rightarrow a^\mu_{\ \nu} x^\nu$对应的旋量变换矩阵为$\Lambda$。利用课上证明了的$\Lambda^\dagger = \gamma^0\Lambda^{-1}\gamma^0$以及$\Lambda$矩阵的定义，
+\bea
+\bar{\psi}\gamma^\mu\gamma^\nu\gamma^\rho\psi &\rightarrow &\psi^\dagger\Lambda^\dagger \gamma^0 \gamma^\mu\gamma^\nu\gamma^\rho\Lambda\psi  \newl
+&=&\psi^\dagger\gamma^0\Lambda^{-1}(\gamma^0)^2\gamma^\mu\gamma^\nu\gamma^\rho\Lambda\psi \newl
+&=&\barpsi\Lambda^{-1}\gamma^\mu\gamma^\nu\gamma^\rho\Lambda\psi \newl
+&=&\barpsi\Lambda^{-1}\gamma^\mu\Lambda\Lambda^{-1}\gamma^\nu\Lambda\Lambda^{-1}\gamma^\rho\Lambda\psi \newl
+&=&\barpsi a^\mu_{\ \alpha}\gamma^\alpha a^\nu_{\ \beta}\gamma^\beta a^\rho_{\ \sigma}\gamma^\sigma \psi \newl
+&=&(a^\mu_{\ \alpha} a^\nu_{\ \beta} a^\rho_{\ \sigma})\barpsi \gamma^\alpha \gamma^\beta \gamma^\sigma \psi
+\eea
+上式表明$\bar{\psi}\gamma^\mu\gamma^\nu\gamma^\rho\psi$满足三阶张量的定义。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题：题目和思路}
+\bch
+题目：如果一个实标量场$\phi$和一个旋量场$\psi$有相互作用，拉氏密度为
+$$\lagr = \frac{1}{2}\partial_\mu\phi\partial^\mu\phi - \frac{1}{2}m^2\phi^2 - \frac{g}{2}\phi^2\bar\psi\psi + \bar\psi(i\slashed{\partial}-m)\psi$$
+其中$g$为耦合常数。
+
+试推导$\phi$和$\psi$的运动方程。
+
+\skipline
+思路：对$\phi$和$\bar\psi$写出Euler-Lagrange方程即可
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第3题解答}
+\bch
+直接利用Euler-Lagrange方程得到$\phi$的运动方程
+$$ (\partial^2 + m^2 + g\barpsi\psi) \phi = 0$$
+$\psi$的运动方程(通过取$\barpsi$的Euler-Lagrange方程得到)
+$$ (-\frac{g}{2}\phi^2 + i\slashed{\partial} - m) \psi = 0 $$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第4题：题目和思路}
+\bch
+题目：设有三维动量$\veck = (k_x, k_y, k_z)$。请在以$z$方向自旋向上的态$|\uparrow\rangle$和自旋向下的态$|\downarrow\rangle$为基的表象里，写出沿$\veck$方向的电子自旋算符的矩阵表达式，并求它的所有本征值$s$和本征矢$\zeta_{\veck,s}$。
+
+\skipline
+思路：同一表象下的算符的和的矩阵表示等于算符的矩阵表示的和。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第4题解答}
+\bch
+沿$\veck$方向的自旋算符为
+\be
+\frac{1}{2} \sigma\cdot\frac{\veck}{|\veck|} = \frac{k_x}{2|\veck|}\sigma^1 + \frac{k_y}{2|\veck|}\sigma^2 + \frac{k_z}{2|\veck|}\sigma^3 = 
+\frac{1}{2|\veck|}
+\bmat{cc}
+k_z & k_x - \ii  k_y \\
+k_x + \ii k_y & -k_z
+\emat
+\ee
+本征值$s$满足：
+$$(k_z-2|\veck|s)(-k_z - 2|\veck|s) - (k_x+\ii k_y)(k_x-\ii k_y) = 0$$
+化简即得$s = \pm 1/2$
+对应$s = \pm 1/2$的本征矢量分别为:
+{\scriptsize
+\be
+\zeta_{\veck, 1/2} = \frac{1}{\sqrt{2|\veck|(|\veck|+k_z)}}
+\bmat{c}
+k_z+|\veck|\\
+k_x+\ii k_y
+\emat,\ 
+\zeta_{\veck, -1/2} = \frac{1}{\sqrt{2|\veck|(|\veck|+k_z)}}
+\bmat{c}
+k_x-\ii k_y \\
+-k_z-|\veck|
+\emat
+\ee
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第5题：题目和思路}
+\bch
+题目：对$m=0$的旋量和非零的三维动量$\veck$，记相应的四维动量为$k$，证明$\slashed{k}$只有两个线性独立的本征态。 
+
+\skipline
+思路：由于矩阵的本征态个数不依赖于表象，我们可以简单取$z$轴沿$\veck$方向写出$\slashed{k}$。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第5题解答}
+\bch
+{\small
+取$\veck$方向为$z$轴，则$k_\mu = (|\veck|, 0 , 0, -|\veck|)$}
+{\scriptsize
+\be
+\slashed{k} = \gamma^0k_0 + \gamma^3k_3 =
+|\veck|
+\bmat{rrrr}
+1 & 0 & -1 & 0 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & -1 & 0 \\
+0 & -1 & 0 & -1 
+\emat
+\ee
+}
+{\small
+设$\slashed{k}$有本征值$\lambda$和非零本征矢$\psi$,则利用课上的结论$\slashed{k}^2=m^2=0$有
+$$\lambda^2\psi = \lambda\slashed{k}\psi = \slashed{k}^2\psi  = 0$$ 
+故$\lambda = 0$。
+所以$\slashed{k}$的本征矢$\psi$满足}
+{\scriptsize
+\be
+\bmat{rrrr}
+1 & 0 & -1 & 0 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & -1 & 0 \\
+0 & -1 & 0 & -1 
+\emat
+\bmat{c}
+\psi_1\\
+\psi_2\\
+\psi_3\\
+\psi_4
+\emat = 0
+\ee
+}{\small
+显然它只有两个线性独立的解分别对应于$\psi_1 = \psi_3$和$\psi_2 = -\psi_4$。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第5题解答}
+\bch
+{\small
+或者更清晰的说法是, 上面的方程等价于$\psi_1 = \psi_3$, $\psi_2 = -\psi_4$，即解可以写成
+\be
+\psi = \psi_1 \bmat{c}
+1 \\
+0 \\
+1 \\
+0
+\emat  + 
+\psi_2 \bmat{c}
+0 \\
+1 \\
+0 \\
+-1
+\emat
+\ee
+也就是说只有两个线性独立的本征矢。
+}
+\ech
+\end{frame}
+
+\end{document}
