@@ -233,13 +233,12 @@ $$|\calM^2| = |J^1|^2 + |J^2|^2 =  |J^1|^2 + |J^2|^2 + |J^3|^2 - |J_0|^2 = -g_{\
 下面我们尝试来完成Compton散射的散射振幅的计算：
 {\tiny
 \bea
- |\calM|^2 &=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins}\left\vert\bar{u}_{p_e'} \slashed{\vece}^*_{p_\gamma'}\left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\slashed{\vece}_{p_\gamma} u_{p_e}   \right\vert^2 \newl
-&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins}(\vece_{p_\gamma'})_\mu (\vece^*_{p_\gamma})_\nu (\vece^*_{p_\gamma'})_\alpha (\vece_{p_\gamma})_\beta  \left(\bar{u}_{p_e'} \gamma^\mu\left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right) \gamma^\nu u_{p_e}  \right)^\dagger \newl
-&& \times\left(\bar{u}_{p_e'} \gamma^\alpha \left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma^\beta u_{p_e}  \right) \newl
-&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} (-g_{\mu\alpha})(- g_{\nu\beta} )\left(\bar{u}_{p_e'} \gamma^\mu\left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right) \gamma^\nu u_{p_e}  \right)^\dagger \newl
-&& \times\left(\bar{u}_{p_e'} \gamma^\alpha \left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma^\beta u_{p_e}  \right) \newl
-&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} \left(\bar{u}_{p_e} \gamma^\nu \left(\frac{-\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{-\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma^\mu   u_{p_e'}\right) \newl
-&& \times\left(\bar{u}_{p_e'} \gamma_\mu \left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma_\nu u_{p_e}  \right)
+ |\calM|^2 &=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{s_e, s_\gamma, s_e', s_\gamma'}\left\vert\bar{u}_{p_e',s'_e} \left(\slashed{\vece}^*_{p_\gamma',s_\gamma'}\frac{\ii }{\slashed{p}_e+\slashed{p}_\gamma-m}\slashed{\vece}_{p_\gamma,s_\gamma}+\slashed{\vece}_{p_\gamma,s_\gamma}\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\slashed{\vece}^*_{p_\gamma',s_\gamma'} \right) u_{p_e,s_e}   \right\vert^2 \newl
+&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'}\sum_{\rm spins}(\vece_{p_\gamma'})_\mu (\vece^*_{p_\gamma})_\nu (\vece^*_{p_\gamma'})_\alpha (\vece_{p_\gamma})_\beta  \newl
+&&\times  \left(\bar{u}_{p_e'} \left(\gamma^\mu\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma^\nu+\gamma^\nu\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma^\mu\right)  u_{p_e}  \right)^\dagger \newl
+&& \times\left(\bar{u}_{p_e'} \left(\gamma^\alpha \frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma^\beta +\gamma^\beta \frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma^\alpha \right)u_{p_e}  \right) \newl
+&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} (-g_{\alpha\mu})(- g_{\nu\beta} )\left(\bar{u}_{p_e'} \left(\gamma^\mu\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma^\nu+\gamma^\nu\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma^\mu\right)  u_{p_e}  \right)^\dagger \newl
+&& \times\left(\bar{u}_{p_e'} \left(\gamma^\alpha \frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma^\beta +\gamma^\beta \frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma^\alpha \right)u_{p_e}  \right) 
 \eea
 }
 \ech
@@ -248,24 +247,34 @@ $$|\calM^2| = |J^1|^2 + |J^2|^2 =  |J^1|^2 + |J^2|^2 + |J^3|^2 - |J_0|^2 = -g_{\
 \begin{frame}
 \chtitle{Compton散射}
 \bch
-上面的自旋求和项可以写成求迹的形式（$1\times 1$矩阵的迹等于自身）
-{\tiny
-\be
-\sum_{\rm spins} \trof{\bar{u}_{p_e} \gamma^\nu \left(\frac{-\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{-\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma^\mu   u_{p_e'}\bar{u}_{p_e'} \gamma_\mu \left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma_\nu u_{p_e} } 
-\ee
-}
-利用迹可以轮换乘积的性质，把最右边的$\gamma^\nu u_{p_e}$移到左边，并利用$u\bar{u}$的自旋求和性质（见第11课前半部分），得到这个和为
+利用$(\gamma^\mu)^\dagger = \gamma^0\gamma^\mu\gamma^0$，以及$1\times 1$矩阵的迹等于自身，上式可写成
 {\tiny
 \bea
- \trof{\gamma_\nu\frac{\slashed{p}_e+m}{2\omega_e} \gamma^\nu \left(\frac{-\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{-\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)\gamma^\mu  \frac{\slashed{p}_e'+m}{2\omega_e'} \gamma_\mu \left(\frac{\ii}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{\ii}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right) } 
+|\calM|^2 &=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} \bar{u}_{p_e}\left(\gamma^\nu\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma^\mu+\gamma^\mu\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma^\nu \right)u_{p_e'}    \newl
+&& \times \bar{u}_{p_e'} \left(\gamma_\mu \frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma_\nu+\gamma_\nu \frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma_\mu \right)u_{p_e}  \newl
+&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} \mathrm{Tr}\left[ \bar{u}_{p_e}\left(\gamma^\nu\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma^\mu+\gamma^\mu\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma^\nu\right) u_{p_e'}     \right.\newl
+&& \times \left. \bar{u}_{p_e'} \left(\gamma_\mu \frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma_\nu+\gamma_\nu \frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma_\mu \right)u_{p_e} \right] \newl
+&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} \mathrm{Tr}\left[ u_{p_e}\bar{u}_{p_e}\left(\gamma^\nu\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma^\mu+\gamma^\mu\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma^\nu\right) u_{p_e'} \bar{u}_{p_e'}    \right.\newl
+&& \times \left.  \left(\gamma_\mu \frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma_\nu+\gamma_\nu \frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma_\mu \right)\right]
 \eea
 }
-这样我们顺利得到了电子的$1/\omega$因子，把它们都提取到外面，定义
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Compton散射}
+\bch
+利用$u\bar{u}$的自旋求和性质（见第11课前半部分），得到
 {\scriptsize 
 $$|\calM|^2 = \frac{q^4}{16 \omega_\gamma\omega_\gamma'\omega_e\omega_e'} K$$}
-再利用$\gamma$矩阵形式下标的性质，得到
+其中
 {\tiny
-$$K =  \trof{(-\slashed{p}_e+2m) \left(\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)(-\slashed{p}_e'+2m)\left(\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}+\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\right)}$$
+\bea
+K &=&  \mathrm{Tr}\left[ (\slashed{p}_e+m)\left(\gamma^\nu\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma^\mu+\gamma^\mu\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma^\nu\right) (\slashed{p}_e'+m)    \right.\newl
+&& \times \left.  \left(\gamma_\mu \frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m}\gamma_\nu+\gamma_\nu \frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m}\gamma_\mu \right)\right]
+\eea
 }
 
 \ech
@@ -274,12 +283,11 @@ $$K =  \trof{(-\slashed{p}_e+2m) \left(\frac{1}{\slashed{p}_e+\slashed{p}_\gamma
 \begin{frame}
 \chtitle{Compton散射}
 \bch
-{\tiny
-\be
-K =  \trace\left[(\slashed{p}_e-2m) \left(\frac{\slashed{p}_e+\slashed{p}_\gamma+m}{2 p_e p_\gamma}-\frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{2p_e p_\gamma'}\right) (\slashed{p}_{e}'-2m) \left(\frac{\slashed{p}_e'+\slashed{p}_\gamma'+m}{2 p_e p_\gamma}-\frac{\slashed{p}_e'-\slashed{p}_\gamma+m}{2 p_e' p_\gamma}\right)\right]
-\ee
+{\small
+利用$\slashed{A}^2 = A^2$, 以及$p_e^2 = p_e'^2 = m^2$, $p_\gamma^2 = p_\gamma'^2 = 0$, Feynman符号在分母的项可以化简为
+$$\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m} = \frac{\slashed{p}_e+\slashed{p}_\gamma+m}{(p_e+p_\gamma)^2-m^2} =  \frac{\slashed{p}_e+\slashed{p}_\gamma+m}{2p_ep_\gamma} $$
+$$\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m} = \frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{(p_e-p_\gamma')^2-m^2} =  \frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{2p_ep_\gamma'} $$
 }
-然后再利用Feynman符号乘积的迹的展开公式把上式展开成几十项的和…
 \ech
 \end{frame}
 
