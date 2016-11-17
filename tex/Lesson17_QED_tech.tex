@@ -185,10 +185,12 @@ $X^\mu= 4(AB)C^\mu - 4(AC)B^\mu + 4(BC)A^\mu$
 {\small
 虽然$\gamma^\mu$并不是矢量，但我们可以形式地把它的指标降下去，定义：
 $$\gamma_\mu \equiv g_{\mu\nu}\gamma^\nu$$
-试证明：
+仍规定重复指标默认求和，试证明：
 \begin{itemize}
 \item{$\gamma^\mu\gamma_\mu = 4$ }
-\item{$\gamma^\mu\slashed{A}\gamma_\mu = -2\slashed{A}$ }
+\item{$\gamma^\mu\gamma^\nu\gamma_\mu = -2\gamma^\nu $}
+\item{$\gamma^\mu\gamma^\alpha\gamma^\beta\gamma_\mu = 4 g^{\alpha\beta}$ }
+\item{$\gamma^\mu\gamma^\alpha\gamma^\beta\gamma^\rho\gamma_\mu =-2\gamma^\rho\gamma^\beta\gamma^\alpha$ }
 \end{itemize}
 
 }
@@ -286,17 +288,25 @@ K &=&  \mathrm{Tr}\left[ (\slashed{p}_e+m)\left(\gamma^\nu\frac{1}{\slashed{p}_e
 {\small
 利用$\slashed{A}^2 = A^2$, 以及$p_e^2 = p_e'^2 = m^2$, $p_\gamma^2 = p_\gamma'^2 = 0$, Feynman符号在分母的项可以化简为
 $$\frac{1}{\slashed{p}_e+\slashed{p}_\gamma-m} = \frac{\slashed{p}_e+\slashed{p}_\gamma+m}{(p_e+p_\gamma)^2-m^2} =  \frac{\slashed{p}_e+\slashed{p}_\gamma+m}{2p_ep_\gamma} $$
-$$\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m} = \frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{(p_e-p_\gamma')^2-m^2} =  \frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{2p_ep_\gamma'} $$
+$$\frac{1}{\slashed{p}_e-\slashed{p}_\gamma'-m} = \frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{(p_e-p_\gamma')^2-m^2} = - \frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{2p_ep_\gamma'} $$
+所以
+{\scriptsize
+\bea
+K &=&  \mathrm{Tr}\left[ (\slashed{p}_e+m)\left(\gamma^\nu\frac{\slashed{p}_e+\slashed{p}_\gamma+m}{2p_ep_\gamma}\gamma^\mu-\gamma^\mu\frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{2p_e p_\gamma'}\gamma^\nu\right) (\slashed{p}_e'+m)    \right.\newl
+&& \times \left.  \left(\gamma_\mu \frac{\slashed{p}_e+\slashed{p}_\gamma+m}{2p_e p_\gamma}\gamma_\nu-\gamma_\nu \frac{\slashed{p}_e-\slashed{p}_\gamma'+m}{2p_ep_\gamma'}\gamma_\mu \right)\right]
+\eea
+}
 }
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{无力吐槽}
+\chtitle{Compton散射}
 \bch
-下节课我们继续…
+我们把问题转化为了求一系列Feynman矩阵的乘积的迹的问题，原则上解决了问题。以后再讲进一步化简的技巧。
 \ech
 \end{frame}
+
 
 \end{document}
 
