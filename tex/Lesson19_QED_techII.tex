@@ -1,0 +1,305 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\title{Quantum Field Theory I \\ Lesson 19 - QED techniques II}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+ 
+\begin{center}
+\begin{Large}
+\bch
+量子场论 I 
+
+{\vskip 0.3in}
+
+第十九课 QED计算技巧(二)
+
+\ech
+\end{Large}
+\end{center}
+
+\vskip 0.2in
+
+\bch
+课件下载
+\ech
+https://github.com/zqhuang/SYSU\_QFTI
+
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{$\gamma$矩阵的迹}
+\bch
+{\small
+这节课我们尝试来完成Compton散射的散射振幅的计算,为此我们先回顾下之前学过的有用的结论。
+
+\begin{itemize}
+\item{奇数个不包含$\gamma^5$的$\gamma$矩阵的乘积的迹为零}
+\item{$$\trof{\slashed{u}_1\slashed{u_2}} = 4u_1u_2$$ }
+\item{
+$$\trof{\slashed{u}_1\slashed{u}_2\slashed{u}_3\slashed{u}_4} = 4(u_1u_2)(u_3u_4) - 4(u_1u_3)(u_2u_4)+4(u_1u_4)(u_2u_3) $$
+}
+\end{itemize}
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{带形式下标的$\gamma$矩阵的性质}
+\bch
+{\small
+默认重复指标求和：
+$$ \gamma^\mu\gamma_\mu = 4 $$
+$$ \gamma^\mu \gamma^\nu \gamma_\mu = -2\gamma^\nu $$
+$$ \gamma^\mu \gamma^\alpha\gamma^\beta\gamma_\mu = 4g^{\alpha\beta} $$
+$$ \gamma^\mu \gamma^\alpha\gamma^\beta\gamma^\rho\gamma_\mu = -2\gamma^\rho\gamma^\beta\gamma^\alpha $$
+
+对只含$\gamma$矩阵乘积的等式，只要保持乘积的顺序不变，张量的指标升降规则仍然适用。例如
+$$\{\gamma_\mu, \gamma_\nu\} = 2 g_{\mu\nu}$$
+$$ \gamma_\mu \gamma_\nu \gamma^\mu = -2\gamma_\nu $$
+$$ \gamma_\mu \gamma^\alpha\gamma_\beta \gamma^\mu = 4\delta^\alpha_\beta $$
+
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Dirac费米子的自旋求和}
+\bch
+$$\sum_{\rm spins} u_p \bar{u}_p = \frac{\slp + m}{2\omega}$$
+$$\sum_{\rm spins} \upsilon_{-p} \bar{\upsilon}_{-p} = \frac{\slp - m}{2\omega}$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Dirac费米子的四维动量的性质}
+\bch
+{\small
+设Dirac费米子的质量为$m$，四维动量为$p$，则有
+$$p^2 = m^2$$
+由此可推出
+$$\slp(\slp + m) = m(\slp+m)$$
+$$\slp(\slp - m) = -m(\slp-m)$$
+$$(\slp+m)\gamma^\mu(\slp+m) = 2p^\mu (\slp+m)$$
+$$(\slp-m)\gamma^\mu(\slp-m) = 2p^\mu (\slp-m)$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{光子的四维动量的性质}
+\bch
+{\small
+设光子四维动量为$k$，则有
+$$k^2 = 0$$
+由此可推出
+$$\slk^2 = 0$$
+$$\slk\gamma^\mu\slk = 2p^\mu \slk$$
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{Compton散射}
+\bch
+{\small 我们把入射电子和光子的四维动量记为$p$, $k$，出射电子和光子的四维动量记为$p'$, $k'$}
+{\tiny
+\bea
+ |\calM|^2&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'}\sum_{\rm spins}(\vece_{k'})_\mu (\vece^*_{k})_\nu (\vece^*_{k'})_\alpha (\vece_{k})_\beta  \newl
+&&\times  \left(\bar{u}_{p'} \left(\gamma^\mu\frac{\ii}{\slp+\slk-m}\gamma^\nu+\gamma^\nu\frac{\ii}{\slp-\slk'-m}\gamma^\mu\right)  u_{p}  \right)^\dagger \newl
+&& \times\left(\bar{u}_{p'} \left(\gamma^\alpha \frac{\ii}{\slp+\slk-m}\gamma^\beta +\gamma^\beta \frac{\ii}{\slp-\slk'-m}\gamma^\alpha \right)u_{p}  \right) \newl
+&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} (-g_{\alpha\mu})(- g_{\nu\beta} )\left(\bar{u}_{p'} \left(\gamma^\mu\frac{\ii}{\slp+\slk-m}\gamma^\nu+\gamma^\nu\frac{\ii}{\slp-\slk'-m}\gamma^\mu\right)  u_{p}  \right)^\dagger \newl
+&& \times\left(\bar{u}_{p'} \left(\gamma^\alpha \frac{\ii}{\slp+\slk-m}\gamma^\beta +\gamma^\beta \frac{\ii}{\slp-\slk'-m}\gamma^\alpha \right)u_{p}  \right) 
+\eea
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Compton散射}
+\bch
+利用$(\gamma^\mu)^\dagger = \gamma^0\gamma^\mu\gamma^0$，以及$1\times 1$矩阵的迹等于自身，上式可写成
+{\tiny
+\bea
+|\calM|^2 &=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} \bar{u}_{p}\left(\gamma^\nu\frac{1}{\slp+\slk-m}\gamma^\mu+\gamma^\mu\frac{1}{\slp-\slk'-m}\gamma^\nu \right)u_{p'}    \newl
+&& \times \bar{u}_{p'} \left(\gamma_\mu \frac{1}{\slp+\slk-m}\gamma_\nu+\gamma_\nu \frac{1}{\slp-\slk'-m}\gamma_\mu \right)u_{p}  \newl
+&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} \mathrm{Tr}\left[ \bar{u}_{p}\left(\gamma^\nu\frac{1}{\slp+\slk-m}\gamma^\mu+\gamma^\mu\frac{1}{\slp-\slk'-m}\gamma^\nu\right) u_{p'}     \right.\newl
+&& \times \left. \bar{u}_{p'} \left(\gamma_\mu \frac{1}{\slp+\slk-m}\gamma_\nu+\gamma_\nu \frac{1}{\slp-\slk'-m}\gamma_\mu \right)u_{p} \right] \newl
+&=& \frac{q^4}{16 \omega_\gamma\omega_\gamma'} \sum_{\rm spins} \mathrm{Tr}\left[ u_{p}\bar{u}_{p}\left(\gamma^\nu\frac{1}{\slp+\slk-m}\gamma^\mu+\gamma^\mu\frac{1}{\slp-\slk'-m}\gamma^\nu\right) u_{p'} \bar{u}_{p'}    \right.\newl
+&& \times \left.  \left(\gamma_\mu \frac{1}{\slp+\slk-m}\gamma_\nu+\gamma_\nu \frac{1}{\slp-\slk'-m}\gamma_\mu \right)\right]
+\eea
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Compton散射}
+\bch
+利用$u\bar{u}$的自旋求和性质，得到
+{\scriptsize 
+$$|\calM|^2 = \frac{q^4}{64 \omega_\gamma\omega_\gamma'\omega_e\omega_e'} K$$}
+其中
+{\tiny
+\bea
+K &=&  \mathrm{Tr}\left[ (\slp+m)\left(\gamma^\nu\frac{1}{\slp+\slk-m}\gamma^\mu+\gamma^\mu\frac{1}{\slp-\slk'-m}\gamma^\nu\right) (\slp'+m)    \right.\newl
+&& \times \left.  \left(\gamma_\mu \frac{1}{\slp+\slk-m}\gamma_\nu+\gamma_\nu \frac{1}{\slp-\slk'-m}\gamma_\mu \right)\right]
+\eea
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Compton散射}
+\bch
+{\small
+利用$\slashed{A}^2 = A^2$, 以及$p^2 = p'^2 = m^2$, $k^2 = k'^2 = 0$, Feynman符号在分母的项可以化简为
+$$\frac{1}{\slp+\slk-m} = \frac{\slp+\slk+m}{(p+k)^2-m^2} =  \frac{\slp+\slk+m}{2pk} $$
+$$\frac{1}{\slp-\slk'-m} = \frac{\slp-\slk'+m}{(p-k')^2-m^2} = - \frac{\slp-\slk'+m}{2pk'} $$
+得到
+{\scriptsize
+\bea
+K &=&  \mathrm{Tr}\left[(\slp+m) \left(\gamma^\nu\frac{\slp+\slk+m}{2pk}\gamma^\mu-\gamma^\mu\frac{\slp-\slk'+m}{2p k'}\gamma^\nu\right) (\slp'+m)    \right.\newl
+&& \times \left.  \left(\gamma_\mu \frac{\slp+\slk+m}{2p k}\gamma_\nu-\gamma_\nu \frac{\slp-\slk'+m}{2pk'}\gamma_\mu \right)\right]
+\eea
+}
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Compton散射}
+\bch
+{\small
+然后利用Dirac费米子的四维动量的性质，得到
+{\scriptsize
+\bea
+K &=&  \mathrm{Tr}\left[(\slp+m) \left(\frac{\gamma^\nu\slk\gamma^\mu+2\gamma^\mu p^\nu}{2pk}+\frac{\gamma^\mu\slk'\gamma^\nu - 2\gamma^\nu p^\mu}{2p k'}\right) (\slp'+m)    \right.\newl
+&& \times \left.  \left(\gamma_\mu \frac{\slp+\slk+m}{2p k}\gamma_\nu-\gamma_\nu \frac{\slp-\slk'+m}{2pk'}\gamma_\mu \right)\right]
+\eea
+把$(\slp+m)$轮换到最后，再次利用Dirac费米子的四维动量的性质
+\bea
+K &=&  \mathrm{Tr}\left[\left(\frac{\gamma^\nu\slk\gamma^\mu+2\gamma^\mu p^\nu}{2pk}+\frac{\gamma^\mu\slk'\gamma^\nu - 2\gamma^\nu p^\mu}{2p k'}\right) (\slp'+m)    \right.\newl
+&& \times \left.  \left( \frac{\gamma_\mu\slk\gamma_\nu+2\gamma_\mu p_\nu}{2p k}+ \frac{\gamma_\nu\slk'\gamma_\mu - 2 \gamma_\nu p_\mu}{2pk'} \right)(\slp+m) \right]
+\eea
+}
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Compton散射}
+\bch
+把$K$展成四项：$K = \frac{K_1}{4(pk)^2} + \frac{K_2}{4(pk)(pk')}+ \frac{K_3}{4(pk)(pk')}+ \frac{K_4}{4(pk')^2}$
+其中
+{\scriptsize
+\bea
+K_1 &=& \mathrm{Tr}\left[(\gamma^\nu\slk\gamma^\mu+2\gamma^\mu p^\nu)(\slp'+m)(\gamma_\mu\slk\gamma_\nu+2\gamma_\mu p_\nu)(\slp+m)\right] \newl
+K_2 &=& \mathrm{Tr}\left[(\gamma^\nu\slk\gamma^\mu+2\gamma^\mu p^\nu)(\slp'+m)(\gamma_\nu\slk'\gamma_\mu - 2 \gamma_\nu p_\mu)(\slp+m)\right] \newl
+K_3 &=& \mathrm{Tr}\left[(\gamma^\mu\slk'\gamma^\nu - 2\gamma^\nu p^\mu)(\slp'+m)(\gamma_\mu\slk\gamma_\nu+2\gamma_\mu p_\nu)(\slp+m)\right] \newl
+K_4 &=& \mathrm{Tr}\left[(\gamma^\mu\slk'\gamma^\nu - 2\gamma^\nu p^\mu)(\slp'+m)(\gamma_\nu\slk'\gamma_\mu - 2 \gamma_\nu p_\mu)(\slp+m)\right] 
+\eea
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{计算$K_1$}
+\bch
+把$K_1$展开，因为是求迹运算，只须保留偶次项。
+{\tiny
+\bea
+K_1 &=&\mathrm{Tr}\left[(\gamma^\nu\slk\gamma^\mu+2\gamma^\mu p^\nu)(\slp'+m)(\gamma_\mu\slk\gamma_\nu+2\gamma_\mu p_\nu)(\slp+m)\right] \newl
+&=& \trof{\gamma^\nu\slk\gamma^\mu\slp'\gamma_\mu\slk\gamma_\nu\slp} + m^2\trof{\gamma^\nu\slk\gamma^\mu\gamma_\mu\slk\gamma_\nu}  + 4m^2\trof{\gamma^\mu \slp'\gamma_\mu \slp} + 4m^4\trof{\gamma^\mu \gamma_\mu} \newl
+&& + 2\trof{\gamma^\nu\slk\gamma^\mu\slp'\gamma_\mu p_\nu\slp} + 2m^2\trof{\gamma^\nu\slk\gamma^\mu\gamma_\mu p_\nu}  + 2\trof{\gamma^\mu p^\nu\slp'\gamma_\mu\slk\gamma_\nu\slp} + 2m^2 \trof{\gamma^\mu p^\nu\gamma_\mu\slk\gamma_\nu} \newl
+&=& -2\trof{\gamma^\nu\slk\slp'\slk\gamma_\nu\slp} -8m^2\trof{\slp' \slp} +  64m^4 \newl
+&& -4 \trof{\slp\slk\slp'\slp} + 8m^2\trof{\slp\slk}  -4\trof{ \slp'\slk\slp\slp} + 8m^2 \trof{\slk\slp}\newl
+&=& 4\trof{\slk\slp'\slk\slp}-32m^2(pp')+  64m^4 -4m^2\trof{\slk\slp'} + 16m^2\trof{\slp\slk}  -4 m^2 \trof{\slp'\slk} \newl
+&=& 32(pk)(p'k)-32m^2(pp')+  64m^4 +64m^2(pk)   -32 m^2(p'k)  \newl
+&=& 32(pk)(p'k) + 32m^4 +32m^2(pk)  
+\eea
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{计算$K_4$}
+\bch
+只要把$k$和$-k'$互换即得到$K_4$
+{\scriptsize
+\be
+K_4 = 32(pk')(p'k') + 32m^4 - 32m^2(pk') 
+\ee
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{计算$K_2$}
+\bch
+{\tiny
+\bea
+K_2 &=& \mathrm{Tr}\left[(\gamma^\nu\slk\gamma^\mu+2\gamma^\mu p^\nu)(\slp'+m)(\gamma_\nu\slk'\gamma_\mu - 2 \gamma_\nu p_\mu)(\slp+m)\right] \newl
+&=& \trof{\gamma^\nu\slk\gamma^\mu\slp'\gamma_\nu\slk'\gamma_\mu\slp} + m^2 \trof{\gamma^\nu\slk\gamma^\mu\gamma_\nu\slk'\gamma_\mu} -4 \trof{\gamma^\mu p^\nu\slp'\gamma_\nu p_\mu\slp} - 4m^2\trof{\gamma^\mu p^\nu\gamma_\nu p_\mu} \newl
+ && -2 \trof{\gamma^\nu\slk\gamma^\mu\slp'\gamma_\nu p_\mu\slp} -2m^2  \trof{\gamma^\nu\slk\gamma^\mu\gamma_\nu p_\mu} + 2\trof{\gamma^\mu p^\nu\slp'\gamma_\nu\slk'\gamma_\mu\slp} +2m^2 \trof{\gamma^\mu p^\nu\gamma_\nu\slk'\gamma_\mu} \newl
+&=& -2\trof{ \slp'\gamma^\mu\slk \slk'\gamma_\mu\slp} + 4m^2 \trof{k^\mu\slk'\gamma_\mu} -4 \trof{\slp\slp'\slp \slp} - 4m^2\trof{\slp^2} \newl
+ && +4 \trof{\slp'\gamma^\mu\slk p_\mu\slp} -8m^2  \trof{k^\mu p_\mu} + 2\trof{\gamma^\mu \slp'\slp\slk'\gamma_\mu\slp} +8m^2 \trof{ \slp\slk'} \newl
+&=& -8(kk')\trof{ \slp'\slp} + 4m^2 \trof{\slk'\slk} -4m^2 \trof{\slp\slp'} - 16m^4 \newl
+ && +4 \trof{\slp'\slp\slk\slp} -32m^2(pk) -4\trof{ \slk'\slp\slp'\slp} +32m^2 (pk') \newl
+&=& -32(kk')(pp') + 16m^2 (kk') -16m^2(pp') - 16m^4 \newl
+ && + 32(pp')(pk) - 16m^2(p'k) -32m^2(pk) -32(pp')(pk') + 16m^2(p'k') +32m^2 (pk') \newl
+&=& 32(pp')(pk)-32(kk')(pp') -32(pp')(pk') - 32m^4  -16m^2(pk)  +16m^2 (pk') \newl
+&=&   - 32m^4  -16m^2(pk)  +16m^2 (pk')
+ \eea
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{计算$K_3$}
+\bch
+同样，在$K_2$的结果中把$k$和$-k'$互换即得到$K_3$
+{\scriptsize
+\be
+K_3 =  - 32m^4  +16m^2(pk')  -16m^2 (pk) = K_2
+\ee
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{总和}
+\bch
+最后总和为
+{\scriptsize
+\be
+K = 8\left[\frac{pk'}{pk} + \frac{pk}{pk'} + 2m^2\left(\frac{1}{pk}-\frac{1}{pk'}\right) + m^4\left(\frac{1}{pk}-\frac{1}{pk'}\right)^2\right]
+\ee
+
+即
+\be
+|\calM|^2 = \frac{q^4}{8\omega_p\omega_p'\omega_k\omega_k'}\left[\frac{pk'}{pk} + \frac{pk}{pk'} + 2m^2\left(\frac{1}{pk}-\frac{1}{pk'}\right) + m^4\left(\frac{1}{pk}-\frac{1}{pk'}\right)^2\right]
+\ee
+
+}
+\ech
+\end{frame}
+
+\end{document}
+
+
