@@ -1,0 +1,44 @@
+\documentclass[CJK]{article}
+\input{reduced_macros.tex}
+\title{Mock Final Exam}
+  \author{}
+  \date{}
+\renewcommand{\thepage}{}
+\begin{document}
+\maketitle
+\bch
+\begin{itemize}
+\item[(一)]{设$\phi(x)$为实标量场，如何理解泛函积分元$\Dint\phi$?（20分）
+}
+\item[(二)]{Feynman规则的外线因子是通过直接读取自由场量子化表达式中的产生/湮灭算符前的系数得到的。但是为什么$e^{\pm \ii kx}$这些因子被忽略掉了？（20分）
+}
+\item[(三)]{实标量场$\phi$的拉氏密度为
+$$\lagr = \frac{\phi^2}{2m^2} \partial_\mu\phi\partial^\mu\phi - \frac{1}{8}\phi^4 $$
+其中$m$为常量。\\
+(1)写出$\phi$的运动方程。(6分)\\
+(2)做变量替换$\psi = \phi^2$，写出$\psi$的拉氏密度。(5分)\\
+(3)写出$\psi$的运动方程(3分），它和$\phi$的运动方程等价吗？(2分)\\
+(4)$\psi$是自由场吗？(2分) $\phi$是自由场吗？(2分)
+}
+\item[(四)]{$p$和$p'$分别是两个电子的四维动量，$k$和$k'$分别是两个光子的四维动量，$m$是电子质量。求下列矩阵的迹:
+\begin{itemize}
+\item[(1)]{$\trof{\slashed{p}\slashed{k}}$ (4分)}
+\item[(2)]{$\trof{\gamma^5\slashed{p}\slashed{k}}$ (4分)}
+\item[(3)]{$\trof{\slashed{p}\gamma_\mu\slashed{k}\gamma^\mu}$ (4分)}
+\item[(4)]{$\trof{\slashed{p}\slashed{k}\frac{1}{\slashed{p}'+\slashed{k}-m}(\slashed{p}-\slashed{k}'+m)\slashed{k}\slashed{p}}$ (4分)}
+\item[(5)]{$\trof{(2\slashed{p}+m)\gamma^\mu(\slashed{p'}+\slashed{k}+m)\frac{1}{\slashed{p}-\slashed{k}-m}(\slashed{p}+\slashed{k}'+m)(\slashed{p}-\slashed{p'})(\slashed{p}+m)\gamma_\mu}$ (4分）}
+\end{itemize}
+}
+\item[(五)]{
+我们在课上学习了自由实标量场的量子化：
+$$\hatphi(x) = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \left(\hata_{\veck} e^{-ik_\mu x^\mu} + \adag_{\veck}e^{ik_\mu x^\mu}\right) $$
+现已知相互作用的两个实标量场$\phi$和$\chi$，拉氏密度为
+$$\lagr = \frac{1}{2}\partial_\mu\phi\partial^\mu\phi + \frac{1}{2}\partial_\mu\chi\partial^\mu\chi - \frac{1}{2} M^2\phi^2 - \frac{1}{2} m^2\chi^2 -\frac{\lambda}{4} \phi^2\chi^2 $$
+其中$M$和$m$为常量，$\lambda\ll 1$是耦合常数。\\
+考虑散射问题：四维动量为$p_1$, $p_2$的两个$\phi$粒子发生散射，变成四维动量为$p_3$和$p_4$的两个$\chi$粒子。 \\
+(1) 用实线表示$\phi$粒子，用波浪线表示$\chi$粒子，画出该散射过程的Feynman图 （10分）。\\
+(2) 写出外线和顶点的Feynman规则 (6分)，并计算散射振幅$\calM$ (4分)。
+}
+\end{itemize}
+\ech
+\end{document}
