@@ -1,0 +1,108 @@
+\documentclass[12pt,CJK]{article}
+\usepackage{geometry}
+\input{reduced_macros.tex}
+\geometry{tmargin=0.1in, bmargin=0.1in, lmargin=0.5in, rmargin=0.5in, nohead, nofoot}
+\def\mark#1{{\color{blue} (#1分)}}
+\renewcommand{\thepage}{}
+\begin{document}
+\bch
+{\large 2016年中山大学物理与天文学院 量子场论I 期末考试 (1-2页，共4页) 总分50分}
+
+{\vskip 0.3in}
+
+姓名 ....................... {\hskip 0.5in}    学号 .......................
+
+{\vskip 0.1in}
+
+
+\begin{itemize}
+\item[(一)] {Dirac旋量理论里的Feynman符号$\slashed{A}$的定义是什么？\mark{3}它是$\gamma$矩阵和矢量（看成$4\times 1$矩阵）的矩阵乘积吗？ \mark{2} 带形式下标的$\gamma$矩阵（即$\gamma_\mu$)的定义是什么?\mark{3}它是$\gamma$矩阵和度规（看成$4\times4$矩阵）的矩阵乘积吗？\mark{2}
+
+\vspace{4.2in}
+}
+
+\item[(二)]{Noether定理中的“对称性”是如何定义的? \mark{2} 分别说明下述对称性分别对应了什么守恒量：a) 时间平移对称性 \mark{2}; b) 空间平移对称性 \mark{2}; c) 空间旋转对称性 \mark{2}; d) QED中的$U(1)$规范不变性 \mark{2}。
+}
+
+\end{itemize}
+\clearpage
+
+\begin{itemize}
+\item[(三)]{实标量场$\phi$和实矢量场$A_\mu$的拉氏密度为
+$$ \lagr = \frac{1}{2}\partial_\mu\phi\partial^\mu\phi - \frac{1}{2}m^2\phi^2 - \frac{e^{2\phi/M}}{4}\Fup\Fdown$$
+其中$\Fdown \equiv \partial_\mu A_\nu - \partial_\nu A_\mu$；质量$m$和描述耦合强度的$M\gg m$均为常量。
+
+(1)写出$\phi$场的运动方程 \mark{5}。
+
+\vspace{1.7in}
+
+
+(2)写出$A_\mu$场的运动方程 \mark{3}。
+
+\vspace{2.1in}
+
+
+(3)定义新的矢量场$B_\mu \equiv e^{\phi/M} A_\mu$和简写符号$G_{\mu\nu} \equiv \partial_\mu B_\nu -\partial_\nu B_\mu$。以$B_\mu$和$\phi$写出拉氏密度 \mark{1} 如果把该拉氏密度看成对$B_\mu$和$\phi$的自由场拉氏密度的微扰，那么拉氏密度里哪些项是微扰项？ \mark{1}
+}
+\end{itemize}
+\clearpage
+
+{\large 2016年中山大学物理与天文学院  量子场论I 期末考试 (3-4页，共4页) 总分50分}
+
+{\vskip 0.3in}
+
+姓名 ....................... {\hskip 0.5in}    学号 .......................
+
+{\vskip 0.1in}
+
+\begin{itemize}
+\item[(四)]{
+我们在课上学习了Dirac方程的对应于动量$\veck$和自旋$s$的解$u_{\veck, s}$, $\upsilon_{\veck,s}$满足
+$$(\slk-m)u_{\veck,s} = 0;\ \ (\slk+m)\upsilon_{-\veck,s} = 0;\ \  \sum_s u_{\veck,s}\bar{u}_{\veck,s} = \frac{\slashed{k}+m}{2\omega}; \ \ \sum_s \upsilon_{-\veck,s}\bar{\upsilon}_{-\veck,s} = \frac{\slashed{k}-m}{2\omega}$$
+其中$k^0 = \omega = \sqrt{m^2+\veck^2}$, $m$为电子的质量。
+
+设$p$和$p'$为两个电子的四维动量，$k$和$k'$为两个光子的四维动量，试化简下列式子。
+\begin{itemize}
+\item[(1)]{$\trof{\slp\gamma^0}$ \mark{2}
+
+\vspace{0.7in}
+}
+
+\item[(2)]{$\trof{\slp\slk\gamma^5}$ \mark{2}
+
+\vspace{0.7in}
+}
+\item[(3)]{$\trof{(\slp\slk)^2}$ \mark{2}
+
+\vspace{1.in}
+}
+\item[(4)]{$\sum_{s,s'}\, \left(\bar{u}_{\vecp,s}\, (\slashed{p}-m) \, \upsilon_{-\vecp',s'} \right)\left(\bar{\upsilon}_{-\vecp',s'}\,\frac{1}{\slp - \slk'+m}\, u_{\vecp,s}\right)$ \mark{2}
+
+\vspace{1.6in}
+}
+\item[(5)]{$\sum_{s,s'}\, \left(\bar{u}_{\vecp,s}\, \gamma^\nu(\slp+\slp')\gamma_\nu \,\upsilon_{-\vecp',s'} \right)\left(\bar{\upsilon}_{-\vecp',s'}\,\gamma^\mu(\slp'+\slk+m)\frac{1}{\slp - \slk'+m}(\slp- 2\slk'+m)\gamma_\mu\, u_{\vecp,s}\right)$ \mark{2}
+}
+\end{itemize}
+}
+\end{itemize}
+
+\clearpage
+
+\begin{itemize}
+\item[(五)]{
+我们在课上学习了自由实标量场的量子化：
+$$\hatphi(x) = \frac{1}{(2\pi)^{3/2}} \int \sqrt{\frac{d^3\veck}{2\omega}} \left(\hata_{\veck} e^{-ik_\mu x^\mu} + \adag_{\veck}e^{ik_\mu x^\mu}\right) $$
+现已知相互作用的两个实标量场$\phi$和$\chi$，拉氏密度为
+$$\lagr = \frac{1}{2}\partial_\mu\phi\partial^\mu\phi + \frac{1}{2}\partial_\mu\chi\partial^\mu\chi - \frac{1}{2} M^2 (\phi^2 + \chi^2) -\frac{\lambda}{4} (\phi- m)^2\chi^2 $$
+其中$M$和$m$为常量，满足$m\lesssim M$；$\lambda\ll 1$是耦合常数。\\
+考虑散射问题：四维动量为$p_1$的$\phi$粒子和四维动量为$p_2$的$\chi$粒子发生散射，变成四维动量为$p_3$的$\phi$粒子和四维动量为$p_4$的$\chi$粒子。
+
+(1) 用实线表示$\phi$粒子，用波浪线表示$\chi$粒子，画出所有不含内线或者含一条内线的Feynman图 \mark{6}。在图上标记外线，顶点和内线的Feynman规则 \mark{3}
+
+\vspace{3.1in}
+
+(2) 计算上述各个Feynman图对散射振幅$\calM$的贡献 \mark{1}。
+}
+\end{itemize}
+\ech
+\end{document}
