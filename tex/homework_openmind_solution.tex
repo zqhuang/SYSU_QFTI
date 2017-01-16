@@ -154,10 +154,10 @@ x_i = \frac{1}{\sqrt{n}} \sum_{j=0}^{n-1}y_j e^{\frac{2\pi i j}{n} \ii}
 \ee
 上式证明如下:
 \bea
-\sum_{i=0}^{n-1} |x_i|^2 &=& \sum_{i=0}^{n-1} y_i*y_i \newl
-&=& \sum_{i=0}^{n-1} \frac{1}{n}\sum_{j=0}^{n-1} y_j* e^{-\frac{2\pi i j}{n} \ii} \sum_{k=0}^{n-1} e^{\frac{2\pi i k}{n} \ii} \newl
-&=& \sum_{j,k} y_j*y_k \frac{1}{n} \sum_{i=0}^{n-1}  e^{\frac{2\pi i (k-j)}{n} \ii}  \newl
-&=& \sum_{j=0}^{n-1}\sum_{k=0}^{n-1} y_j*y_k \delta_{jk} \newl
+\sum_{i=0}^{n-1} |x_i|^2 &=& \sum_{i=0}^{n-1} x_i^*x_i \newl
+&=& \sum_{i=0}^{n-1} \frac{1}{n}\sum_{j=0}^{n-1} y_j^* e^{-\frac{2\pi i j}{n} \ii} \sum_{k=0}^{n-1} y_ke^{\frac{2\pi i k}{n} \ii} \newl
+&=& \sum_{j=0}^{n-1}\sum_{k=0}^{n-1} y_j^*y_k \frac{1}{n} \sum_{i=0}^{n-1}  e^{\frac{2\pi i (k-j)}{n} \ii}  \newl
+&=& \sum_{j=0}^{n-1}\sum_{k=0}^{n-1} y_j^*y_k \delta_{jk} \newl
 &=& \sum_{j=0}^{n-1} |y_j|^2 
 \eea
 }
@@ -238,9 +238,9 @@ $$L_{\rm free} = \int_0^{2\pi}d\theta\ \frac{1}{2}\left[\left(\frac{\partial\phi
 \bch
 {\scriptsize
 解答：由周期性边界条件可以把$\phi$展开为
-$$\phi = \sum_{m=-\infty}^{\infty} \phi_m e^{\ii m\theta}$$
-且由$\phi$为实数可以得到$\phi_{-m} = \phi^*_m$。
-可以仿照课上对实标量场的量子化方法把$\phi$量子化(过程略），唯一的区别是动量$m$为离散的整数值。
+$$\phi = \sum_{k=-\infty}^{\infty} \phi_k e^{\ii k\theta}$$
+且由$\phi$为实数可以得到$\phi_{-k} = \phi^*_k$。
+可以仿照课上对实标量场的量子化方法把$\phi$量子化(过程略），唯一的区别是动量$k$为离散的整数值。
 }
 \ech
 \end{frame}
