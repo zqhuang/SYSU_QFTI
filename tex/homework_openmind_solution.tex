@@ -109,8 +109,8 @@ $$L = \frac{m}{2}\dot{\vecx}^T \dot{\vecx}-\frac{1}{2}m \vecx^T \Omega^2 \vecx$$
 S_n = \left( \begin{array}{cccccccc} 2 & -1 & & & & & \\ -1 & 2 & -1 & & & & & \\  & -1 & 2 & -1 & & & & \\ & &  & & \ldots & & & \\ & & & & & -1 & 2 & -1 \\ & & & & & & -1 & 2 \end{array}\right) 
 \ee
 取变量$\vecx = (x_0, x_1, \ldots, x_{n-1})^T$，则$S_n$对应的二次型耦合谐振子系统的势能可以写为
-$$ \frac{1}{2}\vecx^T S_n\vecx =  \frac{1}{2}\left[(x_0-x_1)^2 + (x_1-x_2)^2 + \ldots + (x_{n-2}-x_{n-1})^2\right]$$
-为了使上式有周期对称性，我们给上述势能加上一项 $\frac{1}{2}(x_0-x_{n-1})^2$，并（不加证明地，厚颜无耻地）认为当$n \rightarrow \infty$时这样加一项造成的影响可以忽略。
+$$ \frac{1}{2}\vecx^T S_n\vecx =  \frac{1}{2}\left[x_0^2+(x_0-x_1)^2 + (x_1-x_2)^2 + \ldots + (x_{n-2}-x_{n-1})^2+x_{n-1}^2\right]$$
+为了使上式有周期对称性，我们给上述势能加上一项 $-x_0x_{n-1}$，并（不加证明地，厚颜无耻地）认为当$n \rightarrow \infty$时这样加一项造成的影响可以忽略。
 $$\vecx^T S_n\vecx \approx \sum_{i=0}^{n-1} (x_i-x_{i+1})^2$$
 其中我们约定符号$x_n = x_0$。
 }
