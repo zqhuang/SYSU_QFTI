@@ -46,7 +46,7 @@ https://github.com/zqhuang/SYSU\_QFTI
 
 \begin{itemize}
 \item{{\bf 平时作业20分}： 每次平时作业2.5分（不足半分取半分），共8次平时作业。 }
-\item{ {\bf 特殊作业10分}： 期末考试前交。允许搜索查阅任何文献，允许讨论，允许请教他人。拱5题每题2分。}
+\item{ {\bf 特殊作业10分}： 期末考试前交。允许搜索查阅任何文献，允许讨论，允许请教他人。共5题每题2分。}
 \item{{\bf 课堂表现20分}： 尽量积极发言。}
 \item{ {\bf 期末考试50分}： 开卷（允许翻阅书和笔记），独立答题。}
 \end{itemize}
@@ -60,23 +60,22 @@ https://github.com/zqhuang/SYSU\_QFTI
 \begin{itemize}
 \item{名字}
 \item{物理基础：高等数学，线性代数，理论力学，狭义相对论，量子力学这五门课的学习情况（没学过，学过大部分忘了，学过大部分还会，精通）}
-\item{对评分方法的意见和建议}
 \end{itemize}
 \ech
 \end{frame}
 
 \begin{frame}
-\frametitle{\bch 第一章需掌握内容 \ech}
+  \chtitle{第一章要掌握的内容}
+\bch   
 \begin{itemize}
-\bch 
 \item{自然单位制和量纲}
 \item{坐标，度规和张量}
 \item{作用量和拉氏密度的概念}
 \item{Euler-Lagrange方程的推导}
 \item{Noether定理的推导}
-\ech
 \end{itemize}
 
+\ech
 \end{frame}
 
 \begin{frame}
@@ -166,10 +165,15 @@ g_{\mu\nu} =  \left( \begin{array}{rrrr} 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 
 \frametitle{\bch 一般性张量(tensor)的定义 \ech}
 \bch
 一般性张量在坐标变换$x \rightarrow \tilde{x}$下的变化：
+
+
+$$\tilde{T}^{\mu\nu\ldots}_{\ \ \alpha\beta\ldots} = \left(\frac{\partial \tilde{x}^\mu}{\partial x^\rho}\frac{\partial \tilde{x}^\nu}{\partial x^\sigma} \frac{\partial x^\gamma }{\partial \tilde{x}^\alpha}\frac{\partial x^\lambda}{\partial \tilde{x}^\beta} \ldots \right)T^{\rho\sigma\ldots}_{\ \ \gamma\lambda\ldots} $$
+
+\skiplines
+
+
+(上个学年很多同学看到这里就退课了\bye)
 \ech
-
-$$\tilde{T}^{\mu\nu\ldots}_{\alpha\beta\ldots} = \left(\frac{\partial \tilde{x}^\mu}{\partial x^\rho}\frac{\partial \tilde{x}^\nu}{\partial x^\sigma} \frac{\partial x^\gamma }{\partial \tilde{x}^\alpha}\frac{\partial x^\lambda}{\partial \tilde{x}^\beta} \ldots \right)T^{\rho\sigma\ldots}_{\gamma\lambda\ldots} $$
-
 \end{frame}
 
 \begin{frame}
@@ -181,13 +185,14 @@ $$\tilde{T}^{\mu\nu\ldots}_{\alpha\beta\ldots} = \left(\frac{\partial \tilde{x}^
 \item{时空微元$dx^\mu$是张量（一阶张量，也称为矢量）}
 \item{$g_{\mu\nu}$本身是张量 （二阶张量）}
 \item{$\partial_\mu\phi$是张量（矢量）}
-\item{克罗内克符号$\delta^{\mu}_{\nu}$是张量}
+\item{克罗内克符号$\delta^{\mu}_{\ \nu}$是张量}
 \item{度规的逆矩阵$g^{\mu\nu}$是张量}
 \item{如果定义$dx_{\mu} \equiv g_{\mu\nu} dx^{\nu}$，则$dx_\mu$也是张量}
 \item{如果定义$\partial^\mu\phi \equiv g^{\mu\nu}\partial_\mu\phi$，则$\partial^\mu\phi$是张量}
-\item{如果$T^{\mu\nu}$是二阶张量，则$T^{\mu}_{\mu}$是标量}
+\item{如果$T^{\mu\nu}$是二阶张量，则$T^{\mu}_{\ \mu}$是标量}
 \item{如果$A^{\mu}$和$B^{\mu}$都是矢量，则$A^\mu B^\nu$是二阶张量}
 \end{itemize}
+
 \ech
 \end{frame}
 
@@ -205,7 +210,7 @@ $$\tilde{T}^{\mu\nu\ldots}_{\alpha\beta\ldots} = \left(\frac{\partial \tilde{x}^
 \begin{minipage}{0.6\textwidth}
 $$F_{\mu\nu} = g_{\mu\rho}g_{\nu\sigma}F^{\rho\sigma}$$
 $$T^{\mu}_{\ \nu\rho} = g^{\mu\sigma} T_{\sigma\nu\rho}$$
-$$g^{\mu}_{\nu} = g^{\mu\rho}g_{\rho\nu} = \delta^{\mu}_{\nu}$$
+$$g^{\mu}_{\ \nu} = g^{\mu\rho}g_{\rho\nu} = \delta^{\mu}_{\ \nu}$$
 \end{minipage}
 \end{frame}
 
@@ -243,8 +248,8 @@ $g_{\mu\nu}g^{\rho\sigma}$ 是四阶张量
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
 $$dx^\mu dx_\mu = ds^2$$
-$$g^{\mu}_{\mu} = 4$$
-$$g^{\mu\rho}g_{\rho\nu} = g^{\mu}_{\nu}$$
+$$g^{\mu}_{\ \mu} = 4$$
+$$g^{\mu\rho}g_{\rho\nu} = \delta^{\mu}_{\ \nu}$$
 \end{minipage}
 \end{frame}
 
@@ -253,6 +258,7 @@ $$g^{\mu\rho}g_{\rho\nu} = g^{\mu}_{\nu}$$
 \begin{frame}
 \frametitle{\bch课堂互动\ech}
 \bch
+\addfig{1}{think2.jpg}
 如果$\phi$是标量，那么$\partial_\mu\partial_\nu\phi$是张量吗？
 \ech
 \end{frame}
