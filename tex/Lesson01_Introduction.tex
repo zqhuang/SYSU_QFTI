@@ -34,22 +34,12 @@
 \ech
 https://github.com/zqhuang/SYSU\_QFTI
 
-\bch
-助教：暂无（实在有问题可在微信上问，微信号zhiqihuang)
-\ech
 \end{frame}
 
 \begin{frame}
 \frametitle{\bch 评分 \ech (Evaluation)}
 \bch
 总分 = 作业30分 + 课堂表现20分  + 期末考试50分
-
-\begin{itemize}
-\item{{\bf 平时作业20分}： 每次平时作业2.5分（不足半分取半分），共8次平时作业。 }
-\item{ {\bf 特殊作业10分}： 期末考试前交。允许搜索查阅任何文献，允许讨论，允许请教他人。共5题每题2分。}
-\item{{\bf 课堂表现20分}： 尽量积极发言。}
-\item{ {\bf 期末考试50分}： 开卷（允许翻阅书和笔记），独立答题。}
-\end{itemize}
 \ech
 \end{frame}
 
@@ -59,7 +49,7 @@ https://github.com/zqhuang/SYSU\_QFTI
 自我介绍：
 \begin{itemize}
 \item{名字}
-\item{物理基础：高等数学，线性代数，理论力学，狭义相对论，量子力学这五门课的学习情况（没学过，学过大部分忘了，学过大部分还会，精通）}
+\item{物理基础：高等数学，线性代数，理论力学，狭义相对论，量子力学这五门课的学习情况（这些是什么鬼?学过大部分忘了?学过大部分还会?精通?）}
 \end{itemize}
 \ech
 \end{frame}
@@ -101,9 +91,11 @@ https://github.com/zqhuang/SYSU\_QFTI
 \end{frame}
 
 \begin{frame}
-\frametitle{\bch 课堂互动\ech}
+\frametitle{\bch 思考题\ech}
 \bch
-讨论下面这些物理量的量纲：
+\addfig{0.5}{think.jpg}
+
+下面物理量的量纲是质量的多少次方？
 
 速度$v$
 
@@ -123,6 +115,20 @@ https://github.com/zqhuang/SYSU\_QFTI
 \end{frame}
 
 
+\begin{frame}
+\frametitle{\bch 思考题 \ech}
+\bch
+$1\SIkg$的倒数是多少$\SIcm$?
+
+\bcenter
+\lfig{1}{blackq.jpg}
+
+根本不知道你在说什么.jpg
+\ecenter
+\ech
+\end{frame}
+
+
 
 \begin{frame}
 \frametitle{\bch 时空坐标的标记以及一些约定 \ech}
@@ -132,25 +138,38 @@ https://github.com/zqhuang/SYSU\_QFTI
 \item{希腊字母指标$\mu, \nu, \rho, \sigma,\ldots$ 默认跑遍0，1，2，3}
 \item{拉丁字母指标$i, j,  k, l,\ldots$ 默认跑遍1，2，3}
 \item{黑体表示三维空间矢量，例如 $\mathbf{dx} \equiv (dx^1, dx^2, dx^3)$}
+\end{itemize}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\bch 时空坐标的标记以及一些约定 \ech}
+\bch
+\begin{itemize}
 \item{爱因斯坦求和规则：重复出现的指标默认求和。例如：$dx^\mu dx_{\mu}$若无特殊说明等价于$\sum_{\mu = 0}^3 dx^\mu dx_{\mu}$} 
 \item{空间坐标的偏微分$\frac{\partial}{\partial x^\mu}$经常简写成$\partial_\mu$. 省略下标的偏微分符号$\partial$是$(\partial_0,\partial_1,\partial_2,\partial_3)$的简写。算符$\nabla$则仅是空间偏微分$(\partial_1, \partial_2, \partial_3)$的简写。}
-\item{克罗内克符号(Kronecker delta) $\delta^\mu_\nu$当$\mu = \nu$时为1，否则为0.}
+\item{克罗内克符号(Kronecker delta) $\delta^\mu_{\ \nu}$当$\mu = \nu$时为1，否则为0.}
 \end{itemize}
 \ech
 
 \end{frame}
 
+
 \begin{frame}
-\frametitle{\bch 度规 (metric) \ech}
-\bch 时空间隔元：\ech
+\chtitle{度规(metric)}
+\bch 时空间隔元的定义：
 
 $ds^2 = g_{\mu\nu} dx^\mu dx^\nu$
 
-\bch $g_{\mu\nu}$称为度规(metric) \ech
+\ech
+\end{frame}
 
-{\vskip 0.1in}
 
-\bch 量子场论与广义相对论的统一尚未完成。本课程仅讨论狭义相对论的平直时空，也叫闵氏空间(Minkowski spacetime). \ech
+\begin{frame}
+\frametitle{\bch 度规 (metric) \ech}
+\bch 时空间隔元：\ech
+\bch 狭义相对论的平直时空，也叫闵氏空间(Minkowski spacetime)的度规 \ech
 
 \begin{equation} 
 g_{\mu\nu} =  \left( \begin{array}{rrrr} 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{array} \right) \nonumber
@@ -171,13 +190,12 @@ $$\tilde{T}^{\mu\nu\ldots}_{\ \ \alpha\beta\ldots} = \left(\frac{\partial \tilde
 
 \skiplines
 
-
 (上个学年很多同学看到这里就退课了\bye)
 \ech
 \end{frame}
 
 \begin{frame}
-\frametitle{\bch 课堂互动 \ech}
+\frametitle{\bch 思考题 \ech}
 \bch
 如果$\phi$是一个标量（0阶张量，在坐标变换下不变），时空度规为$g_{\mu\nu}$，时空度规的逆矩阵为$g^{\mu\nu}$。试证明：
 \begin{itemize}
@@ -261,6 +279,17 @@ $$g^{\mu\rho}g_{\rho\nu} = \delta^{\mu}_{\ \nu}$$
 \addfig{1}{think2.jpg}
 如果$\phi$是标量，那么$\partial_\mu\partial_\nu\phi$是张量吗？
 \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{课后作业}
+  \bch
+  \bitem
+\item[1]{自然单位制下力矩的量纲是什么（=质量的多少次方）？}
+\item[2]{某散射过程的截面为$\sigma = 10^{-3}/m_W^2$, 其中$m_W \approx 80 GeV$是$W^{\pm}$的粒子质量。试换算出以$\mathrm{cm}^2$为单位的截面值。}
+\item[3]{设四维时空度规为$g_{\mu\nu}$，试化简$g_{\mu\nu}g^{\mu\nu}$。}
+  \eitem
+  \ech
 \end{frame}
 
 \end{document}
