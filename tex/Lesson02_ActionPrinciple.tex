@@ -194,11 +194,44 @@ Noether定理: $$j^\mu = F^\mu - \frac{\partial\lagr}{\partial (\partial_\mu\phi
 \end{frame}
 
 \begin{frame}
-\chtitle{课堂互动}
+\chtitle{Noether定理的证明}
 \bch
-\addfig{1}{think3.jpg}
-试证明Noether定理。
+证明：
+\bea
+\epsilon \partial_\mu j^\mu  &=& \epsilon \partial_\mu F^\mu -  \frac{\partial\lagr}{\partial (\partial_\mu\phi)} \partial_\mu(\delta\phi) -\partial_\mu\left(\frac{\partial\lagr}{\partial (\partial_\mu\phi)} \right)\delta\phi \newl
+&=& \delta \lagr -  \frac{\partial\lagr}{\partial (\partial_\mu\phi)} \delta(\partial_\mu\phi) -\frac{\partial\lagr}{\partial \phi} \delta\phi \newl
+&=& 0
+\eea
+中间我们利用了Euler-Lagrange方程。
 \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{课后作业(题号4-6)}
+  \bch
+  \bitem
+  \item[4]{考虑一维空间x和一维时间t构成的时空里的标量场$\phi(x,t)$，若其作用量为
+$$ S = \int dx dt \,   \left[ \frac{1}{2}\left(\frac{\partial \phi}{\partial t}\right)^2 -  \frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^2 - V(\phi)\right]\, ,$$
+    其中$V(\phi)$为给定的势能函数。试用求作用量稳定点的方法推导$\phi(x, t)$的运动方程并将结果与Euler-Lagrange方程做比较。}
+  \item[5]{谐振子
+$$ S = \int_{-\infty}^\infty \frac{m}{2}\left[(\frac{d\phi}{dt})^2 - \omega^2\phi^2\right] dt$$
+    把时间维特殊化以后就只有一个自由度$\phi$。写出$\phi$对应的正则动量$\pi$，系统的Hamilton量，以及Hamilton方程。试把$\pi$从两个Hamilton方程中消去，得到的结果和Euler-Lagrange方程一致吗？}
+  \eitem
+  \ech
+\end{frame}
+
+\begin{frame}
+  \bch
+  \bitem
+  \item[6]{作用量
+$$S = \int d^4x\ \lagr(\phi, \partial_\mu\phi)\,.$$
+在坐标平移下显然具有不变性。由此用Noether定理推导场$\phi$的能量动量守恒方程。
+
+\skipline
+
+提示：考虑四种无穷小变化$x^\mu \rightarrow x^\mu + \epsilon_r \delta_r^\mu$ ($r = 0, 1, 2, 3$)带来的$\phi$的变化和$\mathcal{L}$的变化。}
+    \eitem
+  \ech
 \end{frame}
 
 \end{document}
